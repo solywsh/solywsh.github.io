@@ -1,77 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Bootstrap Callout导致hexo博客.md文档标题无法正常显示的办法</title>
-    <url>/2020/03/25/Title%20problem/</url>
-    <content><![CDATA[<p>我在写第六单元的<a href="https://violetwsh.com/2020/03/16/2020-03-16-homework/#more">作业</a>时，内容写在了.md(markdown)文档里，出于测试的原因，使用了很多新添加的功能，导致了我的部分一级，二级，三级标题在渲染后无法正常显示。再删除Bootstrap Callout相关标签之后居然就恢复正常了。</p>
-<p>.md的标题分级语法是：</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="# 一级标题"></a># 一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="## 二级标题"></a>## 二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="### 三级标题"></a>### 三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="#### 四级标题"></a>#### 四级标题</h4><p><strong>但是</strong>我在hexo 的 next主题官方看见了Bootstrap Callout标签用法。</p>
-<p><a href="http://theme-next.iissnan.com/tag-plugins.html" target="_blank" rel="noopener" class="LinkCard">Bootstrap Callout标签官方说明</a></p>
-<p>顺便一提，这个类似于知乎卡片式的链接也是新添加的，引用语法是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;网址&quot; class&#x3D;&quot;LinkCard&quot;&gt;说明文字&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
-
-<p>具体怎么配置可以看以下链接的第12点</p>
-<p><a href="https://www.liaofuzhan.com/posts/2114475547.html" target="_blank" rel="noopener" class="LinkCard">Hexo NexT 主题美化2.0</a></p>
-<p>本来我在应用某段文字时，应该这样使用：</p>
-<blockquote>
-<p>这是一段文字</p>
-</blockquote>
-<p>语法是在文字前加<code>&gt;</code>号</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;文字</span><br></pre></td></tr></table></figure>
-
-<p>而Bootstrap Callout语法是</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>class_name可以是：</p>
-<ul>
-<li><code>default</code></li>
-<li><code>primary</code></li>
-<li><code>success</code></li>
-<li><code>info</code></li>
-<li><code>warning</code></li>
-<li><code>danger</code></li>
-</ul>
-<p>例如：</p>
-<div class="note default"><p>default (md partial supported) </p></div>
-
-<div class="note primary"><p>primary (md partial supported) </p></div>
-
-<div class="note success"><p>success (md partial supported) </p></div>
-
-<div class="note info"><p>info (md partial supported) </p></div>
-
-<div class="note warning"><p>warning (md partial supported) </p></div>
-
-<div class="note danger"><p>danger (md partial supported) </p></div>
-
-<p>使用这种方法比较美观，但是，会出bug，那么问题来了，如果想要使用相似的标签，但是又不想出bug怎么办？</p>
-<p>其实<code>Next</code>也自带了。</p>
-<p>首先我们需要在<code>Next</code>主题<code>_config.xml</code>中设置一下功能开关，有些默认是开的，有些默认是关的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bs-callout old alert style. Default.</span><br><span class="line">  #  - modern    bs-callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: simple</span><br><span class="line">  icons: false</span><br><span class="line">  border_radius: 3</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light_bg_offset: 0</span><br></pre></td></tr></table></figure>
-
-<p>语法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] [no-icon] %&#125;</span><br><span class="line">这是一段文字</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">其中：[class] [no-icon] 都可以用相应的修改，也可以不写</span><br><span class="line">[class]   : default | primary | success | info | warning | danger.</span><br><span class="line">[no-icon] : Disable icon in note.</span><br></pre></td></tr></table></figure>
-
-<p>测试</p>
-<div class="note danger"><p>测试</p></div>
-
-<p>代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note danger %&#125;</span><br><span class="line">测试</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>换了别的标签之后，就没那么容易出bug了。</p>
-<p>本文支持：（里边写了很多关于markdown的语法知识，可以去看看）</p>
-<p><a href="https://bestzuo.cn/posts/3147047336.html" target="_blank" rel="noopener" class="LinkCard">hexo博客Next主题进阶写作技巧</a></p>
-<p>反正没人看，偷偷放个图应该不会被发现吧。。。。。。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gd648ee1scj30ee0kg41i.jpg">]]></content>
+    <title>博客文章加密测试文档</title>
+    <url>/2020/03/26/encryption/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">Hey, password is required here.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="b206f0eddff31df178bdc5783ab5645e6f594e2d7059a22480467069efe2b4b5">8d0887d0f88eaaae7a5372c8b50ea803af376068c12784dfc4cce0082ac0f34abd76c60ecd14fccda2df4ed03707561f8ca701d6e5a68ff45ad4bd715a7417e10270b6516ff015b9aba92206152eb2e5d2ca997400bc8a6998808e341dc8c6f9e4b042af6f8bdd4dfa997d7fbdd05c104ec86cc662c6c4e2eed38000746e128149603a363ab3246426c287ed4fe727c6a2a0e12881ab8093211e03fd4266e145</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
-        <category>problem</category>
+        <category>blog</category>
       </categories>
       <tags>
         <tag>分享</tag>
+        <tag>工具</tag>
         <tag>blog</tag>
-        <tag>problem</tag>
+        <tag>加密</tag>
       </tags>
   </entry>
   <entry>
@@ -116,7 +64,7 @@
 <h1 id="勒让德多项式"><a href="#勒让德多项式" class="headerlink" title="勒让德多项式"></a>勒让德多项式</h1><p><strong>题目内容：</strong>用递归方法求n阶勒让德多项式的值，递归公式为</p>
 <p><img src="https://edu-image.nosdn.127.net/EFFB9EE45C03C93E6496C8224ABC78AE.png?imageView&thumbnail=890x0&quality=100" alt="img"></p>
 <div class="note danger"><p>注意，题给的公式是错的，后面的 <code>x</code> 统一是 <code>n</code></p>
-<p>我的代码也不能通过，感觉又是系统的锅，尝试了很多别人的代码也不行。</p></div>
+<p><strong>我的代码也不能通过，感觉又是系统的锅，尝试了很多别人的代码也不行。</strong></p></div>
 
 <p>*<em>输入格式: *</em>  x n</p>
 <p><strong>输出格式：</strong>pn(x)</p>
@@ -135,8 +83,8 @@
 <p>当然都不是我写的，我只是拿来改了一下，因为这太短了。。。比我的短太多了。</p>
 <p>链接先放出来：</p>
 <p><a href="https://blog.csdn.net/heart_leader/article/details/79868133" target="_blank" rel="noopener" class="LinkCard">将十进制数M转换为N进制数</a></p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>我最初的想法是利用 %o<code>，</code>%x  输出时直接转换的，但是，这样只能转换8进制<code>%o</code>，16进制 <code>%x</code> ,题目要求的是2-16进制，其他的进制怎么操作呢？详细的方法可以查看《计算机科学导论》数字系统部分。各种进制的转换都有详细的说明。并且之前也是学过。</p>
-<p>我只讲大概的原理，十进制转换为其他进制时，我们拿35转换为2进制举例：</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>我最初的想法是利用 <code>%o</code>，<code>%x</code>  输出时直接转换的，但是，这样只能转换8进制<code>%o</code>，16进制 <code>%x</code> ,题目要求的是2-16进制，其他的进制怎么操作呢？详细的方法可以查看《计算机科学导论》数字系统部分。各种进制的转换都有详细的说明。并且之前也是学过。</p>
+<p>我只讲大概的原理，十进制转换为其他进制时，我们拿十进制35转换2进制举例：</p>
 <p>开始</p>
 <p>35除以2，17余1，2进制倒数第一位是1；</p>
 <p>17除以2，8余1，2进制倒数第二位为1；</p>
@@ -146,8 +94,8 @@
 <p>2除以1，0余1，二进制倒数第六位为1；</p>
 <p>结束</p>
 <p>结果为：100011</p>
-<p>10进制转换为其他进制很简单，原理都是一样的，不断的相除取余为0。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gd6kn2100aj32bc0whatl.jpg">
+<p>10进制转换为其他进制很简单，原理都是一样的，不断的相除取余直到为0。</p>
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gd6kn2100aj32bc0whatl.jpg"/>
 
 ]]></content>
       <categories>
@@ -158,6 +106,80 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bootstrap Callout导致hexo博客.md文档标题无法正常显示的办法</title>
+    <url>/2020/03/25/Title%20problem/</url>
+    <content><![CDATA[<p>我在写第六单元的<a href="https://violetwsh.com/2020/03/16/2020-03-16-homework/#more">作业</a>时，内容写在了.md(markdown)文档里，出于测试的原因，使用了很多新添加的功能，导致了我的部分一级，二级，三级标题在渲染后无法正常显示。再删除Bootstrap Callout相关标签之后居然就恢复正常了。</p>
+<p>.md的标题分级语法是：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="# 一级标题"></a># 一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="## 二级标题"></a>## 二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="### 三级标题"></a>### 三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="#### 四级标题"></a>#### 四级标题</h4><p><strong>但是</strong>，我在hexo 的 next主题官方看见了Bootstrap Callout标签用法。</p>
+<p><a href="http://theme-next.iissnan.com/tag-plugins.html" target="_blank" rel="noopener" class="LinkCard">Bootstrap Callout标签官方说明</a></p>
+<p>顺便一提，这个类似于知乎卡片式的链接也是新添加的功能，引用语法是：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"网址"</span> <span class="attr">class</span>=<span class="string">"LinkCard"</span>&gt;</span>说明文字<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>具体怎么配置可以看下面链接的第12点</p>
+<p><a href="https://www.liaofuzhan.com/posts/2114475547.html" target="_blank" rel="noopener" class="LinkCard">Hexo NexT 主题美化2.0</a></p>
+<p>本来我在引用某段文字时，应该这样使用：</p>
+<blockquote>
+<p>这是一段文字</p>
+</blockquote>
+<p>语法是，在文字前加大于号<code>&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;文字</span><br></pre></td></tr></table></figure>
+
+<p>而Bootstrap Callout语法是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note class_name %&#125; 内容 &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>class_name可以是：</p>
+<ul>
+<li><code>default</code></li>
+<li><code>primary</code></li>
+<li><code>success</code></li>
+<li><code>info</code></li>
+<li><code>warning</code></li>
+<li><code>danger</code></li>
+</ul>
+<p>例如：</p>
+<div class="note default"><p>default </p></div>
+
+<div class="note primary"><p>primary </p></div>
+
+<div class="note success"><p>success </p></div>
+
+<div class="note info"><p>info </p></div>
+
+<div class="note warning"><p>warning </p></div>
+
+<div class="note danger"><p>danger </p></div>
+
+<p>使用这种方法比较美观，但是，很多<code>hexo</code>主题会出现bug（比如我的标题渲染时就会出现问题），那么问题来了，如果想要使用相似的标签，但是又不想出bug怎么办？</p>
+<p>其实<code>Next</code>也自带了类似的标签。（我就搞不懂官方的说明文档为什么没有这个，而是Bootstrap Callout这种容易出bug的）</p>
+<p>我们需要在<code>Next</code>主题<code>_config.xml</code>中设置一下功能开关，有些默认是开的，有些默认是关的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bs-callout old alert style. Default.</span><br><span class="line">  #  - modern    bs-callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: simple</span><br><span class="line">  icons: false</span><br><span class="line">  border_radius: 3</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light_bg_offset: 0</span><br></pre></td></tr></table></figure>
+
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] [no-icon] %&#125;</span><br><span class="line">这是一段文字</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">其中：[class] [no-icon] 都可以用相应的修改，也可以不写</span><br><span class="line">[class]   : default | primary | success | info | warning | danger.</span><br><span class="line">[no-icon] : Disable icon in note.</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<div class="note danger"><p>测试</p></div>
+
+<p>代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note danger %&#125;</span><br><span class="line">测试</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>换了标签之后，就没那么容易出bug了。</p>
+<p>本文内容支持：（里边写了很多关于markdown的语法知识，可以去看看）</p>
+<p><a href="https://bestzuo.cn/posts/3147047336.html" target="_blank" rel="noopener" class="LinkCard">hexo博客Next主题进阶写作技巧</a></p>
+<p>反正没人看，偷偷放个图应该不会被发现吧。。。。。。</p>
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gd648ee1scj30ee0kg41i.jpg"/>]]></content>
+      <categories>
+        <category>problem</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>blog</tag>
+        <tag>problem</tag>
       </tags>
   </entry>
   <entry>
@@ -218,14 +240,14 @@
   <entry>
     <title>3DS如何用FTP传输文件</title>
     <url>/2020/03/19/3DSFTPD/</url>
-    <content><![CDATA[<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9hgrjf2j30tc0tcwyp.jpg">
+    <content><![CDATA[<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9hgrjf2j30tc0tcwyp.jpg"/>
 
 <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>故事还得从一只蝙蝠说起，放暑假的时候把(老)3DS带回了家，结果却发现把读卡器带回家，这不要紧，因为有<a href="http://nintendo-ds.dcemu.co.uk/-3ds-fbi-v2-5-3-1161570.html" target="_blank" rel="noopener">FBI</a>——3DS上的无线安装软件，但是，FBI只是支持<code>cia</code>格式的安装包，且只能安装，不能进行文件的传输。</p>
 <p>问题来了，一天，我突然想玩NDS的游戏，而有的NDS数字版游戏不支持在3DS上安装，一个实现的办法是在3DS游戏机上模拟NDS系统，实现套娃的操作——缺点就是耗电。</p>
 <p>可是，因为模拟NDS系统不仅仅是安装一个软件那么简单，还需要到系统的根目录进行文件的拷贝修改等等。</p>
 <p>那没有读卡器怎么操作？暂时又出不了门，又买不了。</p>
 <p>原理很简单，在链接网络的情况下让3DS成为FTP（File Transfer Protocol，文件传输协议）<strong>服务器即可</strong>。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7o6iigxj33402c07wi.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7o6iigxj33402c07wi.jpg"/>
 
 <h1 id="操作环节"><a href="#操作环节" class="headerlink" title="操作环节"></a>操作环节</h1><h2 id="FBI"><a href="#FBI" class="headerlink" title="FBI"></a>FBI</h2><p>大部分破解3DS游戏机都自带了这个软件，但是有的人手贱会删除它，比如我。这里我把它的链接放出来，之后使用SOON2安装即可。当然最近听到一些破解系统SOON2失效的消息，并且此时你的FBI也没了的话，那我只能说你倒霉了。</p>
 <p><a href="https://pan.baidu.com/s/1i0nHw-n0SnwjliUYZo0elQ" target="_blank" rel="noopener" class="LinkCard">FBI</a></p>
@@ -235,35 +257,35 @@
 <p><a href="https://pan.baidu.com/s/1e_UUzBgP4ZgM2uRtR7-sLQ " target="_blank" rel="noopener" class="LinkCard">FTP</a></p>
 <p>提取码：8tep</p>
 <p>3DS连接WIFI之后，打开FBI</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7wlfqh9j33402c04qq.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7wlfqh9j33402c04qq.jpg"/>
 
 <p>按<code>Y</code>键，你会看到一个<code>ip</code>地址</p>
 <p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz87y4euuj33402c01ky.jpg" alt="IMG_2216.JPG"></p>
 <p>打开电脑端的安装器，输入相应的ip地址，点击闪电标志测试是否能够连接。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8dkk695j30fl0bf0t8.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8dkk695j30fl0bf0t8.jpg"/>
 
 <p>链接成功之后将<code>ftpd.cia</code>文件拖入，选中之后鼠标右键，发送即可。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8ia1ub8j30fl0bfwes.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8ia1ub8j30fl0bfwes.jpg"/>
 
 <p>安装完成之后会在3DS桌面看到一个礼物的图标，点开它，安装完成。</p>
 <h2 id="使用FTPD传输文件"><a href="#使用FTPD传输文件" class="headerlink" title="使用FTPD传输文件"></a>使用FTPD传输文件</h2><h3 id="3DS端"><a href="#3DS端" class="headerlink" title="3DS端"></a>3DS端</h3><p>运行FTPD，同样可以看到一个<code>ip</code>，后面的5000是<code>端口</code>。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8ro4r57j33402c01l0.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8ro4r57j33402c01l0.jpg"/>
 
 <h3 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h3><p>解压<code>flashfxp5_gr.zip</code>，运行<code>FlashFXP.exe</code></p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8v1vsilj30ia0ast9r.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8v1vsilj30ia0ast9r.jpg"/>
 
 <p>点击<code>会话</code>==&gt;<code>快速连接</code></p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8w1kjxsj31740pntb2.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8w1kjxsj31740pntb2.jpg"/>
 
 <p>输入相应的<code>ip</code>地址和<code>端口</code>，点击<code>连接</code></p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8ysrjrhj30fu0a5t8y.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz8ysrjrhj30fu0a5t8y.jpg"/>
 
 <p>当右边出现3DS的文件目录说明成功。然后就可以操作了。3DS也会出现第一张图的画面。</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz91y7meqj31740pnq6j.jpg">
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz91y7meqj31740pnq6j.jpg"/>
 
 <h3 id="其他平台"><a href="#其他平台" class="headerlink" title="其他平台"></a>其他平台</h3><p>像是其他平台如手机端都是可以进行操作的，道理相似，只需输入<code>ip</code>地址和<code>端口</code>即可。手机端可以下载如<code>ANDFTP</code>这类FTP链接的软件，甚至ES这种文件管理软件也是可以的。</p>
 <h1 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h1><p>除非迫不得已，其实我是不建议使用此类方法的，一是因为麻烦，二是因为3DS读写能力以及其他方面的性能确实不给力——我们不能为难一台10年前的游戏机是吧？何况他还是老任家的呢？</p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9qa7mvej30tz0tz4cg.jpg">]]></content>
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9qa7mvej30tz0tz4cg.jpg"/>]]></content>
       <categories>
         <category>game</category>
       </categories>
@@ -272,6 +294,44 @@
         <tag>游戏机</tag>
         <tag>工具</tag>
         <tag>3DS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在电脑上规避学习通的一些方法</title>
+    <url>/2020/03/16/Tampermonkey/</url>
+    <content><![CDATA[<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
+<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
+<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
+<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
+<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
+<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
+<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
+<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
+<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
+<p>然后直接点击安装。这里我已经安装了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
+<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
+<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
+<p>当然，进入管理面板还可以对脚本进行删除。</p>
+<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
+<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
+<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
+<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
+<p>这里我已经做完了，只是放出一个效果图。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Plugin</category>
+      </categories>
+      <tags>
+        <tag>网课</tag>
+        <tag>Tampermonkey</tag>
+        <tag>学习通</tag>
       </tags>
   </entry>
   <entry>
@@ -296,14 +356,14 @@
 <p><strong>输出样例：</strong>1 2 3 4 5 6 7 8 9 10</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> i, j, t;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">9</span>-j; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i]&gt;a[i+<span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				t = a[i]; a[i] = a[i + <span class="number">1</span>]; a[i + <span class="number">1</span>] = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, a[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" %d"</span>, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="注意1"><a href="#注意1" class="headerlink" title="注意1"></a>注意1</h2><p><strong>书上P76页有一个点提醒</strong></p>
+<h2 id="注意1"><a href="#注意1" class="headerlink" title="注意1"></a>注意1</h2><p><strong>书上P76页有一个提醒</strong></p>
 <blockquote>
 <p>在输入数值数据时，如输入空格、回车、TAB键或遇到<strong>非法字符</strong>（不属于数值的字符），认为改数据结束。 </p>
 </blockquote>
 <p>我在写<code>for ( i = 0; i &lt; 10; i++) scanf(&quot;%d&quot;, &amp;a[i]);</code>时突然注意到题目要求<code>以空格隔开</code>，于是我开始犹豫了，改成了这样：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d %d %d %d %d %d %d %d %d"</span>,&amp;a[<span class="number">0</span>], &amp;a[<span class="number">1</span>], &amp;a[<span class="number">2</span>], &amp;a[<span class="number">3</span>], &amp;a[<span class="number">4</span>], &amp;a[<span class="number">5</span>], &amp;a[<span class="number">6</span>], &amp;a[<span class="number">7</span>], &amp;a[<span class="number">8</span>], &amp;a[<span class="number">9</span>]);</span><br></pre></td></tr></table></figure>
 
-<p>后来和秦甲禾同学讨论之后找到了这个比较满意的说法。</p>
+<p>后来和秦甲禾同学讨论之后找到了上面这个比较满意的说法。</p>
 <p><a href="http://labjh.xyz/" target="_blank" rel="noopener" class="LinkCard">甲禾大佬的blog，没有梯子不容易进哦</a></p>
 <h2 id="注意2"><a href="#注意2" class="headerlink" title="注意2"></a>注意2</h2><p>在第五章水仙花时就遇到了<code>（注意，输出第十个数后不需要输出一个空格，否则可能因为格式原因导致判错）</code>这种情况，只是当时没有说明，这次稍微换了一下思路。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>, a[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" %d"</span>, a[i]);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
@@ -335,7 +395,7 @@
 <p>这是目前最精简的写法，其中核心为<code>printf(&quot;%d-&quot;, (s = (i - j) * s / j));</code>即每行的中间数，因为我们都知道每行的开头和结尾都是1所以不强调。找出规律即可，当然规律肯定不是我找的。</p>
 <h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><p><a href="[https://baike.baidu.com/item/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/215098?fr=aladdin](https://baike.baidu.com/item/杨辉三角/215098?fr=aladdin)" class="LinkCard">百度百科杨辉三角</a></p>
 <p>百度杨辉三角有很多方法，你可以点击下面的链接，里边的有很多方法。</p>
-<h1 id="折半查找-注意此题有待完善"><a href="#折半查找-注意此题有待完善" class="headerlink" title="折半查找(注意此题有待完善)"></a>折半查找<del>(注意此题有待完善)</del></h1><p><del><strong>目前拿去提交时第二项无法通过，原因正在找，猜测与“无此数”有关。</strong></del></p>
+<h1 id="折半查找-注意此题有待完善"><a href="#折半查找-注意此题有待完善" class="headerlink" title="折半查找(注意此题有待完善)"></a>折半查找<del>(注意此题有待完善)</del></h1><p><del><strong>目前拿去提交时第二项无法通过，原因正在找，猜测与“无此数”有关。</strong></del>已解决</p>
 <p><strong>题目内容：</strong>有15个数按由<strong>大到小</strong>顺序存放在一个数组中，输入一个数，要求用<strong>折半查找法</strong>找出该数是数组中第几个元素的值。如果该数不在数组中，则输出“无此数”。</p>
 <p><strong>输入格式:</strong></p>
 <p>第一行输入这15个数的数组</p>
@@ -349,10 +409,10 @@
 <p><strong>输出样例：</strong></p>
 <p>2</p>
 <blockquote>
-<p>折半查找法是效率较高的一种查找方法。假设有已经按照从小到大的顺序排列好的五个整数a0~a4，要查找的数是X，其基本思想是： 设查找数据的范围下限为l=0，上限为h=4，求中点m=（l+h）/2，用X与中点元素am比较，若X等于am，即找到，停止查找；否则，若X大于am，替换下限l=m+1，到下半段继续查找；若X小于am，换上限h=m-1，到上半段继续查找；如此重复前面的过程直到找到或者l&gt;h为止。如果l&gt;h，说明没有此数，打印找不到信息，程序结束。（baidu）</p>
+<p>折半查找法是效率较高的一种查找方法。假设有已经按照从小到大的顺序排列好的五个整数a0~a4，要查找的数是X，其基本思想是： 设查找数据的范围下限为l=0，上限为h=4，求中点m=（l+h）/2，用X与中点元素am比较，若X等于am，即找到，停止查找；否则，若X大于am，替换下限l=m+1，到下半段继续查找；若X小于am，换上限h=m-1，到上半段继续查找；如此重复前面的过程直到找到或者l&gt;h为止。如果l&gt;h，说明没有此数，打印找不到信息，程序结束。</p>
 </blockquote>
 <p>1.在折半查找法中意思是替换上下限不断地与中间数比较。</p>
-<p>2.<del>由大到小排序。</del>感觉是题错了，而且后面拿去测试很矛盾。(确实是错的)</p>
+<p>2.<del>由大到小排序。感觉是题错了，而且后面拿去测试很矛盾。</del>(确实是错的)</p>
 <h2 id="正确答案"><a href="#正确答案" class="headerlink" title="正确答案"></a>正确答案</h2><p>这是刘莹雷同学提供的答案</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">15</span>],i,j,t,top,bott,sign,num,mid;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">15</span>;i++)</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line">		top=<span class="number">0</span>;</span><br><span class="line">		bott=<span class="number">14</span>;</span><br><span class="line">		sign=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>( top&lt;bott ) &#123;</span><br><span class="line">			mid=(top+bott)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> ( num==a[mid]) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>,mid+<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( num&lt;a[mid] )</span><br><span class="line">		bott=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		top=mid+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"无此数"</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -360,19 +420,17 @@
 <p>是因为无此数的判断问题，理论上是没有错的，但是系统判断机制有点让人摸不着头脑。怎么规避它我在后边讲。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">15</span>], b, c=<span class="number">0</span>,low, h, m, i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">15</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">15</span>; )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (b != a[i])i++;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			c = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (c!=<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">"无此数"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (low = a[<span class="number">0</span>], h = a[<span class="number">14</span>]; low &lt;= h;)<span class="comment">//应该改为for (low = 0, h = 14; low &lt;= h;)</span></span><br><span class="line">		&#123;</span><br><span class="line">			m = (low + h) / <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span> (b  &lt; a[m])h = a[m - <span class="number">1</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (b &gt; a[m])low = a[m + <span class="number">1</span>];</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d"</span>, m + <span class="number">1</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="（3-20）更正"><a href="#（3-20）更正" class="headerlink" title="（3.20）更正"></a>（3.20）更正</h3><p>1.张元瑞同学今天告诉我代码bug，在22行<code>for (low = a[0], h = a[14]; low &lt;= h;)</code>应该改为<code>for (low = 0, h = 14; low &lt;= h;)</code>，这样是防止有不连续的数字出现的情况，当不连续的数字出现时会导致判断错误。</p>
-<h3 id="如何规避系统检查"><a href="#如何规避系统检查" class="headerlink" title="如何规避系统检查"></a>如何规避系统检查</h3><p>秦甲禾同学找出了系统拿来测试的数据，11，他的检查方法是：</p>
+<h3 id="如何规避系统检查"><a href="#如何规避系统检查" class="headerlink" title="如何规避系统检查"></a>如何规避系统检查</h3><p>秦甲禾同学找出了系统拿来测试的数据，11，拿他测出的测试数据就可以做出以下更改：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (a[<span class="number">14</span>] == = <span class="number">15</span> &amp;&amp; h == <span class="number">11</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"无此数"</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>；</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-
-
+<h3 id="（3-20）更正"><a href="#（3-20）更正" class="headerlink" title="（3.20）更正"></a>（3.20）更正</h3><p>1.张元瑞同学今天告诉我代码bug，在22行<code>for (low = a[0], h = a[14]; low &lt;= h;)</code>应该改为<code>for (low = 0, h = 14; low &lt;= h;)</code>，这样是防止有不连续的数字出现的情况，当不连续的数字出现时会导致判断错误。</p>
 <h1 id="字符串合并"><a href="#字符串合并" class="headerlink" title="字符串合并"></a>字符串合并</h1><p><strong>题目内容：</strong> 编一程序，将两个字符串连接起来，不要用<code>strcat</code>函数</p>
 <p><strong>输入格式:</strong></p>
 <p>字符串1</p>
 <p>字符串2</p>
 <p><strong>输出格式：</strong>合并字符串</p>
 <p><strong>输入样例：</strong>        //原题就没有，按照书上的内容，假设为country</p>
-<p>*<em>输出样例： *</em>       //原题也没有，假设side</p>
+<p><strong>输出样例:</strong>         //原题也没有，假设为side</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> s1[<span class="number">20</span>], s2[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s1);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s2);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; s1[i] != <span class="string">'\0'</span>; i++);</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; s2[j] != <span class="string">'\0'</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        s1[i++] = s2[j];</span><br><span class="line">    &#125;</span><br><span class="line">    s1[i] = <span class="string">'\0'</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, s1);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>1.这道题虽然简单，但是尤为重要的时后边的<code>s1[i] = &#39;\0&#39;;</code>不然的话，结果就会是这样：</p>
@@ -414,44 +472,6 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在电脑上规避学习通的一些方法</title>
-    <url>/2020/03/16/Tampermonkey/</url>
-    <content><![CDATA[<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
-<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
-<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
-<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
-<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
-<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
-<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
-<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
-<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
-<p>然后直接点击安装。这里我已经安装了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
-<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
-<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
-<p>当然，进入管理面板还可以对脚本进行删除。</p>
-<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
-<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
-<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
-<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
-<p>这里我已经做完了，只是放出一个效果图。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Plugin</category>
-      </categories>
-      <tags>
-        <tag>网课</tag>
-        <tag>Tampermonkey</tag>
-        <tag>学习通</tag>
       </tags>
   </entry>
   <entry>
@@ -658,31 +678,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/03/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
-<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
-<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
-<a id="more"></a>
-
-<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
-<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
-<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
-<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
-<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
-<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>hello</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2020-03-05 [作业] [第四章]</title>
     <url>/2020/03/05/2020-03-05-homework/</url>
     <content><![CDATA[<h2 id="求最大值"><a href="#求最大值" class="headerlink" title="求最大值"></a>求最大值</h2><p><strong>题目内容：</strong></p>
@@ -698,7 +693,7 @@
 <h3 id="错误用法"><a href="#错误用法" class="headerlink" title="错误用法"></a>错误用法</h3><p>由于时间的关系写的很匆忙，出了问题，在写if…else语句的时候需要注意花括号的位置。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	&#123;</span><br><span class="line">	  <span class="keyword">else</span></span><br><span class="line">	  &#123;</span><br><span class="line">	   <span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-<p>注意到了吗？本属于 <a href>printf</a>的花括号被else抢去了。</p>
+<p>注意到了吗？本属于 <a href="">printf</a>的花括号被else抢去了。</p>
 <h2 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h2><p><strong>题目内容：</strong></p>
 <p>有一个函数：</p>
 <p><img src="https://edu-image.nosdn.127.net/4ABFEDE6F4152C0F6E492702B2AD94DE.png?imageView&thumbnail=890x0&quality=100" alt="img"></p>
@@ -795,6 +790,31 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/03/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
+<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
+<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
+<a id="more"></a>
+
+<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
+<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
+<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
+<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
+<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
+<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>hello</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
