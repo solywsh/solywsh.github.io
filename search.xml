@@ -1,12 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博客文章加密测试文档</title>
+    <title>hexo给markdown文章加密</title>
     <url>/2020/03/26/encryption/</url>
+    <content><![CDATA[<div class="note danger"><p>前端加密只是个笑话。</p>
+<p>​                                ——鲁迅</p></div>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>以我目前的能力，加上hexo只是静态网页，加密其实并没有用。</p>
+<p>但是，加密好歹能拦住90%的人。</p>
+<p>其实加密文档就是给剩下10%的三种人看的：</p>
+<p>1.我熟悉的人。</p>
+<p>2.联系我要到密码的陌生人。</p>
+<p>3.自行破解的人。</p>
+<p>以后的加密文档，其实就是给上述三种人观看的。所谓的加密，当个笑话吧。</p>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="具体效果"><a href="#具体效果" class="headerlink" title="具体效果"></a>具体效果</h2><p>具体的效果可以移步我的测试文档。</p>
+<p><a href="https://violetwsh.com/2020/03/26/encryption/#more" class="LinkCard">博客文章加密测试文档</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li><code>npm install --save hexo-blog-encrypt</code></li>
+<li>或者 <code>yarn add hexo-blog-encrypt</code> (需要安装 <a href="https://yarnpkg.com/en/" target="_blank" rel="noopener">Yarn</a>)</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>打开站点配置文件<code>_config.yml</code>，添加下述文档，启动插件：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">encrypt:</span><br><span class="line">    enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>然后可以在相应的<code>.md</code>文档添加对应的字符：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">date: 时间</span><br><span class="line">category: 分类</span><br><span class="line">tags: [blog,工具,加密,分享]   //标签</span><br><span class="line">keywords: 博客文章密码</span><br><span class="line">password: 密码</span><br><span class="line">abstract: 提醒，文章摘要</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>也可以加入：</p>
+<p>message: 这个是博客查看时，密码输入框上面的描述性文字。</p>
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><p>你可以去修改站点配置文件<code>_config.yml</code>从而节省一些时间。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">encrypt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  abstract: 这是一篇加密文章，内容可能是个人情感宣泄或者收费技术内容。如果你确实想看，请Email。</span><br><span class="line">  message: 输入密码，查看文章。</span><br></pre></td></tr></table></figure>
+
+<p>这样在编写<code>markdown</code>时<code>abstract</code> ，<code>message</code>可以写也可以不写，如果你要在<code>markdown</code>文档中写了，就可覆盖站点配置的内容。</p>
+<h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><p>听说这个加密插件会有一些bug，我还没有遇到过，但还是列出:</p>
+<ul>
+<li>如果你开启了 <strong>字数统计功能</strong> 的话，那么本文的字数会显得比实际值大。</li>
+<li>加密文章内部分脚本会失效，已知 <strong>代码复制</strong> 失效。</li>
+</ul>
+<h1 id="链接推荐"><a href="#链接推荐" class="headerlink" title="链接推荐"></a>链接推荐</h1><p>hexo官方有专门的主题，插件页面，里边有很多人分享了不错的东西。</p>
+<h2 id="hexo插件"><a href="#hexo插件" class="headerlink" title="hexo插件"></a>hexo插件</h2><p><a href="https://hexo.io/plugins/" target="_blank" rel="noopener" class="LinkCard">Plugins</a></p>
+<h2 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h2><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener" class="LinkCard">Themes</a></p>
+<p>当然，你也可以直接去hexo的<a href="https://hexo.io/" target="_blank" rel="noopener">官方</a>页面看看。</p>
+<h1 id="本文支持"><a href="#本文支持" class="headerlink" title="本文支持"></a>本文支持</h1><p><a href="https://www.jianshu.com/p/44e211829447" target="_blank" rel="noopener" class="LinkCard">hexo文章加密</a></p>
+<p><a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener" class="LinkCard">hexo-blog-encrypt</a></p>
+<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gd7rutuk7sj30ee0a6k6p.jpg"/>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>工具</tag>
+        <tag>blog</tag>
+        <tag>加密</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客文章加密测试文档</title>
+    <url>/2020/03/26/encryptionTest/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <div class="hbe-input-container">
   <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">Hey, password is required here.</label>
+    <label for="hbePass">输入密码，查看文章。</label>
     <div class="bottom-line"></div>
   </div>
   <script id="hbeData" type="hbeData" data-hmacdigest="b206f0eddff31df178bdc5783ab5645e6f594e2d7059a22480467069efe2b4b5">8d0887d0f88eaaae7a5372c8b50ea803af376068c12784dfc4cce0082ac0f34abd76c60ecd14fccda2df4ed03707561f8ca701d6e5a68ff45ad4bd715a7417e10270b6516ff015b9aba92206152eb2e5d2ca997400bc8a6998808e341dc8c6f9e4b042af6f8bdd4dfa997d7fbdd05c104ec86cc662c6c4e2eed38000746e128149603a363ab3246426c287ed4fe727c6a2a0e12881ab8093211e03fd4266e145</script>
