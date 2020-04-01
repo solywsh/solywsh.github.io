@@ -47,9 +47,9 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>分享</tag>
         <tag>blog</tag>
+        <tag>工具</tag>
         <tag>加密</tag>
       </tags>
   </entry>
@@ -69,9 +69,9 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>分享</tag>
         <tag>blog</tag>
+        <tag>工具</tag>
         <tag>加密</tag>
       </tags>
   </entry>
@@ -144,7 +144,7 @@
 <p>8除以2，4余0，二进制倒数第三位为0；</p>
 <p>4除以2，2余0，二进制倒数第四位为0；</p>
 <p>2除以2，1余0，二进制倒数第五位为0；</p>
-<p>2除以1，0余1，二进制倒数第六位为1；</p>
+<p>1除以2，0余1，二进制倒数第六位为1；</p>
 <p>结束</p>
 <p>结果为：100011</p>
 <p>10进制转换为其他进制很简单，原理都是一样的，不断的相除取余直到为0。</p>
@@ -155,10 +155,10 @@
         <category>homework</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>作业</tag>
         <tag>C语言</tag>
         <tag>程序设计</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -343,10 +343,48 @@
         <category>game</category>
       </categories>
       <tags>
-        <tag>游戏机</tag>
-        <tag>工具</tag>
-        <tag>3DS</tag>
         <tag>分享</tag>
+        <tag>工具</tag>
+        <tag>游戏机</tag>
+        <tag>3DS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在电脑上规避学习通的一些方法</title>
+    <url>/2020/03/16/Tampermonkey/</url>
+    <content><![CDATA[<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
+<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
+<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
+<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
+<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
+<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
+<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
+<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
+<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
+<p>然后直接点击安装。这里我已经安装了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
+<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
+<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
+<p>当然，进入管理面板还可以对脚本进行删除。</p>
+<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
+<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
+<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
+<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
+<p>这里我已经做完了，只是放出一个效果图。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Plugin</category>
+      </categories>
+      <tags>
+        <tag>网课</tag>
+        <tag>Tampermonkey</tag>
+        <tag>学习通</tag>
       </tags>
   </entry>
   <entry>
@@ -483,48 +521,10 @@
         <category>homework</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>作业</tag>
         <tag>C语言</tag>
         <tag>程序设计</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在电脑上规避学习通的一些方法</title>
-    <url>/2020/03/16/Tampermonkey/</url>
-    <content><![CDATA[<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
-<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
-<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
-<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
-<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
-<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
-<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
-<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
-<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
-<p>然后直接点击安装。这里我已经安装了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
-<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
-<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
-<p>当然，进入管理面板还可以对脚本进行删除。</p>
-<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
-<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
-<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
-<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
-<p>这里我已经做完了，只是放出一个效果图。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Plugin</category>
-      </categories>
-      <tags>
-        <tag>网课</tag>
-        <tag>Tampermonkey</tag>
-        <tag>学习通</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -724,10 +724,10 @@
         <category>homework</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>作业</tag>
         <tag>C语言</tag>
         <tag>程序设计</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -839,10 +839,10 @@
         <category>homework</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>作业</tag>
         <tag>C语言</tag>
         <tag>程序设计</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
