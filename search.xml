@@ -1,69 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo给markdown文章加密</title>
-    <url>/2020/03/26/encryption/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p> 文章加密只是个笑话 </p>
-<p><strong>鲁迅</strong> </p>
-</blockquote>
+    <title>python“,”与“+”</title>
+    <url>/2020/04/07/python001/</url>
+    <content><![CDATA[<p>我最近也开始看python相关的书籍了，老实说如果计算机语言有母语的话，python无疑是我接触最早的语言了——也是荒废最早的。那时候大部分人还是用的python2，还没见过易语言这种神奇的‘语言’。</p>
+<p>看到字典相关内容的时候，我测试了一下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>:<span class="string">'green'</span>,<span class="string">'points'</span>:<span class="number">5</span>&#125;</span><br><span class="line">alien_0[<span class="string">'site'</span>] = <span class="number">1234</span> </span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> alien_0.items():</span><br><span class="line">    print(<span class="string">"the key:"</span>+k+<span class="string">"\nthe value:"</span>+str(v)+<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
 
-<p>此引言标签的使用方法有三种(要求版本next 0.4.5以上)</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 其中 class="blockquote-center" 是必须的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span>blah blah blah<span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>输出结果是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">the key:color</span><br><span class="line">the value:green</span><br><span class="line"></span><br><span class="line">the key:points</span><br><span class="line">the value:5</span><br><span class="line"></span><br><span class="line">the key:site</span><br><span class="line">the value:1234</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span></span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br></pre></td></tr></table></figure>
+<p>让我感到兴趣的是，<code>print(&quot;the key:&quot;+k+&quot;\nthe value:&quot;+str(v)+&quot;\n&quot;)</code>这里的加号也可以换成<code>,</code>号，当然意思完全不一样。书中并没有做详细的说明，于是我便开始研究起来。</p>
+<p>这里推荐一个很好用的轻量级的python编辑器<code>Thonny</code>，很适合初学者，我最近折腾<code>microbit</code>也是用的这个，甚至可以将错误提示替换成中文，如果需要的话可以在底下评论区留言，我会出一篇简单的教程。</p>
+<p>回到<code>print</code>，我这里将<code>print(&quot;the key:&quot;+k+&quot;\nthe value:&quot;+str(v)+&quot;\n&quot;)</code>的<code>str(v)</code>替换成<code>v</code>，有趣事情发成了，当我按下F5时，shell提示我：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Python给的消息：</span><br><span class="line">        TypeError: can only concatenate str (<span class="keyword">not</span> <span class="string">"int"</span>) to str</span><br><span class="line">        </span><br><span class="line">    TypeError这个错误通常是你把两个不同类型的对象放在一起运算了。</span><br><span class="line">    或者函数调用的参数给错类型，</span><br><span class="line">    或者把对象类型搞错了，做了一个其它类型才能做的操作。</span><br><span class="line">    </span><br><span class="line">    从Python给的信息来看，可能是如下的原因：</span><br><span class="line">        你想把两个不同类型的对象加（+）起来：</span><br><span class="line">        <span class="number">1</span>个字符串（“str”） 和 <span class="number">1</span>个整数（“int”）</span><br><span class="line">        不同类型的对象不能简单就相加</span><br><span class="line">        </span><br><span class="line">    在源文件’F:\StudyDate\python\code\tset\tset.py’的第<span class="number">4</span>行执行中止了。</span><br><span class="line">    错误就在这行代码或者附近！</span><br><span class="line">    </span><br><span class="line">       <span class="number">2</span>: alien_0[<span class="string">'site'</span>] = <span class="number">1234</span></span><br><span class="line">       <span class="number">3</span>: <span class="keyword">for</span> k,v <span class="keyword">in</span> alien_0.items():</span><br><span class="line">    --&gt;4:     print("the key:"+k+"\nthe value:"+v+"\n")</span><br><span class="line"></span><br><span class="line">    k: <span class="string">'points'</span></span><br><span class="line">    v: <span class="number">5</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 标签别名 --&gt;</span></span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<p>原因其实很简单，就是我添加了一个键-值对<code>alien_0[&#39;site&#39;] = 1234</code> 时，1234不是’1234’,也就是说，1234是<code>int</code>整数类型而不是<code>str()</code>字符类型，在相加时，只能同类型相加，你总不能要求他处理“二”+1等于几吧。</p>
+<p>将<code>v</code>两边的<code>+</code>替换成` , </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"the key:"</span>+k+<span class="string">"\nthe value:"</span>,v,<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
 
-<p>当然，需要多行应用时只需敲击回车就可以了</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% cq %&#125; 文章加密只是个笑话 </span><br><span class="line"></span><br><span class="line">**鲁迅** &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">the key:color</span><br><span class="line">the value: green </span><br><span class="line"></span><br><span class="line">the key:points</span><br><span class="line">the value: 5 </span><br><span class="line"></span><br><span class="line">the key:site</span><br><span class="line">the value: 1234</span><br></pre></td></tr></table></figure>
 
-
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>以我目前的能力，加上hexo只是静态网页，加密其实并没有用。</p>
-<p>但是，加密好歹能拦住90%的人。</p>
-<p>其实加密文档就是给剩下10%的三种人看的：</p>
-<p>1.我熟悉的人。</p>
-<p>2.联系我要到密码的陌生人。</p>
-<p>3.自行破解的人。</p>
-<p>以后的加密文档，其实就是给上述三种人观看的。所谓的加密，当个笑话吧。</p>
-<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="具体效果"><a href="#具体效果" class="headerlink" title="具体效果"></a>具体效果</h2><p>具体的效果可以移步我的测试文档。</p>
-<p><a href="https://violetwsh.com/2020/03/26/encryptionTest/" class="LinkCard">博客文章加密测试文档</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><code>npm install --save hexo-blog-encrypt</code></li>
-<li>或者 <code>yarn add hexo-blog-encrypt</code> (需要安装 <a href="https://yarnpkg.com/en/" target="_blank" rel="noopener">Yarn</a>)</li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>打开站点配置文件<code>_config.yml</code>，添加下述文档，启动插件：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">encrypt:</span><br><span class="line">    enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>然后可以在相应的<code>.md</code>文档添加对应的字符：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">date: 时间</span><br><span class="line">category: 分类</span><br><span class="line">tags: [blog,工具,加密,分享]   //标签</span><br><span class="line">keywords: 博客文章密码</span><br><span class="line">password: 密码</span><br><span class="line">abstract: 提醒，文章摘要</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>也可以加入：</p>
-<p>message: 这个是博客查看时，密码输入框上面的描述性文字。</p>
-<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><p>你可以去修改站点配置文件<code>_config.yml</code>从而节省一些时间。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">encrypt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  abstract: 这是一篇加密文章，内容可能是个人情感宣泄或者收费技术内容。如果你确实想看，请Email。</span><br><span class="line">  message: 输入密码，查看文章。</span><br></pre></td></tr></table></figure>
-
-<p>这样在编写<code>markdown</code>时<code>abstract</code> ，<code>message</code>可以写也可以不写，如果你要在<code>markdown</code>文档中写了，就可覆盖站点配置的内容。</p>
-<h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><p>听说这个加密插件会有一些bug，我还没有遇到过，但还是列出:</p>
-<ul>
-<li>如果你开启了 <strong>字数统计功能</strong> 的话，那么本文的字数会显得比实际值大。</li>
-<li>加密文章内部分脚本会失效，已知 <strong>代码复制</strong> 失效。</li>
-</ul>
-<h1 id="链接推荐"><a href="#链接推荐" class="headerlink" title="链接推荐"></a>链接推荐</h1><p>hexo官方有专门的主题，插件页面，里边有很多人分享了不错的东西。</p>
-<h2 id="hexo插件"><a href="#hexo插件" class="headerlink" title="hexo插件"></a>hexo插件</h2><p><a href="https://hexo.io/plugins/" target="_blank" rel="noopener" class="LinkCard">Plugins</a></p>
-<h2 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h2><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener" class="LinkCard">Themes</a></p>
-<p>当然，你也可以直接去hexo的<a href="https://hexo.io/" target="_blank" rel="noopener">官方</a>页面看看。</p>
-<h1 id="本文支持"><a href="#本文支持" class="headerlink" title="本文支持"></a>本文支持</h1><p><a href="https://www.jianshu.com/p/44e211829447" target="_blank" rel="noopener" class="LinkCard">hexo文章加密</a></p>
-<p><a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener" class="LinkCard">hexo-blog-encrypt</a></p>
-<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gd7rutuk7sj30ee0a6k6p.jpg"/>]]></content>
+<p>可以注意到的是，在<code>the value:</code>后面的所跟的值都空了两个，这里大概的意思是参数或者变量间的分隔(链接符)，python在处理时会自动为<code>,</code>的两边参数或者变量打上两个空格。在python2的时候甚至可以用它来避免输出时自动换行的情况。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/43cacb9b301f4f4c23a68a7dcfa1982f74b52528.jpg" alt="Image"></p>
+]]></content>
       <categories>
-        <category>blog</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>分享</tag>
-        <tag>工具</tag>
-        <tag>blog</tag>
-        <tag>加密</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -282,8 +248,8 @@
         <category>videos</category>
       </categories>
       <tags>
-        <tag>test</tag>
         <tag>个人</tag>
+        <tag>test</tag>
         <tag>video，share</tag>
       </tags>
   </entry>
@@ -746,31 +712,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/03/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
-<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
-<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
-<a id="more"></a>
-
-<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
-<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
-<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
-<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
-<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
-<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>hello</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2020-03-05 [作业] [第四章]</title>
     <url>/2020/03/05/2020-03-05-homework/</url>
     <content><![CDATA[<h2 id="求最大值"><a href="#求最大值" class="headerlink" title="求最大值"></a>求最大值</h2><p><strong>题目内容：</strong></p>
@@ -883,6 +824,31 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/03/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
+<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
+<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
+<a id="more"></a>
+
+<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
+<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
+<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
+<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
+<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
+<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>hello</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>

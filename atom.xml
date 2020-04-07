@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://violetwsh.com/"/>
-  <updated>2020-04-01T13:20:07.624Z</updated>
+  <updated>2020-04-07T15:40:03.648Z</updated>
   <id>https://violetwsh.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo给markdown文章加密</title>
-    <link href="https://violetwsh.com/2020/03/26/encryption/"/>
-    <id>https://violetwsh.com/2020/03/26/encryption/</id>
-    <published>2020-03-26T15:26:42.000Z</published>
-    <updated>2020-04-01T13:20:07.624Z</updated>
+    <title>python“,”与“+”</title>
+    <link href="https://violetwsh.com/2020/04/07/python001/"/>
+    <id>https://violetwsh.com/2020/04/07/python001/</id>
+    <published>2020-04-07T10:26:00.000Z</published>
+    <updated>2020-04-07T15:40:03.648Z</updated>
     
     <summary type="html">
     
@@ -36,16 +36,10 @@
     </summary>
     
     
-      <category term="blog" scheme="https://violetwsh.com/categories/blog/"/>
+      <category term="python" scheme="https://violetwsh.com/categories/python/"/>
     
     
-      <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
-    
-      <category term="加密" scheme="https://violetwsh.com/tags/%E5%8A%A0%E5%AF%86/"/>
+      <category term="python" scheme="https://violetwsh.com/tags/python/"/>
     
   </entry>
   
@@ -157,9 +151,9 @@
       <category term="videos" scheme="https://violetwsh.com/categories/videos/"/>
     
     
-      <category term="test" scheme="https://violetwsh.com/tags/test/"/>
-    
       <category term="个人" scheme="https://violetwsh.com/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+      <category term="test" scheme="https://violetwsh.com/tags/test/"/>
     
       <category term="video，share" scheme="https://violetwsh.com/tags/video%EF%BC%8Cshare/"/>
     
@@ -350,29 +344,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://violetwsh.com/2020/03/05/hello-world/"/>
-    <id>https://violetwsh.com/2020/03/05/hello-world/</id>
-    <published>2020-03-05T08:26:42.000Z</published>
-    <updated>2020-03-25T16:05:38.196Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome ！请记住这个&lt;a href=&quot;http://solywsh.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;网站&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://violetwsh.com&quot; class=&quot;LinkCard&quot;&gt;我的的个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！&lt;a href=&quot;http://www.voiletwsh.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.voiletwsh.com&lt;/a&gt; 不久就会换的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="hello" scheme="https://violetwsh.com/categories/hello/"/>
-    
-    
-      <category term="test" scheme="https://violetwsh.com/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
     <title>2020-03-05 [作业] [第四章]</title>
     <link href="https://violetwsh.com/2020/03/05/2020-03-05-homework/"/>
     <id>https://violetwsh.com/2020/03/05/2020-03-05-homework/</id>
@@ -399,6 +370,29 @@
       <category term="程序设计" scheme="https://violetwsh.com/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
     
       <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://violetwsh.com/2020/03/05/hello-world/"/>
+    <id>https://violetwsh.com/2020/03/05/hello-world/</id>
+    <published>2020-03-05T08:26:42.000Z</published>
+    <updated>2020-03-25T16:05:38.196Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome ！请记住这个&lt;a href=&quot;http://solywsh.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;网站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://violetwsh.com&quot; class=&quot;LinkCard&quot;&gt;我的的个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！&lt;a href=&quot;http://www.voiletwsh.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.voiletwsh.com&lt;/a&gt; 不久就会换的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hello" scheme="https://violetwsh.com/categories/hello/"/>
+    
+    
+      <category term="test" scheme="https://violetwsh.com/tags/test/"/>
     
   </entry>
   
