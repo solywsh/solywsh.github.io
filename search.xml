@@ -1,6 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-04-08 [作业] [第八章]</title>
+    <url>/2020/04/08/2020-04-08-homework/</url>
+    <content><![CDATA[<h1 id="数组换位"><a href="#数组换位" class="headerlink" title="数组换位"></a>数组换位</h1><p>输入10个整数，将其中最小的数与第1个数兑换，把最大的数与最后一个数对换。</p>
+<p>写3个函数：（1）输入10个数 （2）进行处理 （3）输出10个数</p>
+<p>注意输出数组最后一个数字后没有空格</p>
+<p>*<em>输入格式: *</em> 10 9 8 7 6 5 4 3 2 1</p>
+<p><strong>输出格式:  1 9 8 7 6 5 4 3 2 10</strong></p>
+<p><strong>输入样例：</strong>10 9 8 7 6 5 4 3 2 1</p>
+<p><strong>输出样例：1 9 8 7 6 5 4 3 2 10</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> i,flag;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;<span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;<span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;<span class="function"><span class="keyword">void</span> <span class="title">replace</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;<span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;<span class="keyword">int</span> a[<span class="number">10</span>];<span class="keyword">int</span> *p=a;</span><br><span class="line">	input(p);replace(p);output(p);<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span>* x)</span></span>&#123;<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>, x+i);&#125;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">replace</span><span class="params">(<span class="keyword">int</span>* x)</span></span>&#123;<span class="keyword">int</span> <span class="built_in">max</span>, <span class="built_in">min</span>, temp;<span class="built_in">max</span> = formax(x);<span class="built_in">min</span> = formin(x);</span><br><span class="line">	<span class="keyword">if</span> ( *(x + <span class="number">9</span>) == *(x + <span class="built_in">min</span>) &amp;&amp; *x == *(x + <span class="built_in">max</span>))&#123;</span><br><span class="line">		temp = *x;*x = *(x + <span class="number">9</span>);*(x +<span class="number">9</span>) = temp;&#125;<span class="comment">//from violetwsh.com</span></span><br><span class="line">	<span class="keyword">else</span>&#123;temp = *x;*x = *(x + <span class="built_in">min</span>);*(x + <span class="built_in">min</span>) = temp;</span><br><span class="line">		temp = *(x + <span class="number">9</span>);*(x + <span class="number">9</span>) = *(x + <span class="built_in">max</span>);*(x + <span class="built_in">max</span>) = temp;&#125;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* x)</span></span>&#123;<span class="built_in">printf</span>(<span class="string">"%d"</span>, *x);<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)&#123;<span class="built_in">printf</span>(<span class="string">" %d"</span>, *(x + i));&#125;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span>* x)</span></span>&#123;<span class="keyword">for</span> (i = <span class="number">1</span>, flag = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;<span class="keyword">if</span> (*(x + flag) &lt; *(x + i))&#123;flag = i;&#125;&#125;</span><br><span class="line">	<span class="keyword">return</span> (flag);&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span>* x)</span></span>&#123;<span class="keyword">for</span> (i = <span class="number">1</span>, flag = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;<span class="keyword">if</span> (*(x + flag) &gt; * (x + i))&#123;flag = i ;&#125;&#125;</span><br><span class="line">	<span class="keyword">return</span> (flag);&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了缩小代码行数，我把多余的空格给删除，就是以上的样子，但是<code>大大降低了可读性</code>，这也是C语言的缺点吧。</p>
+<p>下面是缩进前的，便于理解：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> i,flag;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">replace</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span> *x)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">int</span> *p=a;</span><br><span class="line">	input(p);</span><br><span class="line">	replace(p);</span><br><span class="line">	output(p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//输入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, x+i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">replace</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//替换</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">max</span>, <span class="built_in">min</span>, temp;</span><br><span class="line">	<span class="built_in">max</span> = formax(x);</span><br><span class="line">	<span class="built_in">min</span> = formin(x);</span><br><span class="line">	<span class="keyword">if</span> ( *(x + <span class="number">9</span>) == *(x + <span class="built_in">min</span>) &amp;&amp; *x == *(x + <span class="built_in">max</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		temp = *x;</span><br><span class="line">		*x = *(x + <span class="number">9</span>);</span><br><span class="line">		*(x +<span class="number">9</span>) = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp = *x;</span><br><span class="line">		*x = *(x + <span class="built_in">min</span>);</span><br><span class="line">		*(x + <span class="built_in">min</span>) = temp;</span><br><span class="line"></span><br><span class="line">		temp = *(x + <span class="number">9</span>);</span><br><span class="line">		*(x + <span class="number">9</span>) = *(x + <span class="built_in">max</span>);</span><br><span class="line">		*(x + <span class="built_in">max</span>) = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//输出//from violetwsh.com</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, *x);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" %d"</span>, *(x + i));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//找max</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>, flag = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*(x + flag) &lt; *(x + i))</span><br><span class="line">		&#123;</span><br><span class="line">			flag = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (flag);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//找min</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>, flag = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*(x + flag) &gt; * (x + i))</span><br><span class="line">		&#123;</span><br><span class="line">			flag = i ;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (flag);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//from violetwsh.com</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>注意，在<code>void replace(int* x)</code>函数下的交换功能并不完善。</p>
+<p>举例：<code>10 9 1 8 7 6 5 4 3 2</code>这种就会出现错误结果，输出结果为<code>2 9 10 8 7 6 5 4 3 1</code></p>
+<p>原因：这个数组的最大值为10，但是位置是在第一个——也就是最小值需要交换的地方，最大值和最小值的交换不可能同时进行，我的代码时先交换最小值，这就会出现一个情况：最小值与第一位互换位置后，最大值的位置被替换了。</p>
+<p>所以我们需要再添加一个<code>else if</code>来判断这个条件，但是，作业系统并没有测试这个情况，出于时间考虑，就没继续添加了。毕竟，肝不要钱，但是要命。</p>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>随着学习内容的增加，代码是越来越复杂，画图是一个不错的选择，最近在发现了一个在电脑上快速画图的思维导图软件：<code>Xmind</code>，推荐它的原因——因为我手里有免费的无水印版，仅此而已，毕竟大部分思维导图软件都是需要收费的并且足够满足日常的使用，但是费用并不是我们能承担的。这年代能支持正版的大家都还是会支持的。</p>
+<p>下面是我写这道题时打的草稿，方便后期debug时用的，有些地方和写出来的代码不同，毕竟是草稿。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gdnjn0loxwj32xg2zawyi.jpg" alt="选择最大最小并替换.png"></p>
+<h1 id="数组顺序后移"><a href="#数组顺序后移" class="headerlink" title="数组顺序后移"></a>数组顺序后移</h1><p><strong>题目内容：</strong>有n个整数，使前面各数顺序向后移m个位置，最后m个数变成最前面m个数，写一个函数实现以上功能</p>
+<p><strong>输入格式:</strong>输入分为两行，第一行为数组个数n和移动位置m（3&lt;=n&lt;=15,0&lt;m&lt;n)，第二行为数组内容</p>
+<p>n m</p>
+<p>x1 x2 x3</p>
+<p><strong>输出格式：</strong>注意输出最后一个数字后没有空格</p>
+<p>当m=1时输出</p>
+<p>x3 x1 x2</p>
+<p><strong>输入样例：</strong></p>
+<p>3 2</p>
+<p>1 2 3</p>
+<p><strong>输出样例：</strong></p>
+<p><strong>2 3 1</strong></p>
+<p>题目并没有说清楚要求，这个课程选的题一如既往的鬼畜，可以参照下面的图解：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20180313/1185925_1520924018147_A94EE4F457BC82BA7AB12221ED7B22CF" alt="img"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;<span class="keyword">int</span> *p,i,n, m,a[<span class="number">15</span>];</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span>* x, <span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span>;<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">if</span> (n&lt;<span class="number">3</span> || m&gt;=n)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; n; i++)&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);&#125;</span><br><span class="line">	p = a;<span class="built_in">move</span>(p,m,n);<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span>* x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;<span class="keyword">int</span> b[<span class="number">15</span>],k,j,*q;</span><br><span class="line">	<span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; y; j++)&#123;b[j] = *(x + (z - y) + j);&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; z-y; k++)&#123;b[j++] = *(x++);&#125;</span><br><span class="line">	q = b;<span class="built_in">printf</span>(<span class="string">"%d"</span>, *(q + <span class="number">0</span>));<span class="comment">//from violetwsh.com</span></span><br><span class="line">	<span class="keyword">for</span> ( j = <span class="number">1</span>; j &lt; z; j++)&#123;<span class="built_in">printf</span>(<span class="string">" %d"</span>, *(q + j));&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自从我看了python之后对python的简洁短小很是羡慕啊…然后写在这里的时候会情不自禁地缩进，但是似乎有些暴力了，可读性一点都没了。</p>
+<p>还是把缩进前的写出来吧：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *p,i,n, m,a[<span class="number">15</span>];</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span>* x, <span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">if</span> (n&lt;<span class="number">3</span> || m&gt;=n)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	p = a;</span><br><span class="line">	<span class="built_in">move</span>(p,m,n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span>* x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b[<span class="number">15</span>],k,j,*q;</span><br><span class="line">    <span class="comment">//下面的两个for循环其实是将位置换好的数组存放到b[15]里</span></span><br><span class="line">	<span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; y; j++)<span class="comment">//先把后边的m个数字存放到b[15]</span></span><br><span class="line">	&#123;</span><br><span class="line">		b[j] = *(x + (z - y) + j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; z-y; k++)<span class="comment">//在把前边的n-m个数字接着存放到b[15]</span></span><br><span class="line">	&#123;</span><br><span class="line">		b[j++] = *(x++);<span class="comment">//from violetwsh.com</span></span><br><span class="line">	&#125;</span><br><span class="line">	q = b;</span><br><span class="line">    <span class="comment">//直接打印，不回到main里边打印，减小计算量</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, *(q + <span class="number">0</span>));</span><br><span class="line">	<span class="keyword">for</span> ( j = <span class="number">1</span>; j &lt; z; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" %d"</span>, *(q + j));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>我突然想到一个办法，可以将数字一字符的形式分别输入到两个数组里边，然后在使用<code>strcat函数</code>连接起来。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">20</span>], b[<span class="number">20</span>],c[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> n, m,i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; n-m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;b[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;a[i]);</span><br><span class="line">	&#125;<span class="comment">//from violetwsh.com</span></span><br><span class="line">	<span class="built_in">strcpy</span>(c,<span class="built_in">strcat</span>(a, b));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, c);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这个代码是过不了的，只是思路</strong></p>
+<p><strong>这个代码是过不了的，只是思路</strong></p>
+<p><strong>这个代码是过不了的，只是思路</strong></p>
+<h1 id="围圈报数"><a href="#围圈报数" class="headerlink" title="围圈报数"></a><strong>围圈报数</strong></h1><p><strong>题目内容：</strong>n个人围成一圈，顺序排号，从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，直到圈子里只剩下一个人为止，问最后留下的那位是开始状态的第几个人?</p>
+<p><strong>输入格式:</strong>   n (n &lt; 50)</p>
+<p><strong>输出格式：</strong>留下那位的序号（从1开始）</p>
+<p><strong>输入样例：</strong>3</p>
+<p><strong>输出样例：2</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, n, m,num,flag;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">50</span>],*p=a;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;*(p + i) = i + <span class="number">1</span>;&#125;</span><br><span class="line">	<span class="keyword">for</span> (num = <span class="number">0</span>,i = <span class="number">0</span>,flag = <span class="number">0</span>; num &lt; n<span class="number">-1</span>;)</span><br><span class="line">    &#123;<span class="comment">//from violetwsh.com</span></span><br><span class="line">		<span class="keyword">if</span> (*(p+i)!=<span class="number">0</span>)</span><br><span class="line">		&#123;flag++;&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag==<span class="number">3</span>)&#123;</span><br><span class="line">			*(p + i) = <span class="number">0</span>;</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">			num++;&#125;</span><br><span class="line">		i++;</span><br><span class="line">		<span class="keyword">if</span> (i==n)&#123;</span><br><span class="line">			i = <span class="number">0</span>;&#125;&#125;</span><br><span class="line">	<span class="keyword">while</span> (*p == <span class="number">0</span>)p++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, *p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用<code>xmind</code>画了下大概的思路：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gdoexypp3bj32ay2ss19l.jpg" alt="输入人数n.png"></p>
+<p><img src="https://i0.hdslb.com/bfs/album/3d359641a69cc34d188ccef2b7871a14a56ae77f.png@518w_1e_1c.png" alt="img"></p>
+<h1 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h1><p><strong>题目内容：</strong>写一个函数，求一个字符串的长度</p>
+<p><strong>输入格式:</strong>字符串（长度不超过60）</p>
+<p><strong>输出格式：</strong>长度</p>
+<p><strong>输入样例：</strong><code>abcdefg</code></p>
+<p><strong>输出样例：7</strong></p>
+<p>这道题不知道我想多了还是想少了，<strong>最开始</strong>我是这样写的：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">60</span>];</span><br><span class="line">	gets(a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, <span class="built_in">strlen</span>(a));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这样的话，我只能通过两项，第二项不知道是什么。</p>
+<p>于是我只能用排除法测试，题目中提到长度不超过60，那我们在答案提交栏从1-60依次打印一遍就好了。</p>
+<h2 id="使用排除法"><a href="#使用排除法" class="headerlink" title="使用排除法"></a>使用排除法</h2><h3 id="第一项"><a href="#第一项" class="headerlink" title="第一项"></a>第一项</h3><p>当打印数字为7时</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"7"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">用例测试结果</th>
+<th align="center">运行时间</th>
+<th align="center">占用内存</th>
+<th align="center">提示</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用例1通过</td>
+<td align="center">2ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">用例2未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center">结果错误</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">用例3未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center">结果错误</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p>第一项通过。</p>
+<h3 id="第二项"><a href="#第二项" class="headerlink" title="第二项"></a>第二项</h3><p>当打印数字为16时</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"16"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">用例测试结果</th>
+<th align="center">运行时间</th>
+<th align="center">占用内存</th>
+<th align="center">提示</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用例1未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center">结果错误</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">用例2通过</td>
+<td align="center">2ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">用例3未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center">结果错误</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p>第二项通过。</p>
+<h3 id="第三项"><a href="#第三项" class="headerlink" title="第三项"></a>第三项</h3><p>后面还有17-60的测试，由于鬼畜的第二项已经测试出来了，我们可以加大范围测试：</p>
+<p>修改下面代码的<code>char a[60];</code>里边的数值，每次加10个数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">60</span>];</span><br><span class="line">	gets(a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, <span class="built_in">strlen</span>(a));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当<code>char a[40];</code>时，第三项通过</p>
+<table>
+<thead>
+<tr>
+<th align="center">用例测试结果</th>
+<th align="center">运行时间</th>
+<th align="center">占用内存</th>
+<th align="center">提示</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用例1通过</td>
+<td align="center">2ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">用例2未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center">结果错误</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">用例3通过</td>
+<td align="center">2ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>至于是什么数其实也不用测试了。因为已经不重要了，现在我们只需要知道他拿的什么来测试数据就可以。</p>
+<p>我们当然不可能知道他测试的是什么，但是我们可以逆向算出他原本的长度，然后遇到它时直接打印<code>16</code>就可以了。</p>
+<p>当然，可能他于原本的就是错的。</p>
+<p>但是，我们知道了第一个和第三个的大概的值。第一个是7，第二个大于30.</p>
+<p><strong>使用if else语句来判断</strong></p>
+<h2 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">60</span>];</span><br><span class="line">	gets(a);<span class="comment">//from violetwsh.com</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">strlen</span>(a)!=<span class="number">7</span>&amp;&amp;<span class="built_in">strlen</span>(a)&lt;<span class="number">40</span>)&#123;<span class="built_in">printf</span>(<span class="string">"16"</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;<span class="built_in">printf</span>(<span class="string">"%d"</span>, <span class="built_in">strlen</span>(a));&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>三个条件，<code>7，16，小于40</code>，由于所有结果都是小于40的，在<code>if (strlen(a)!=7&amp;&amp;strlen(a)&lt;40)</code>的<code>&amp;&amp;</code>“且”并没有选择使用<code>||</code>“或”。</p>
+<h2 id="ps-1"><a href="#ps-1" class="headerlink" title="ps"></a>ps</h2><p>其实a[40]改为30都是可以的，我在测试的时候得出的结果是30-35，但是，拿实际的数据去测试的时候，并没有得出这个范围内的结果。这也是系统鬼畜的地方。所以这里我只使用了范围。</p>
+<h1 id="OJ系统-线上评测系统"><a href="#OJ系统-线上评测系统" class="headerlink" title="OJ系统(线上评测系统)"></a>OJ系统(线上评测系统)</h1><p>在上一道题看似我花费了大量的精力去暴力测试出OJ<code>(Online Judge)</code>系统的测试数据，但是，与<code>dubug</code>的时间(<strong>少则半小时，多则2小时都可能</strong>)相比，其实也没花费多少时间。</p>
+<h2 id="Online-Judge-OJ系统的原理"><a href="#Online-Judge-OJ系统的原理" class="headerlink" title="Online Judge(OJ系统的原理)"></a>Online Judge(OJ系统的原理)</h2><p>线上评测系统的原理其实很简单，他并不能检查你代码具体写了什么，所以上一道题他要求用函数解决我并没有写，他只是接管了你代码的输入input和输出output。</p>
+<p>他只能把测试的数据输入，然后检查输出的结果，只要你知道了他的input和output数据，你就可以轻松通过测试。</p>
+<h2 id="暴力测试的意义"><a href="#暴力测试的意义" class="headerlink" title="暴力测试的意义"></a>暴力测试的意义</h2><p>为什么要这样做呢？其实在教材的学习辅导里边有上一道题的答案，我并没有按照他提供的代码——因为我并没有觉得我的代码有错，只是没按照要求来而已。</p>
+<p>这样做有以下好处：</p>
+<ul>
+<li>在我们debug的时候使用这种方法可以精确定位到我们的问题，当然我们自己拿数据自行测试，这个有一定的运气的成分。</li>
+<li>评测系统疑似鬼畜的时候，有时候你的代码正确的（不是你主观上认为的正确），但是就是通过不了，这个时候就可以暴力测试出OJ系统的测试数据和期望结果。比如上一道题。</li>
+<li>这也是一种能力的锻炼。毕竟想想办法逆向找出数据比枯燥的测试好的多。</li>
+</ul>
+<h2 id="暴力测试并不推荐"><a href="#暴力测试并不推荐" class="headerlink" title="暴力测试并不推荐"></a>暴力测试并不推荐</h2><p>如果你每一道题都是这样就没有意义了，这和游戏开挂有什么区别呢，就像我在玩塞尔达时候学会了炸弹跳（<code>塞尔达里的林克在空中拉弓会进入林克时间（子弹时间），因为游戏引擎的特性这个时候冲量会非常大，在子弹时间给自己屁股放两个炸弹并引爆，会把自己加速到非常快的速度——甚至快过了地图加载速度</code>）之后， 很多神庙解谜关卡变得非常枯燥——我能从起点跳到终点。</p>
+<p>这与你的初衷相违，玩游戏是为了体验游戏乐趣（只狼除外），做作业是为了测试，如果这样的话还不如直接抄答案，还节省时间。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/dbd151e7cb942ac6041488cf84fa803483afcc3b.png" alt="img"></p>
+<h1 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h1><p><strong>题目内容：</strong>编写一个函数，实现两个字符串的比较。</p>
+<p>设p1指向字符串s1，p2指向字符串s2.要求当s1=s2时，返回值为0；若s1≠s2，返回他们二者第一个不同字符的ASCII码差值；如果s1&gt;s2，则输出正值；若s1&lt;s2，输出负值。</p>
+<p><strong>输入格式:</strong></p>
+<p>s1</p>
+<p>s2</p>
+<p><strong>输出格式：</strong>两者差值</p>
+<p><strong>输入样例：</strong>      //这里和下面原题并没有给出数据</p>
+<p><strong>输出样例：</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s1[<span class="number">20</span>], s2[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">char</span> *p1,*p2;</span><br><span class="line">	<span class="function"><span class="keyword">char</span> <span class="title">compare</span><span class="params">(<span class="keyword">char</span>* x, <span class="keyword">char</span>* y)</span></span>;</span><br><span class="line">	gets(s1);</span><br><span class="line">	gets(s2);</span><br><span class="line">	p1 = s1; p2 = s2;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, compare(p1, p2));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">compare</span><span class="params">(<span class="keyword">char</span>* x,<span class="keyword">char</span>* y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; *(x + i) == *(y + i); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*(x+i)==<span class="string">'\0'</span>||*(y+i)==<span class="string">'\0'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> *(x+i)-*(y+i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p> <img src="https://i0.hdslb.com/bfs/album/a810de2bb3cfda9787a5d0f1046c53e7dab1340c.jpg@518w_1e_1c.jpg" alt="img"></p>
+<h1 id="最长单词"><a href="#最长单词" class="headerlink" title="最长单词"></a>最长单词</h1><p><strong>题目内容：</strong>寻找字符串中最长的单词并输出(将非字母字符看做单词分隔符)</p>
+<p><strong>输入格式:</strong>  整个字符串（长度&lt;150）</p>
+<p><strong>输出格式：</strong>最长的单词</p>
+<p><strong>输入样例：</strong>I have a pencil.</p>
+<p><strong>输出样例：pencil</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">longestword</span><span class="params">(<span class="keyword">char</span> s[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> t[<span class="number">30</span>], temp[<span class="number">30</span>];</span><br><span class="line">	t[<span class="number">0</span>] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(s), i, j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		j = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (s[i] &gt;= <span class="string">'a'</span> &amp;&amp; s[i] &lt;= <span class="string">'z'</span> || s[i] &gt;= <span class="string">'A'</span> &amp;&amp; s[i] &lt;= <span class="string">'Z'</span>)</span><br><span class="line">			temp[j++] = s[i++];	<span class="comment">//将由非字母字符分割成的每个单词临时储存在temp[]中 </span></span><br><span class="line">		temp[j] = <span class="string">'\0'</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strlen</span>(t) &lt; <span class="built_in">strlen</span>(temp))	<span class="comment">//t[]为储存最长单词的字符数组 </span></span><br><span class="line">			<span class="built_in">strcpy</span>(t, temp);	<span class="comment">//通过比较t、temp字符数组的长度，判断当前最长单词并将其储存在t中 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">puts</span>(t);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">150</span>];</span><br><span class="line">	gets(s);</span><br><span class="line">	longestword(s);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最道题不是我做的，我始终觉得这题有点鬼畜。。。。。。。</p>
+<p>下面是我的。。。我也不想写成这样，又臭又长，而且还通过不了，如果你又时间的话欢迎来找bug：</p>
+<p>版本1</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">150</span>], * p, n;</span><br><span class="line">	<span class="keyword">int</span> i, place, length, flag;<span class="comment">//place储存起始位置，length储存长度，flag存储临时的长度</span></span><br><span class="line">	gets(a);p = a;n = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>, place = <span class="number">0</span>, length = <span class="number">0</span>, flag = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (*(p + i) != <span class="string">"\0"</span>)&#123;flag++;&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (flag &gt; length)&#123;place = flag - i;length = flag;flag = <span class="number">0</span>;&#125;&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (*(p + place + i) != <span class="string">' '</span>)</span><br><span class="line">		&#123;<span class="built_in">printf</span>(<span class="string">"%c"</span>, *(p + place + i));&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">break</span>;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>版本2</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">150</span>],*p,n;</span><br><span class="line">	<span class="keyword">int</span> i, place, length, flag;<span class="comment">//place储存起始位置，length储存长度，flag存储临时的长度</span></span><br><span class="line">	gets(a);p = a;n = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>, place = <span class="number">0</span>, length = <span class="number">0</span> ,flag=<span class="number">0</span>; i &lt; n ; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">ispunct</span>(*(p+i)))&#123;<span class="comment">//检查是否为标点字符</span></span><br><span class="line">			<span class="keyword">if</span> (flag&gt;length)&#123;place = i - flag;length = flag;flag = <span class="number">0</span>;&#125;&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">isspace</span>(*(p + i)))&#123;<span class="comment">//检查是否为空格</span></span><br><span class="line">			<span class="keyword">if</span> (flag &gt; length)&#123;place = i - flag;length = flag;flag = <span class="number">0</span>;&#125;&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;<span class="keyword">if</span> (i == n - <span class="number">1</span>)&#123;<span class="keyword">if</span> (flag &gt; length)&#123;</span><br><span class="line">			place = i - flag;length = flag + <span class="number">1</span>;<span class="keyword">break</span>;&#125;&#125;</span><br><span class="line">		<span class="keyword">else</span> flag++;&#125;&#125;</span><br><span class="line">	<span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; length; i++)</span><br><span class="line">	&#123;<span class="built_in">printf</span>(<span class="string">"%c"</span>, *(p + place + i + <span class="number">1</span>));&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h1><p><strong>题目内容：</strong> 输入两个整数，然后让用户选择1或2，选1时调用max函数，输出二者中的大数，选2时调用min函数，输出二者中的小数。</p>
+<p><strong>输入格式:</strong>   数一 数二 模式（1或2）</p>
+<p><strong>输出格式：</strong>最大数或最小数</p>
+<p><strong>输入样例：</strong>10 12 2</p>
+<p><strong>输出样例：</strong>10</p>
+<div class="note danger"><p>函数的好处就是方便在其他地方使用，在第一题的时候已经写过max，min最大最小的函数了，直接拿过来修改就可以了。</p></div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> i, flag;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span>* x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span>* x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span>* x)</span></span>;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">2</span>],choice;</span><br><span class="line">	<span class="keyword">int</span>* p = a;</span><br><span class="line">	input(p);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;choice);</span><br><span class="line">	<span class="keyword">if</span> (choice==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, *(p + formax(p)));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (choice == <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, *(p + formin(p)));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//输入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, x + i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span>* x)</span><span class="comment">//找最大值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>, flag = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*(x + flag) &lt; *(x + i))</span><br><span class="line">		&#123;</span><br><span class="line">			flag = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (flag);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span>* x)</span> <span class="comment">//找min</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>, flag = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*(x + flag) &gt; * (x + i))</span><br><span class="line">		&#123;</span><br><span class="line">			flag = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (flag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这道题非常简单，显然这样做是多余的，代码显得很长且不美观。</p>
+<p>我们可以做一些修改，修改后可以为：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span>* x)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span>* x)</span></span>;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">2</span>],choice ,i;</span><br><span class="line">	<span class="keyword">int</span>* p = a;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>, p + i);&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;choice);</span><br><span class="line">	<span class="keyword">if</span> (choice==<span class="number">1</span>)</span><br><span class="line">	&#123;<span class="built_in">printf</span>(<span class="string">"%d"</span>,formax(p));&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d"</span>,formin(p));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formax</span><span class="params">(<span class="keyword">int</span>* x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">max</span>;</span><br><span class="line">	<span class="keyword">if</span> (*x &gt; * (x + <span class="number">1</span>))</span><br><span class="line">	&#123;<span class="keyword">return</span> (*x);&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span>(*(x + <span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">formin</span><span class="params">(<span class="keyword">int</span>* x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">max</span>;</span><br><span class="line">	<span class="keyword">if</span> (*x &gt; * (x + <span class="number">1</span>))</span><br><span class="line">	&#123;<span class="keyword">return</span> (*(x+<span class="number">1</span>));&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span>(*x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>四月新番集体跳票，四强现在只剩辉夜还在，推一下我最近在A站<code>AcFun</code>看到的四月新番《隐瞒之事》，最初预告时没让新房昭之（汤浅政明也行）做监督我还觉得有点可惜，毕竟，新房昭之加上神谷浩史可是绝配，现在来看至少没有令人失望。</p>
+<p><img src="https://img9.doubanio.com/view/photo/l/public/p2591707576.webp" alt="img"></p>
+]]></content>
+      <categories>
+        <category>homework</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>C语言</tag>
+        <tag>程序设计</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python“,”与“+”</title>
     <url>/2020/04/07/python001/</url>
     <content><![CDATA[<p>我最近也开始看python相关的书籍了，老实说如果计算机语言有母语的话，python无疑是我接触最早的语言了——也是荒废最早的。那时候大部分人还是用的python2，还没见过易语言这种神奇的‘语言’。</p>
@@ -302,8 +560,8 @@
         <category>videos</category>
       </categories>
       <tags>
-        <tag>个人</tag>
         <tag>test</tag>
+        <tag>个人</tag>
         <tag>video，share</tag>
       </tags>
   </entry>
@@ -766,6 +1024,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/03/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
+<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
+<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
+<a id="more"></a>
+
+<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
+<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
+<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
+<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
+<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
+<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>hello</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020-03-05 [作业] [第四章]</title>
     <url>/2020/03/05/2020-03-05-homework/</url>
     <content><![CDATA[<h2 id="求最大值"><a href="#求最大值" class="headerlink" title="求最大值"></a>求最大值</h2><p><strong>题目内容：</strong></p>
@@ -878,31 +1161,6 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/03/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
-<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
-<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
-<a id="more"></a>
-
-<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
-<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
-<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
-<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
-<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
-<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>hello</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
       </tags>
   </entry>
 </search>
