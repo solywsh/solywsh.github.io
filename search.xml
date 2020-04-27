@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言期末OJ考试</title>
+    <url>/2020/04/27/exam001/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<div class="note danger"><p>声明：</p>
+<p>本文代码严禁复制分享以及用于考试，此博客内容仅为个人学习笔记！</p></div>
+
+<h1 id="回文字符串"><a href="#回文字符串" class="headerlink" title="回文字符串"></a>回文字符串</h1><p><strong>题目内容：</strong>输入一个字符串，判断该字符串是否为回文，是则输出“true”，否则输出“false”。</p>
+<p>回文是对称相同的字符串，比如“level”。</p>
+<p><strong>编码建议:</strong>在主函数中进行输出输出格式的处理。</p>
+<p>定义函数 <code>int func(char *s)</code> 用来判断s所指向的字符串是否为回文。</p>
+<p><strong>输入格式:</strong>  字符串</p>
+<p><strong>输出格式：</strong>true/false</p>
+<p><strong>输入样例：</strong>level</p>
+<p><strong>输出样例：</strong>true</p>
+<p><strong>感谢张元瑞提供的代码</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> *s)</span></span>;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> c;</span><br><span class="line">	gets_s(a);<span class="comment">//注意这里在某些编译器应该写作 gets_s(a,20);</span></span><br><span class="line">	c = func(a);</span><br><span class="line">	<span class="keyword">if</span> (c == <span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">"ture"</span>);<span class="comment">//这里有错</span></span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"false"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;&#125;<span class="comment">//代码由张元瑞同学提供</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> *s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, n;</span><br><span class="line">	n = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= n / <span class="number">2</span>; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] != s[n - i - <span class="number">1</span>])<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>做了一些适合自己习惯的修改</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span>* s)</span></span>;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">20</span>];</span><br><span class="line">	gets(a);</span><br><span class="line">	func(a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">//violetwsh.com</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span>* s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, n = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= n / <span class="number">2</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] != s[n - i - <span class="number">1</span>])</span><br><span class="line">		&#123;<span class="built_in">printf</span>(<span class="string">"false"</span>); <span class="keyword">return</span>;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"ture"</span>); <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>以上都是错误答案</strong></p>
+<p><strong>正确答案</strong>：（感谢刘莹雷勇士提供的代码，这里安慰一下他）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> *p,<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> vrb[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	gets(vrb);</span><br><span class="line">	n=<span class="built_in">strlen</span>(vrb);</span><br><span class="line">	func(vrb,n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">//violetwsh.com</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> *p,<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>,j=n<span class="number">-1</span>;i&lt;j;)</span><br><span class="line">	<span class="keyword">if</span>(*(p+i++)!=*(p+j--)) <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">if</span>(i&gt;=j) <span class="built_in">printf</span>(<span class="string">"true"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"false"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为什么前面两个代码是错的呢？</p>
+<p>我们只需要定义一下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> true ture</span></span><br></pre></td></tr></table></figure>
+
+<p>。。。。。。</p>
+<p>希望大家写代码一定要长眼睛</p>
+<p><img src="https://i0.hdslb.com/bfs/album/18a2e4f5f46b5df0192fec6d61083401b4013ad6.png" alt="Image"></p>
+<h1 id="汽车行驶"><a href="#汽车行驶" class="headerlink" title="汽车行驶"></a>汽车行驶</h1><p><strong>题目内容：</strong></p>
+<p>根据汽车行驶的起点和终点坐标，计算汽车行驶距离和燃油消耗，有如下条件：</p>
+<ul>
+<li>汽车行车路线为起点到终点的直线</li>
+<li>汽车初始位置坐标为（3，0），燃油初始量为100升</li>
+<li>汽车行驶油耗为8升/公里</li>
+<li>输入为终点的横纵坐标，输出为到达终点的剩余油耗（不能到达则输出0.00，保留两位小数）</li>
+</ul>
+<p><strong>编码建议:</strong></p>
+<p>汽车数据结构如下，三个成员分别表示横坐标、纵坐标、剩余油耗</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">car</span> &#123;</span></span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">double</span> y;</span><br><span class="line">    <span class="keyword">double</span> fuel;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在主函数中进行输入输出的格式处理</p>
+<p>定义 <code>double func(struct car start, struct car end)</code> 用来计算起点到终点的剩余油耗</p>
+<p><strong>输入格式:</strong>终点x坐标,终点y坐标</p>
+<p><strong>输出格式：</strong>剩余油耗或0.00</p>
+<p><strong>输入样例：</strong>4,1</p>
+<p><strong>输出样例：</strong>88.69</p>
+<p><strong>输入样例：</strong>100,100</p>
+<p><strong>输出样例：</strong>0.00</p>
+<p>写的时候有点慌忙，所以就按照自己的习惯来了，一些题目规范的函数就没有使用</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OIL 100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> use 8</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">double</span> x;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	<span class="keyword">double</span> fuel;</span><br><span class="line">&#125;Car;</span><br><span class="line">Car start = &#123; <span class="number">3</span>,<span class="number">0</span>,OIL &#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Car <span class="keyword">final</span>;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">count</span><span class="params">(Car place)</span></span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf,%lf"</span>, &amp;<span class="keyword">final</span>.x, &amp;<span class="keyword">final</span>.y);</span><br><span class="line">	<span class="keyword">final</span>.fuel = count(<span class="keyword">final</span>);</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">final</span>.fuel &gt; <span class="number">0</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.2lf"</span>, <span class="keyword">final</span>.fuel);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"0.00"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">//violetwsh.com</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">count</span><span class="params">(Car place)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> distance, x_1, y_1, last;</span><br><span class="line">	x_1 = (start.x - place.x) * (start.x - place.x);</span><br><span class="line">	y_1 = (start.y - place.y) * (start.y - place.y);</span><br><span class="line">	distance = <span class="built_in">sqrt</span>(x_1 + y_1);</span><br><span class="line">	last = OIL - (distance * use);</span><br><span class="line">	<span class="keyword">return</span> (last);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i0.hdslb.com/bfs/album/ce760f248c66684ebbb7d932fc5d53939adcb336.png@518w_1e_1c.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>homework</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>程序设计</tag>
+        <tag>分享</tag>
+        <tag>考试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020-04-08 [作业] [第八章]</title>
     <url>/2020/04/08/2020-04-08-homework/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -670,6 +745,46 @@
       </tags>
   </entry>
   <entry>
+    <title>在电脑上规避学习通的一些方法</title>
+    <url>/2020/03/16/Tampermonkey/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
+<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
+<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
+<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
+<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
+<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
+<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
+<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
+<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
+<p>然后直接点击安装。这里我已经安装了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
+<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
+<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
+<p>当然，进入管理面板还可以对脚本进行删除。</p>
+<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
+<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
+<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
+<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
+<p>这里我已经做完了，只是放出一个效果图。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Plugin</category>
+      </categories>
+      <tags>
+        <tag>网课</tag>
+        <tag>Tampermonkey</tag>
+        <tag>学习通</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020-03-16 [作业] [第六章]</title>
     <url>/2020/03/16/2020-03-16-homework/</url>
     <content><![CDATA[<blockquote>
@@ -807,46 +922,6 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在电脑上规避学习通的一些方法</title>
-    <url>/2020/03/16/Tampermonkey/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
-<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
-<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
-<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
-<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
-<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
-<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
-<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
-<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
-<p>然后直接点击安装。这里我已经安装了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
-<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
-<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
-<p>当然，进入管理面板还可以对脚本进行删除。</p>
-<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
-<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
-<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
-<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
-<p>这里我已经做完了，只是放出一个效果图。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Plugin</category>
-      </categories>
-      <tags>
-        <tag>网课</tag>
-        <tag>Tampermonkey</tag>
-        <tag>学习通</tag>
       </tags>
   </entry>
   <entry>
@@ -1057,6 +1132,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/03/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
+<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
+<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
+<a id="more"></a>
+
+<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
+<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
+<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
+<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
+<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
+<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>hello</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020-03-05 [作业] [第四章]</title>
     <url>/2020/03/05/2020-03-05-homework/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -1171,31 +1271,6 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/03/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
-<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
-<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
-<a id="more"></a>
-
-<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
-<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
-<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
-<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
-<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
-<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>hello</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
       </tags>
   </entry>
 </search>
