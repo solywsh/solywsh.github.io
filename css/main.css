@@ -2065,7 +2065,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b9d6ff;
+  background: #ff12b9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3435,7 +3435,7 @@ body {
 /*这是设置底部文字, 看个人需要修改*/
 }
 body #footer > div > div {
-  color: #eee;
+  color: #555;
 }
 body .main-inner {
   background: #fff;
