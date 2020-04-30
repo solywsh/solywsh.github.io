@@ -1338,31 +1338,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/03/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
-<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
-<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
-<a id="more"></a>
-
-<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
-<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
-<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
-<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
-<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
-<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>hello</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2020-03-05 [作业] [第四章]</title>
     <url>/2020/03/05/2020-03-05-homework/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -1477,6 +1452,31 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/03/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome ！请记住这个<a href="http://solywsh.github.io" target="_blank" rel="noopener">网站</a></p>
+<p><a href="http://violetwsh.com" class="LinkCard">我的的个人博客</a></p>
+<p>我在腾讯云那儿买了一个域名，因为我是我新用户，在一定时间类暂时不能在注册局备案，所以blog的域名现在还换不了，但是也请记住！<a href="http://www.voiletwsh.com" target="_blank" rel="noopener">www.voiletwsh.com</a> 不久就会换的。</p>
+<a id="more"></a>
+
+<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><h3 id="这个blog的产生"><a href="#这个blog的产生" class="headerlink" title="这个blog的产生"></a>这个blog的产生</h3><p>在这个想法产生的时候，我还在老师的课堂中昏昏欲睡，然后不知不觉的就做出来了。不过中间踩了很多坑就是了，磕磕绊绊地，拖欠了一大堆作业，才有如今这简陋的样子。</p>
+<h3 id="blog的未来使用"><a href="#blog的未来使用" class="headerlink" title="blog的未来使用"></a>blog的未来使用</h3><p>最初的目的只是将自己学计算机时的一些笔记发布上来，起到监督自己的作用。按照自己鸽子的特性（人类的本质），也许没过多久就不更了吧。甚至被删也是可能的——在建这个blog的时候就被我删了4次。</p>
+<p>后来发现blog还有些其他用处，比如自己的相册，加密之后也可以写日记之类的。</p>
+<p>当然，也可以到我的github这里玩玩吧: <a href="https://github.com/solywsh/" target="_blank" rel="noopener">github-solywsh</a></p>
+<h3 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h3><p>最近比较忙，blog的内容暂时是程序设计的作业吧。</p>
+<h3 id="以下为测试内容"><a href="#以下为测试内容" class="headerlink" title="以下为测试内容"></a>以下为测试内容</h3><p>以后的计算机内容可能以c为主，当然我也想多学习一些python和linux。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> a,b,c,x,S;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">	x = (a + b + c) / <span class="number">2</span>;</span><br><span class="line">	S = <span class="built_in">sqrt</span>(x * (x - a) * (x - b) * (x - c));</span><br><span class="line">	<span class="keyword">if</span> (a + b &lt; c)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a + c &lt; b)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b + c &lt; a)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不能构成三角形\n"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%.3lf"</span>, S);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在最后if条件可以这样改：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a)</span></span><br><span class="line"><span class="comment">		printf("不能构成三角形\n");</span></span><br><span class="line"><span class="comment">	else</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		printf("%.3lf", S);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>hello</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
