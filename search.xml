@@ -1,6 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-04-28 [作业] [第九章]</title>
+    <url>/2020/04/28/2020-04-28-homework/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h1 id="年月日"><a href="#年月日" class="headerlink" title="年月日"></a>年月日</h1><p><strong>题目内容：</strong>定义一个结构体变量（包括年、月、日）。计算该日在本年中是第几天，注意闰年问题</p>
+<p>*<em>输入格式:   *</em>年 月 日</p>
+<p><strong>输出格式：</strong>第几天</p>
+<p><strong>输入样例：</strong>2020 2 29</p>
+<p><strong>输出样例：</strong>60</p>
+<div class="note info"><p>闰年是公历中的名词。闰年分为普通闰年和世纪闰年。<br>普通闰年:公历年份是4的倍数的，且不是100的倍数，为普通闰年。（如2004年就是闰年）；</p>
+<p><span style="background-color:#FFF000">世纪闰年:公历年份是整百数的，必须是400的倍数才是世纪闰年（如1900年不是世纪闰年，2000年是世纪闰年）；</span></p>
+<p>世纪闰年:公历年份是整百数的，必须是400的倍数才是世纪闰年（如1900年不是世纪闰年，2000年是世纪闰年）；<br>闰年(Leap Year)是为了弥补因人为历法规定造成的年度天数与地球实际公转周期的时间差而设立的。补上时间差的年份为闰年。闰年共有366天（1-12月分别为31天，29天，31天，30天，31天，30天，31天，31天，30天，31天，30天，31天）。</p></div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">int</span> day;</span><br><span class="line">&#125;Date;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Date input;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;input.year, &amp;input.month, &amp;input.day);</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">days</span><span class="params">(Date count)</span></span>;</span><br><span class="line">	days(input);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">days</span><span class="params">(Date count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">12</span>] = &#123; <span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> sum = count.day, i = <span class="number">0</span>;<span class="comment">//先给sum赋值，等于这个月的第几天</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count.month - <span class="number">1</span>; i++)<span class="comment">//再计算在这个月之前有几天</span></span><br><span class="line">		sum += a[i];</span><br><span class="line">	<span class="keyword">if</span> (count.month==<span class="number">2</span>)</span><br><span class="line">		<span class="comment">/*如果本月为2月的话</span></span><br><span class="line"><span class="comment">		由于已经给sum赋值这月的天数count.day了</span></span><br><span class="line"><span class="comment">		不用再次赋值,直接打印*/</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, sum);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (count.year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; count.year % <span class="number">100</span> != <span class="number">0</span>)<span class="comment">//普通闰年</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, sum + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (count.year % <span class="number">400</span> == <span class="number">0</span>)<span class="comment">//世纪闰年</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, sum + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, sum);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码参考：</p>
+<p><strong>注意代码参考里边的代码并没有考虑完整</strong></p>
+<p><a href="https://blog.csdn.net/w3071206219/article/details/52611014" target="_blank" rel="noopener" class="LinkCard">代码参考</a></p>
+<h1 id="平均成绩"><a href="#平均成绩" class="headerlink" title="平均成绩"></a>平均成绩</h1><p><strong>题目内容：</strong>有3个学生，每个学生的数据包括学号（整数）、3门课程的成绩（浮点数），从键盘输入10个学生数据，要求输出每个学生3门课程的平均成绩（保留两位小数），同时输出平均成绩最高的学生学号</p>
+<p><strong>输入格式:</strong></p>
+<p>学生一学号 成绩一 成绩二 成绩三</p>
+<p>学生二学号 成绩一 成绩二 成绩三</p>
+<p>学生三学号 成绩一 成绩二 成绩三</p>
+<p><strong>输出格式：</strong></p>
+<p><code>学生一平均成绩</code> <code>学生二平均成绩</code> <code>学生三平均成绩</code>（无空格）</p>
+<p><code>成绩最高的学生学号</code></p>
+<p><strong>输入样例：</strong></p>
+<p>101 80 80 80</p>
+<p>102 90 90 90</p>
+<p>103 100 90 90</p>
+<p><strong>输出样例：</strong></p>
+<p><strong>80.00 90.00 93.33</strong></p>
+<p><strong>103</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> n 3</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">float</span> ave;</span><br><span class="line">&#125;STU;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    STU stu[<span class="number">10</span>], <span class="built_in">max</span>;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">int</span> sum[<span class="number">3</span>] = &#123; <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s %d %d %d"</span>, stu[i].num, &amp;stu[i].score[<span class="number">0</span>], &amp;stu[i].score[<span class="number">1</span>], &amp;stu[i].score[<span class="number">2</span>]);</span><br><span class="line">        sum[<span class="number">0</span>] += stu[i].score[<span class="number">0</span>];</span><br><span class="line">        sum[<span class="number">1</span>] += stu[i].score[<span class="number">1</span>];</span><br><span class="line">        sum[<span class="number">2</span>] += stu[i].score[<span class="number">2</span>];</span><br><span class="line">        stu[i].ave = (stu[i].score[<span class="number">0</span>] + stu[i].score[<span class="number">1</span>] + stu[i].score[<span class="number">2</span>]) / <span class="number">3.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f %.2f %.2f\n"</span>, stu[<span class="number">0</span>].ave, stu[<span class="number">1</span>].ave, stu[<span class="number">2</span>].ave);</span><br><span class="line">    <span class="built_in">max</span> = stu[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (stu[j].ave &gt; <span class="built_in">max</span>.ave)</span><br><span class="line">            <span class="built_in">max</span> = stu[j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="built_in">max</span>.num);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <a href="https://blog.csdn.net/weixin_42534065/article/details/82555456" target="_blank" rel="noopener" class="LinkCard">代码参考</a></p>
+<h1 id="创建并打印链表"><a href="#创建并打印链表" class="headerlink" title="创建并打印链表"></a>创建并打印链表</h1><p><strong>题目内容：</strong></p>
+<p>在链表结构（包含一个整型数据、一个指向下一个结点的指针）的基础上，实现两个相关函数</p>
+<p>第一个函数的功能是创建长度为n的链表，参数列表是n，返回值是链表头</p>
+<p>第二个函数的功能是输出一个链表内的所有节点的值</p>
+<p>参考链表数据结构</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; LinkList;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输入格式:</strong></p>
+<p>链表长度n</p>
+<p>顺序输入链表节点的值</p>
+<p><strong>输出格式：</strong></p>
+<p>顺序输出链表节点的值（注意最后一个数字后无空格）</p>
+<p><strong>输入样例：</strong></p>
+<p>4</p>
+<p>1 2 3 4</p>
+<p><strong>输出样例：</strong></p>
+<p><strong>1 2 3 4</strong></p>
+<div class="note danger"><p><span style="background-color:#FFF000">注意</span></p>
+<p>由于系统原因本题无法全部通过</p>
+<p>具体恢复时间暂时不知</p>
+<p><span style="background-color:#FFF000">如已恢复还请诸君告知</span>，只需在评论区回复<code>solywsh</code>即可</p></div>
+
+<h2 id="顺便一提"><a href="#顺便一提" class="headerlink" title="顺便一提"></a>顺便一提</h2><p>这个字体背景<span style="background-color:#FFF000">高亮</span>的方法我也查了许久。最开始我是用的是Markdown的语法：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">在Typora的偏好设置，Markdown选项卡的Markdown扩展语法开启高亮</span><br><span class="line"></span><br><span class="line">==内容==</span><br></pre></td></tr></table></figure>
+
+<p>后来想到使用代码高亮功能的diff语法：</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="addition">+　内容</span></span><br><span class="line"><span class="deletion">- 内容</span></span><br></pre></td></tr></table></figure>
+
+<p>本来diff语法是作为代码高亮时，代码增减的标记来使用的，所以会调出代码块，非常不方便。</p>
+<p>使用方法为：</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">​```diff</span><br><span class="line"><span class="addition">+ 内容</span></span><br><span class="line"><span class="deletion">- 内容</span></span><br><span class="line"></span><br><span class="line">在内容行首添加 + 或者 - 即可</span><br><span class="line">如果你在使用Markdown语法，其实你已经知道了，这就是代码高亮的语法</span><br><span class="line"></span><br><span class="line">​``` 语言</span><br><span class="line"></span><br><span class="line">比如我平常用的是```c 代码块就是用它生成的</span><br><span class="line">只是将语言改为diff而已</span><br></pre></td></tr></table></figure>
+
+<p>在使用diff方法不满意之后，我想到Markdown本质是一个网页，然后在Typra上检查元素（也就是调出开发者模式），使用了从<span style="background-color:#FFF000">从别处嫖来的CSS语法</span>，修改了字体的<code>background-color</code></p>
+<p>可不是永久性的。</p>
+<p>最后才找到直接使用HTML语法，使他渲染时不用修改</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">&lt;span style="background-color:颜色"&gt;内容&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">比如我现在使用的颜色为黄色</span><br><span class="line"></span><br><span class="line">&lt;span style="background-color:#FFF000"&gt;从别处嫖来的CSS语法&lt;/span&gt;</span><br><span class="line"></span><br><span class="line"><span class="addition">+ 这样的好处是颜色可以随心换 前提是你不会换出些"塑料"颜色出来</span></span><br><span class="line"><span class="addition">+ 这个方法同样适用于word文档</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><table>
+<thead>
+<tr>
+<th align="center">用例测试结果</th>
+<th align="center">运行时间</th>
+<th align="center">占用内存</th>
+<th align="center">提示</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用例1通过</td>
+<td align="center">2ms</td>
+<td align="center">228kb</td>
+<td align="center"></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">用例2通过</td>
+<td align="center">3ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">用例3未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center"><span style="background-color:#FFF000">结果错误</span></td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1geawmsrakuj30mc03gq2w.jpg" alt="QQ截图20200429202055.png"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN sizeof(LinkList)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;LinkList;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">LinkList* <span class="title">creat</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//创建部分，这里其实参照了书上的一些代码</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head = <span class="literal">NULL</span>, * p1, * p2;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    p1 = p2 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p1-&gt;num);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>)head = p1;</span><br><span class="line">        <span class="keyword">else</span> p2-&gt;next = p1;</span><br><span class="line">        p2 = p1;</span><br><span class="line">        p1 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    &#125;</span><br><span class="line">    p2-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> (head);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(LinkList* head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* p = head;</span><br><span class="line">    <span class="keyword">if</span> (head != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, p-&gt;num);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        <span class="keyword">for</span> (; p != <span class="literal">NULL</span>; p = p-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>, p-&gt;num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head;</span><br><span class="line">    head = creat();</span><br><span class="line">    <span class="built_in">print</span>(head);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="删除链表"><a href="#删除链表" class="headerlink" title="删除链表"></a>删除链表</h1><p><strong>题目内容：</strong>在创建和打印链表的基础上，新建一个函数实现删除链表中元素的功能</p>
+<p><strong>输入格式:</strong></p>
+<p>新建链表的长度n</p>
+<p>顺序输入链表节点的值</p>
+<p>要删除元素的索引</p>
+<p><strong>输出格式：</strong></p>
+<p>顺序输出删除后的链表节点的值（注意最后一个数字后无空格）</p>
+<p><strong>输入样例：</strong></p>
+<p>4</p>
+<p>1 2 3 4</p>
+<p>3</p>
+<p><strong>输出样例：</strong></p>
+<p><strong>1 2 4</strong></p>
+<div class="tabs" id="代码"><ul class="nav-tabs"><li class="tab"><a href="#代码-1">代码 1</a></li><li class="tab active"><a href="#代码-2">代码 2</a></li><li class="tab"><a href="#代码-3">代码 3</a></li></ul><div class="tab-content"><div class="tab-pane" id="代码-1"><p>最开始我想的只是将要删除数字的绕过输出</p>
+<p>但是结果很快打脸了</p>
+<table>
+<thead>
+<tr>
+<th align="center">用例测试结果</th>
+<th align="center">运行时间</th>
+<th align="center">占用内存</th>
+<th align="center">提示</th>
+<th align="center">得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用例1通过</td>
+<td align="center">2ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">用例2通过</td>
+<td align="center">2ms</td>
+<td align="center">256kb</td>
+<td align="center"></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">用例3未通过</td>
+<td align="center">0ms</td>
+<td align="center">0kb</td>
+<td align="center"><span style="background-color:#FF0202">结果错误</span></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN sizeof(LinkList)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;LinkList;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">LinkList* <span class="title">creat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head = <span class="literal">NULL</span>, * p1, * p2;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    p1 = p2 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p1-&gt;num);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>)head = p1;</span><br><span class="line">        <span class="keyword">else</span> p2-&gt;next = p1;</span><br><span class="line">        p2 = p1;</span><br><span class="line">        p1 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    &#125;</span><br><span class="line">    p2-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> (head);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(LinkList* head, <span class="keyword">int</span> y)</span><span class="comment">//删除部分</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList * p = head;<span class="comment">//violetwsh.com</span></span><br><span class="line">    <span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;num == y)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;next!=<span class="literal">NULL</span>)<span class="comment">//防止出现只有一个数字的情况</span></span><br><span class="line">            &#123;</span><br><span class="line">                p = p-&gt;next;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d"</span>, p-&gt;num);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                p = p-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>, p-&gt;num);</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; p != <span class="literal">NULL</span>; p = p-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;num != y)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">" %d"</span>, p-&gt;num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head;</span><br><span class="line">    <span class="keyword">int</span> del;</span><br><span class="line">    head = creat();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;del);</span><br><span class="line">    <span class="built_in">print</span>(head, del);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="tab-pane active" id="代码-2"><p><strong>正确答案</strong></p>
+<div class="note infor"><p><span style="background-color:#00c758">注意</span></p>
+<p>本题的题意并不是检索某一个数值，在代码一中没有得到全部分数的原因就是我写的时候只是检索<span style="background-color:#FFF000">某一个</span>数字，而不是<span style="background-color:#FFF000">第几个</span>数字。</p>
+<p>感觉又对着空气打了半天。。。。。。（T_T）</p>
+<p>这里使用了<code>stdlib.h</code>文件下的<code>free()</code>函数，直接释放它的内存，但其实没有必要，我们可以直接将要释放的某个数据的上一个和下一个数据连接就可。</p>
+<p>在创建时，定义一个它的全局变量，这样如果还要使用的话还可以调出来。</p></div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN sizeof(LinkList)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;LinkList;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function">LinkList* <span class="title">creat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head_1 = <span class="literal">NULL</span>, * p1, * p2;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    p1 = p2 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p1-&gt;num);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>)head_1 = p1;</span><br><span class="line">        <span class="keyword">else</span> p2-&gt;next = p1;</span><br><span class="line">        p2 = p1;</span><br><span class="line">        p1 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    &#125;</span><br><span class="line">    p2-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> (head_1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(LinkList* head_2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head_2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, head_2-&gt;num);</span><br><span class="line">        head_2 = head_2-&gt;next;</span><br><span class="line">        <span class="keyword">for</span> (; head_2 != <span class="literal">NULL</span>; head_2 = head_2-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>, head_2-&gt;num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LinkList *<span class="title">delLink</span><span class="params">(LinkList* head_3)</span> </span>&#123;            <span class="comment">//链表的删除操作</span></span><br><span class="line">    <span class="comment">/* 这里使用了指针，本来返回值是void的，但是常常出现内存上的一些错误</span></span><br><span class="line"><span class="comment">    所以建议还是吧返回值改回来</span></span><br><span class="line"><span class="comment">    这样理解时相对简单一些</span></span><br><span class="line"><span class="comment">    这里全部返回头部 head</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    LinkList *r, * q;</span><br><span class="line">    <span class="keyword">int</span> Num,i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;Num);</span><br><span class="line">    <span class="keyword">for</span> (q = head_3, i = <span class="number">1</span>; i &lt; Num;  q = q-&gt;next, i++);<span class="comment">//注意这里直接分号结束了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (q == head_3) <span class="comment">//如果删除第一个节点 </span></span><br><span class="line">    &#123;</span><br><span class="line">        r= q-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(q);</span><br><span class="line">        <span class="keyword">return</span> (r);<span class="comment">//以r作为头部返回</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    &#123;                                    <span class="comment">//删除其他节点 </span></span><br><span class="line">        <span class="keyword">for</span> (r = head_3; r-&gt;next != q; r = r-&gt;next);</span><br><span class="line">        <span class="keyword">if</span> (r-&gt;next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            r-&gt;next = q-&gt;next;</span><br><span class="line">            <span class="built_in">free</span>(q);</span><br><span class="line">            <span class="keyword">return</span> (head_3);<span class="comment">//由于不是第一个节点，所以作为头部的第一个节点并没有更改，直接返回</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head, temp;</span><br><span class="line">    head = creat();</span><br><span class="line">    head = delLink(head);</span><br><span class="line">    <span class="built_in">print</span>(head);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="tab-pane" id="代码-3"><p>嘿，这里什么都没有！φ(≧ω≦*)♪～</p>
+<p><strong>别偷懒了！</strong></p>
+</div></div></div>
+
+<h2 id="随便一提（留着自己用的）"><a href="#随便一提（留着自己用的）" class="headerlink" title="随便一提（留着自己用的）"></a>随便一提（留着自己用的）</h2><p>选项卡的语法是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 选项卡, 2 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 1** 呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈……</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 2**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 3** 哇，你找到我了！φ(≧ω≦*)♪～</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<div class="tabs" id="选项卡"><ul class="nav-tabs"><li class="tab"><a href="#选项卡-1">选项卡 1</a></li><li class="tab active"><a href="#选项卡-2">选项卡 2</a></li><li class="tab"><a href="#选项卡-3">选项卡 3</a></li></ul><div class="tab-content"><div class="tab-pane" id="选项卡-1"><p><strong>这是选项卡 1</strong> 呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈……</p>
+</div><div class="tab-pane active" id="选项卡-2"><p><strong>这是选项卡 2</strong></p>
+</div><div class="tab-pane" id="选项卡-3"><p><strong>这是选项卡 3</strong> 哇，你找到我了！φ(≧ω≦*)♪～</p>
+</div></div></div>
+
+<p>首先还是需要在Next主题配置文件中配置：</p>
+<p>文件位置：~/blog/themes/next/_config.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Tabs tag.</span></span><br><span class="line"><span class="attr">tabs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">transition:</span></span><br><span class="line">    <span class="attr">tabs:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">labels:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">border_radius:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>然后上面源码中<code>, 2</code>表示一开始在第二个选项卡，非必须，若数值为<code>-1</code>则隐藏选项卡内容。更多用法请查看<a href="https://almostover.ru/2016-01/hexo-theme-next-test/#Tab-tag-test" target="_blank" rel="noopener">这个页面</a>。</p>
+<p>参考：</p>
+<p><a href="https://bestzuo.cn/posts/3147047336.html" target="_blank" rel="noopener" class="LinkCard">代码参考</a></p>
+<p><img src="https://i0.hdslb.com/bfs/album/28580dc6b949f09f1a1242c3bbdc616fbabf8f31.jpg@518w_1e_1c.jpg" alt="img"></p>
+<h1 id="向链表中插入元素"><a href="#向链表中插入元素" class="headerlink" title="向链表中插入元素"></a>向链表中插入元素</h1><p><strong>题目内容：</strong>在前面两题的基础上，新建一个函数实现向链表中插入元素的功能</p>
+<p><strong>输入格式:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span style&#x3D;&quot;background-color:#00c758&quot;&gt;注意&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新建链表的长度n</p>
+<p>顺序输入链表节点的值</p>
+<p>要插入元素的<span style="background:#00c758">值</span> 要插入元素的<span style="background:#00c758">位置</span></p>
+<p><strong>输出格式：</strong></p>
+<p>顺序输出插入后的链表节点的值（注意最后一个数字后无空格）</p>
+<p><strong>输入样例：</strong></p>
+<p>4</p>
+<p>1 2 3 4</p>
+<p>5 3</p>
+<p><strong>输出样例：</strong></p>
+<p><strong>1 2 3 5 4</strong></p>
+<p>我直接用上一道题的<code>LinkList *delLink(LinkList* head_3)</code>函数来进行一点点的修改。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN sizeof(LinkList)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;LinkList;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function">LinkList* <span class="title">creat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head_1 = <span class="literal">NULL</span>, * p1, * p2;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    p1 = p2 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p1-&gt;num);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>)head_1 = p1;</span><br><span class="line">        <span class="keyword">else</span> p2-&gt;next = p1;</span><br><span class="line">        p2 = p1;</span><br><span class="line">        p1 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    &#125;</span><br><span class="line">    p2-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> (head_1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(LinkList* head_2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head_2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, head_2-&gt;num);</span><br><span class="line">        head_2 = head_2-&gt;next;</span><br><span class="line">        <span class="keyword">for</span> (; head_2 != <span class="literal">NULL</span>; head_2 = head_2-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>, head_2-&gt;num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LinkList * <span class="title">insertList</span><span class="params">(LinkList* head_3)</span> </span>&#123;     <span class="comment">//链表的添加操作，首位置为 0 处</span></span><br><span class="line">    LinkList *r, * q;</span><br><span class="line">    <span class="keyword">int</span> place,i;</span><br><span class="line">    LinkList *ins;</span><br><span class="line">    ins = (LinkList *)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;ins-&gt;num,&amp;place);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (q = head_3, i = <span class="number">1</span>; i &lt; place;  q = q-&gt;next, i++);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">注意上边for循环取巧了</span></span><br><span class="line"><span class="comment">我们令i=1，本来按照顺序是应该令i=0的</span></span><br><span class="line"><span class="comment">但是如果添加的位置不是首位的话，在后面的操作时链接会自动前进一个</span></span><br><span class="line"><span class="comment">反正当place=0，i=1时 i&lt;place也是假</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">if</span> (q == head_3) <span class="comment">//如果添加位置在第 0 个（首位）</span></span><br><span class="line">    &#123;</span><br><span class="line">        ins-&gt;next = head_3;</span><br><span class="line">        <span class="keyword">return</span> (ins);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    &#123;                                <span class="comment">//添加在其他位置</span></span><br><span class="line">        r = q-&gt;next;</span><br><span class="line">        q-&gt;next = ins;</span><br><span class="line">        ins-&gt;next = r;</span><br><span class="line">        <span class="keyword">return</span> (head_3);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head, temp;</span><br><span class="line">    head = creat();</span><br><span class="line">    head = insertList(head);</span><br><span class="line">    <span class="built_in">print</span>(head);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="归并链表"><a href="#归并链表" class="headerlink" title="归并链表"></a>归并链表</h1><p><strong>题目内容：</strong></p>
+<p>输入两个升序链表，加他们归并为一个有序链表</p>
+<p><strong>输入格式:</strong></p>
+<p>链表1长度</p>
+<p>链表1</p>
+<p>链表2长度</p>
+<p>链表2</p>
+<p><strong>输出格式：</strong></p>
+<p>归并链表</p>
+<p><strong>输入样例：</strong></p>
+<p>3</p>
+<p>1 5 7</p>
+<p>4</p>
+<p>2 4 6 8</p>
+<p><strong>输出样例：</strong></p>
+<p><strong>1 2 4 5 6 7 8</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN sizeof(LinkList)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;LinkList;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function">LinkList* <span class="title">creat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head_1 = <span class="literal">NULL</span>, * p1, * p2;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    p1 = p2 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p1-&gt;num);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>)head_1 = p1;</span><br><span class="line">        <span class="keyword">else</span> p2-&gt;next = p1;</span><br><span class="line">        p2 = p1;</span><br><span class="line">        p1 = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    &#125;</span><br><span class="line">    p2-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> (head_1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(LinkList* head_2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head_2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, head_2-&gt;num);</span><br><span class="line">        head_2 = head_2-&gt;next;</span><br><span class="line">        <span class="keyword">for</span> (; head_2 != <span class="literal">NULL</span>; head_2 = head_2-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>, head_2-&gt;num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LinkList* <span class="title">Combine</span><span class="params">(LinkList* head1, LinkList* head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head = <span class="literal">NULL</span>, * p, * tail;</span><br><span class="line">    tail = (LinkList*)<span class="built_in">malloc</span>(LEN);</span><br><span class="line">    <span class="keyword">while</span> (head1 &amp;&amp; head2)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (head1-&gt;num &lt; head2-&gt;num)</span><br><span class="line">        &#123;</span><br><span class="line">            p = head1;</span><br><span class="line">            head1 = head1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = head2;</span><br><span class="line">            head2 = head2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">if</span> (!head)</span><br><span class="line">            head = tail = p;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            tail = tail-&gt;next = p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (head1)</span><br><span class="line">        p = head1;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        p = head2;</span><br><span class="line">    tail-&gt;next = p;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList* head[<span class="number">2</span>];</span><br><span class="line">    head[<span class="number">0</span>] = creat();</span><br><span class="line">    head[<span class="number">1</span>] = creat();</span><br><span class="line">    <span class="built_in">print</span>(Combine(head[<span class="number">0</span>], head[<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/qq_39241239/article/details/80897992" target="_blank" rel="noopener" class="LinkCard">代码参考</a></p>
+<p><img src="https://i0.hdslb.com/bfs/album/70201a35d6cb190104ac248be882709fb68add0d.png" alt="Image"></p>
+]]></content>
+      <categories>
+        <category>homework</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>C语言</tag>
+        <tag>程序设计</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言期末OJ考试</title>
     <url>/2020/04/27/exam001/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -422,8 +665,8 @@
       </categories>
       <tags>
         <tag>分享</tag>
-        <tag>工具</tag>
         <tag>blog</tag>
+        <tag>工具</tag>
         <tag>加密</tag>
       </tags>
   </entry>
@@ -444,8 +687,8 @@
       </categories>
       <tags>
         <tag>分享</tag>
-        <tag>工具</tag>
         <tag>blog</tag>
+        <tag>工具</tag>
         <tag>加密</tag>
       </tags>
   </entry>
@@ -627,43 +870,6 @@
       </tags>
   </entry>
   <entry>
-    <title>视频嵌入测试/分享--瘟疫医生</title>
-    <url>/2020/03/22/videotest/</url>
-    <content><![CDATA[<h1 id="视频测试"><a href="#视频测试" class="headerlink" title="视频测试"></a>视频测试</h1><a id="more"></a>
-
-
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?aid=64768491&cid=112430226&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe>
-</div>
-
-
-
-
-<h1 id="嵌入方法"><a href="#嵌入方法" class="headerlink" title="嵌入方法"></a>嵌入方法</h1><p>打开B站相应视频的网页，点击分享，复制嵌入代码</p>
-<p>在编辑.md文档时，插入以下代码(注意不要引用代码块)，然后替换掉相应的内容即可</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative; width: 100%; height: 0; padding-bottom: 75%;"</span>&gt;</span></span><br><span class="line">    在此处粘贴（并去掉 <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>） style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"&gt; <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative; width: 100%; height: 0; padding-bottom: 75%;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"//player.bilibili.com/player.html?aid=64768491&amp;cid=112430226&amp;page=1"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span> <span class="attr">style</span>=<span class="string">"position: absolute; width: 100%; height: 100%; left: 0; top: 0;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="视频分享（3-24）"><a href="#视频分享（3-24）" class="headerlink" title="视频分享（3.24）"></a>视频分享（3.24）</h1>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?aid=98219293&bvid=BV1vE411w73j&cid=168252030&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe>
-</div>
-
-
-]]></content>
-      <categories>
-        <category>videos</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-        <tag>个人</tag>
-        <tag>video，share</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>个人用：hexo next主题配置文件详细说明</title>
     <url>/2020/03/20/include/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -742,46 +948,6 @@
         <tag>游戏机</tag>
         <tag>工具</tag>
         <tag>3DS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在电脑上规避学习通的一些方法</title>
-    <url>/2020/03/16/Tampermonkey/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
-<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
-<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
-<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
-<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
-<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
-<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
-<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
-<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
-<p>然后直接点击安装。这里我已经安装了。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
-<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
-<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
-<p>当然，进入管理面板还可以对脚本进行删除。</p>
-<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
-<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
-<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
-<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
-<p>这里我已经做完了，只是放出一个效果图。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Plugin</category>
-      </categories>
-      <tags>
-        <tag>网课</tag>
-        <tag>Tampermonkey</tag>
-        <tag>学习通</tag>
       </tags>
   </entry>
   <entry>
@@ -922,6 +1088,46 @@
         <tag>C语言</tag>
         <tag>程序设计</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在电脑上规避学习通的一些方法</title>
+    <url>/2020/03/16/Tampermonkey/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文章目的只是用来分享，本人的网课全部亲自听完，作业为自己做的。使用插件的原因只是因为在听网课时鼠标不能自由移动，常常有各种各样的事情找上我使我不得不（被迫）暂停视频，很是麻烦。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.浏览器，火狐，谷歌等等，建议谷歌内核的浏览器（国内浏览器虽然大部分都是谷歌内核，但是版本非常老旧，这里不推荐），原版谷歌浏览器当然更好的支持，但是我更喜欢新版的带谷歌内核的edge，<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">点击下载</a></p>
+<p>2.梯子，因为会使用谷歌插件，所以会用到梯子。没有的话可以使用其他非谷歌内核浏览器，如火狐浏览器。</p>
+<h2 id="添加Tampermonkey插件"><a href="#添加Tampermonkey插件" class="headerlink" title="添加Tampermonkey插件"></a>添加Tampermonkey插件</h2><p>1.进入<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>主页，添加一个脚本插件，这里推荐<code>Tampermonkey</code>。操作非常简单，其实进入页面方法已经告诉你了。</p>
+<h3 id="谷歌内核浏览器添加"><a href="#谷歌内核浏览器添加" class="headerlink" title="谷歌内核浏览器添加"></a>谷歌内核浏览器添加</h3><p>进入主页，梯子打开，注意，一定要打开梯子，点击箭头指向的<code>Chrome:Tampermonkey</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtak0v4j31hc0t4jw8.jpg" alt="img"></p>
+<p>接着点击安装插件，由于我已经安装了，我的显示的是<code>从Chrome中删除</code>。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtan7shj31hc0t4adg.jpg" alt="img">****</p>
+<p>安装完之后浏览器右上角有以下图标就说明安装成功了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtahdq1j30qn04hjrw.jpg" alt="img"></p>
+<h3 id="火狐浏览器的安装"><a href="#火狐浏览器的安装" class="headerlink" title="火狐浏览器的安装"></a>火狐浏览器的安装</h3><p>和谷歌内核同理，链接我已经提供，点击安装即可，Firefox：<a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a> </p>
+<h2 id="学习通（超星）脚本的安装"><a href="#学习通（超星）脚本的安装" class="headerlink" title="学习通（超星）脚本的安装"></a>学习通（超星）脚本的安装</h2><p>可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页直接搜索<code>超星</code>，选择安装量最多的一个就是。</p>
+<p>当然，如果嫌麻烦，直接<a href="[https://greasyfork.org/zh-CN/scripts/369625-%E8%B6%85%E6%98%9F%E7%BD%91%E8%AF%BE%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/369625-超星网课助手)">点击</a>我提供的超链接即可跳转。</p>
+<p>然后直接点击安装。这里我已经安装了。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtard8uj30qv0t3dn0.jpg" alt="img"></p>
+<p>到此，学习通脚本已经安装好了，进入超星网站时浏览器右上角的图标有红色的数字说明已经成功，在你听课时就可以自由移动鼠标了。</p>
+<h2 id="插件进阶设置"><a href="#插件进阶设置" class="headerlink" title="插件进阶设置"></a>插件进阶设置</h2><h3 id="自由开关"><a href="#自由开关" class="headerlink" title="自由开关"></a>自由开关</h3><p>进入超星网站，点击浏览器右上角的插件图标，即可自由开关脚本。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtajbdnj308e08nq3s.jpg" alt="img"></p>
+<p>当然，进入管理面板还可以对脚本进行删除。</p>
+<h3 id="安装其他脚本"><a href="#安装其他脚本" class="headerlink" title="安装其他脚本"></a>安装其他脚本</h3><p>其他脚本可根据需求在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a>的主页搜索，比如解除批改网复制粘贴限制，bilibili视频下载等等。大家自由探索，这里不过多说明。（保命）</p>
+<h2 id="脚本的进阶使用（功能介绍）"><a href="#脚本的进阶使用（功能介绍）" class="headerlink" title="脚本的进阶使用（功能介绍）"></a>脚本的进阶使用（功能介绍）</h2><p>其实（学习通）脚本安装完之后就不需要手动操作了，这里算是对超星脚本的功能的说明。</p>
+<p>除了解除鼠标限制之外还有一个功能就是<strong>自动答题</strong>。</p>
+<p>点击一个学科的作业，进入即可自动答题，不需要操作，甚至不需要你点提交。</p>
+<p>这里我已经做完了，只是放出一个效果图。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcwxtap9dtj30qv0t3wn2.jpg" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Plugin</category>
+      </categories>
+      <tags>
+        <tag>网课</tag>
+        <tag>Tampermonkey</tag>
+        <tag>学习通</tag>
       </tags>
   </entry>
   <entry>
