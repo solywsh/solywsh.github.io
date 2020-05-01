@@ -154,7 +154,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1ged5ky9h0nj31hc0t476r.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1ged5u8tnpjg30hs0a0e1t.gif">
 <meta property="article:published_time" content="2020-05-01T11:26:42.000Z">
-<meta property="article:modified_time" content="2020-05-01T11:14:54.219Z">
+<meta property="article:modified_time" content="2020-05-01T11:30:22.455Z">
 <meta property="article:author" content="Wang Shihao">
 <meta property="article:tag" content="分享">
 <meta property="article:tag" content="blog">
@@ -531,7 +531,7 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="YAML"><figure class="iseeu highlight /yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
 
 <ul>
-<li>最后hexo clean, hexo g ,hexo s一套操作就可以了。</li>
+<li>最后hexo clean, hexo g ,hexo s一套操作就可以。</li>
 </ul>
 <p><span style="background-color:#FFF000">但是</span></p>
 <p>我的博客出现问题了，当我点击搜索按钮输入关键字之后，点击链接，然后。。。。然后就没有然后了。</p>
@@ -539,15 +539,15 @@
 <p><span style="background-color:#198fdc">也就是说，它并没有跳转到我想要的页面去。</span></p>
 <p>怎么办？我又不会HTML和CSS。</p>
 <p>没关系，F12帮你搞定。</p>
-<p>在<code>hexo s --debug</code>(当然hexo s也是可以的)进入<a href="http://localhost:4000/之后，我们按F12调出开发者模式。" target="_blank" rel="noopener">http://localhost:4000/之后，我们按F12调出开发者模式。</a></p>
-<p>利用在开发者模式中<code>页面中选择一个元素进行检查</code>的功能，选择搜索相关。</p>
+<p>在<code>hexo s --debug</code>(当然hexo s也是可以的)进入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 之后，我们按F12调出浏览器的开发者模式。</p>
+<p>利用在开发者模式中<code>页面中选择一个元素进行检查</code>的功能，选择搜索相关的元素。</p>
 <p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1ged4vpx0gyj31hc0t4apy.jpg" alt="RFKIUV5_47QQR8JBRBB4@~9.png"></p>
-<p>我们会在样式栏看到如下代码：</p>
+<p>在样式栏看到如下代码：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.local-search-pop-overlay</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2080</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>显然这是css语言，但是问题来了，我没学过啊。</p>
 <p>办法很简单，挨个挨个给注释掉试试就可以：（在浏览器上可以直接勾选来控制是否注释掉）</p>
-<p>于是我发现了它的问题：</p>
+<p>于是我发现将它注释掉之后，搜索正常使用了：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">z-index</span>: 2080;</span><br></pre></td></tr></table></figure></div>
 
 <p>查阅资料：</p>
@@ -618,12 +618,12 @@
 </tr>
 </tbody></table>
 <p><span style="background-color:#198fdc">显然这里堆叠顺序出现了问题，可能是我在部署其他的功能时，与它造成了冲突。</span></p>
-<p>本来注释掉了就可以，但是我在修改参数时，发现浏览器贴心的给了我<code>auto</code>，<code>inherit</code>，<code>initial</code>以及<code>unset</code>四个选项，不会CSS的我（看来我的学学前端了），当然是选择<code>auto</code>了。</p>
+<p>本来注释掉了就可以，但是我在修改参数时，发现浏览器贴心的给了我<code>auto</code>，<code>inherit</code>，<code>initial</code>以及<code>unset</code>四个选项，不会CSS的我（看来我该学学前端了），当然是选择<code>auto</code>。</p>
 <p>当然，在浏览器修改是没有的，毕竟不是永久，于是我们得想办法吧它保存下来。</p>
-<p>在<code>.\bolg\themes\next\source\css\_custom</code>里有一个<code>custom.styl</code>的<code>css</code>文件，这是官方留给我们修改的，我们不会CSS语法的时候，在开发者模式下进行了一些修改可以直接复制到这里。比如背景图片，侧栏的颜色什么的。</p>
+<p>在<code>.\bolg\themes\next\source\css\_custom</code>里有一个<code>custom.styl</code>的<code>css</code>文件，这是官方留给我们自行修改的，在我不会CSS语法的时候，在开发者模式下进行了一些样式上的修改可以直接复制到这里。比如背景图片，侧栏的颜色什么的。</p>
 <p>详细的操作可以看下面的链接：</p>
 <p><a href="https://yangbingdong.com/2017/build-blog-hexo-advanced/#定位元素" target="_blank" rel="noopener" class="LinkCard">定位元素</a></p>
-<p>但，这一次不行。因为local-search有一个独立的CSS文件，所以直接在资源管理器搜索<code>localsearch</code>。</p>
+<p>但，这一次不行。因为local-search有一个独立的CSS文件，所以直接在资源管理器搜索<code>localsearch</code>，找到它的样式文件。</p>
 <p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1ged5ky9h0nj31hc0t476r.jpg" alt="QQ截图20200501190208.png"></p>
 <p>我们看到一个<code>localsearch.styl</code>文件，打开它，搜索<span style="background-color:#198fdc">z-index: 2080</span>，将2080改为<code>auto</code>（其实将它删除之后就是默认值auto了。。。。。。。。）</p>
 <p>保存，clean，再渲染，就会发现搜索功能能用了。</p>
