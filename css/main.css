@@ -2116,7 +2116,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd596;
+  background: #ffdba7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3498,5 +3498,5 @@ body .header-inner {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #244465;
+  background: #032344;
 }
