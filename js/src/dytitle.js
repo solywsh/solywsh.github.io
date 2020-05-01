@@ -1,4 +1,4 @@
-网络出现了问题var OriginTitile = document.title;
+var OriginTitile = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
