@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://violetwsh.com/"/>
-  <updated>2020-05-05T16:50:22.966Z</updated>
+  <updated>2020-05-05T16:56:57.596Z</updated>
   <id>https://violetwsh.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://violetwsh.com/2020/05/05/GitNotePart1/"/>
     <id>https://violetwsh.com/2020/05/05/GitNotePart1/</id>
     <published>2020-05-05T08:15:00.000Z</published>
-    <updated>2020-05-05T16:50:22.966Z</updated>
+    <updated>2020-05-05T16:56:57.596Z</updated>
     
     <summary type="html">
     
@@ -39,9 +39,9 @@
       <category term="git" scheme="https://violetwsh.com/categories/git/"/>
     
     
-      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="git" scheme="https://violetwsh.com/tags/git/"/>
+    
+      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -68,11 +68,11 @@
       <category term="html" scheme="https://violetwsh.com/categories/html/"/>
     
     
+      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="前端" scheme="https://violetwsh.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="html" scheme="https://violetwsh.com/tags/html/"/>
-    
-      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -99,11 +99,11 @@
       <category term="html" scheme="https://violetwsh.com/categories/html/"/>
     
     
+      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="前端" scheme="https://violetwsh.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="html" scheme="https://violetwsh.com/tags/html/"/>
-    
-      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -130,11 +130,11 @@
       <category term="html" scheme="https://violetwsh.com/categories/html/"/>
     
     
+      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="前端" scheme="https://violetwsh.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="html" scheme="https://violetwsh.com/tags/html/"/>
-    
-      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -502,9 +502,9 @@
       <category term="videos" scheme="https://violetwsh.com/categories/videos/"/>
     
     
-      <category term="个人" scheme="https://violetwsh.com/tags/%E4%B8%AA%E4%BA%BA/"/>
-    
       <category term="test" scheme="https://violetwsh.com/tags/test/"/>
+    
+      <category term="个人" scheme="https://violetwsh.com/tags/%E4%B8%AA%E4%BA%BA/"/>
     
       <category term="video，share" scheme="https://violetwsh.com/tags/video%EF%BC%8Cshare/"/>
     
