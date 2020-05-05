@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://violetwsh.com/"/>
-  <updated>2020-05-05T06:18:07.557Z</updated>
+  <updated>2020-05-05T16:50:22.966Z</updated>
   <id>https://violetwsh.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git学习笔记part1-基础篇</title>
+    <link href="https://violetwsh.com/2020/05/05/GitNotePart1/"/>
+    <id>https://violetwsh.com/2020/05/05/GitNotePart1/</id>
+    <published>2020-05-05T08:15:00.000Z</published>
+    <updated>2020-05-05T16:50:22.966Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://violetwsh.com/categories/git/"/>
+    
+    
+      <category term="笔记" scheme="https://violetwsh.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="git" scheme="https://violetwsh.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5学习笔记part2</title>
@@ -473,9 +502,9 @@
       <category term="videos" scheme="https://violetwsh.com/categories/videos/"/>
     
     
-      <category term="test" scheme="https://violetwsh.com/tags/test/"/>
-    
       <category term="个人" scheme="https://violetwsh.com/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+      <category term="test" scheme="https://violetwsh.com/tags/test/"/>
     
       <category term="video，share" scheme="https://violetwsh.com/tags/video%EF%BC%8Cshare/"/>
     
@@ -602,37 +631,6 @@
       <category term="Tampermonkey" scheme="https://violetwsh.com/tags/Tampermonkey/"/>
     
       <category term="学习通" scheme="https://violetwsh.com/tags/%E5%AD%A6%E4%B9%A0%E9%80%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何在电脑用cemu玩塞尔达？</title>
-    <link href="https://violetwsh.com/2020/03/15/cemu/"/>
-    <id>https://violetwsh.com/2020/03/15/cemu/</id>
-    <published>2020-03-15T08:26:42.000Z</published>
-    <updated>2020-04-11T10:23:34.928Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-      <category term="games" scheme="https://violetwsh.com/categories/games/"/>
-    
-    
-      <category term="游戏" scheme="https://violetwsh.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-      <category term="cemu" scheme="https://violetwsh.com/tags/cemu/"/>
-    
-      <category term="塞尔达" scheme="https://violetwsh.com/tags/%E5%A1%9E%E5%B0%94%E8%BE%BE/"/>
     
   </entry>
   
