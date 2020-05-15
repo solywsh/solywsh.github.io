@@ -143,12 +143,12 @@
 
 
 
-<meta name="description" content="起因故事还得从一只蝙蝠说起，放暑假的时候把(老)3DS带回了家，结果却发现把读卡器带回家，这不要紧，因为有FBI——3DS上的无线安装软件，但是，FBI只是支持cia格式的安装包，且只能安装，不能进行文件的传输。 问题来了，一天，我突然想玩NDS的游戏，而有的NDS数字版游戏不支持在3DS上安装，一个实现的办法是在3DS游戏机上模拟NDS系统，实现套娃的操作——缺点就是耗电。 可是，因为模">
+<meta name="description" content="起因放暑假的时忘记把读卡器带回家，这不要紧，因为有FBI——3DS上的无线安装软件，但是，FBI只是支持cia格式的安装包，且只能安装，不能进行文件的传输。 问题来了，一天，我突然想玩NDS的游戏，而有的NDS数字版游戏不支持在3DS上安装，一个实现的办法是在3DS游戏机上模拟NDS系统，实现套娃的操作——缺点就是耗电。 可是，因为模拟NDS系统不仅仅是安装一个软件那么简单，还需要到系统的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3DS如何用FTP传输文件">
 <meta property="og:url" content="https://violetwsh.com/2020/03/19/3DSFTPD/index.html">
 <meta property="og:site_name" content="马猴小站">
-<meta property="og:description" content="起因故事还得从一只蝙蝠说起，放暑假的时候把(老)3DS带回了家，结果却发现把读卡器带回家，这不要紧，因为有FBI——3DS上的无线安装软件，但是，FBI只是支持cia格式的安装包，且只能安装，不能进行文件的传输。 问题来了，一天，我突然想玩NDS的游戏，而有的NDS数字版游戏不支持在3DS上安装，一个实现的办法是在3DS游戏机上模拟NDS系统，实现套娃的操作——缺点就是耗电。 可是，因为模">
+<meta property="og:description" content="起因放暑假的时忘记把读卡器带回家，这不要紧，因为有FBI——3DS上的无线安装软件，但是，FBI只是支持cia格式的安装包，且只能安装，不能进行文件的传输。 问题来了，一天，我突然想玩NDS的游戏，而有的NDS数字版游戏不支持在3DS上安装，一个实现的办法是在3DS游戏机上模拟NDS系统，实现套娃的操作——缺点就是耗电。 可是，因为模拟NDS系统不仅仅是安装一个软件那么简单，还需要到系统的">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9hgrjf2j30tc0tcwyp.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7o6iigxj33402c07wi.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7wlfqh9j33402c04qq.jpg">
@@ -162,7 +162,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz91y7meqj31740pnq6j.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9qa7mvej30tz0tz4cg.jpg">
 <meta property="article:published_time" content="2020-03-19T08:26:42.000Z">
-<meta property="article:modified_time" content="2020-04-11T10:24:31.846Z">
+<meta property="article:modified_time" content="2020-05-09T05:54:51.345Z">
 <meta property="article:author" content="Wang Shihao">
 <meta property="article:tag" content="3DS">
 <meta name="twitter:card" content="summary">
@@ -520,14 +520,14 @@
 
 <img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz9hgrjf2j30tc0tcwyp.jpg"/>
 
-<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>故事还得从一只蝙蝠说起，放暑假的时候把(老)3DS带回了家，结果却发现把读卡器带回家，这不要紧，因为有<a href="http://nintendo-ds.dcemu.co.uk/-3ds-fbi-v2-5-3-1161570.html" target="_blank" rel="noopener">FBI</a>——3DS上的无线安装软件，但是，FBI只是支持<code>cia</code>格式的安装包，且只能安装，不能进行文件的传输。</p>
+<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>放暑假的时忘记把读卡器带回家，这不要紧，因为有<a href="http://nintendo-ds.dcemu.co.uk/-3ds-fbi-v2-5-3-1161570.html" target="_blank" rel="noopener">FBI</a>——3DS上的无线安装软件，但是，FBI只是支持<code>cia</code>格式的安装包，且只能安装，不能进行文件的传输。</p>
 <p>问题来了，一天，我突然想玩NDS的游戏，而有的NDS数字版游戏不支持在3DS上安装，一个实现的办法是在3DS游戏机上模拟NDS系统，实现套娃的操作——缺点就是耗电。</p>
 <p>可是，因为模拟NDS系统不仅仅是安装一个软件那么简单，还需要到系统的根目录进行文件的拷贝修改等等。</p>
 <p>那没有读卡器怎么操作？暂时又出不了门，又买不了。</p>
 <p>原理很简单，在链接网络的情况下让3DS成为FTP（File Transfer Protocol，文件传输协议）<strong>服务器即可</strong>。</p>
 <img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gcz7o6iigxj33402c07wi.jpg"/>
 
-<h1 id="操作环节"><a href="#操作环节" class="headerlink" title="操作环节"></a>操作环节</h1><h2 id="FBI"><a href="#FBI" class="headerlink" title="FBI"></a>FBI</h2><p>大部分破解3DS游戏机都自带了这个软件，但是有的人手贱会删除它，比如我。这里我把它的链接放出来，之后使用SOON2安装即可。当然最近听到一些破解系统SOON2失效的消息，并且此时你的FBI也没了的话，那我只能说你倒霉了。</p>
+<h1 id="操作环节"><a href="#操作环节" class="headerlink" title="操作环节"></a>操作环节</h1><h2 id="FBI"><a href="#FBI" class="headerlink" title="FBI"></a>FBI</h2><p>大部分破解3DS游戏机都自带了这个软件，但是有的人手贱会删除它，比如我。这里我把它的链接放出来，之后使用SOON2安装即可。当然最近听到一些破解系统SOON2失效的消息。</p>
 <p><a href="https://pan.baidu.com/s/1i0nHw-n0SnwjliUYZo0elQ" target="_blank" rel="noopener" class="LinkCard">FBI</a></p>
 <p>提取码：zozf</p>
 <h2 id="FTPD"><a href="#FTPD" class="headerlink" title="FTPD"></a>FTPD</h2><h3 id="FTPD介绍"><a href="#FTPD介绍" class="headerlink" title="FTPD介绍"></a>FTPD介绍</h3><p>FTPD软件为今天得重中之重，就是让3DS实现FTP服务器的软件啦，不过建议大一点的游戏就不要使用这个了，因为3DS本来不支持FTP还有其他各种各样的原因，反正速度是很慢（大概维持在1M/s左右），尤其是稍微大一点的游戏，传输过程之缓慢——亲身体验，毕竟我没读卡器。</p>
@@ -676,8 +676,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/16/Tampermonkey/" rel="next" title="在电脑上规避学习通的一些方法">
-                <i class="fa fa-chevron-left"></i> 在电脑上规避学习通的一些方法
+              <a href="/2020/03/16/2020-03-16-homework/" rel="next" title="2020-03-16 [作业] [第六章]">
+                <i class="fa fa-chevron-left"></i> 2020-03-16 [作业] [第六章]
               </a>
             
           </div>
@@ -795,7 +795,7 @@
              
                 <a href="/archives">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
