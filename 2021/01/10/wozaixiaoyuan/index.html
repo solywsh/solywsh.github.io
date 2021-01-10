@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="9HmzmBcH88a5AOd6-NVhyaQfv09HwIlkky0an9zyZoQ" />
+
+
+<script data-ad-client="ca-pub-7913970091878122" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|ZCOOL KuaiLe:300,300italic,400,400italic,700,700italic|Noto Sans SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Varela Round:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,脚本," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="马猴小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="我在校园自动打卡脚本(部署在服务器上)很久没有跟新了，要不是腾讯云提醒我域名要到期我都快忘了我还有个博客，最近疫情的原因每天总是需要打卡，但是有些时候还得专门定闹钟起来给自己打卡，就很烦。 得知网安那边搞了个自动打卡的脚本最开始我是很兴奋的，毕竟可以偷懒了，但是我听说Token只能有效4天，于是我又放弃了打算。 在几天前韩松傲给我解释了为什么无法自动得到Token的原理之后，虽然我没听懂，但是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我在校园自动打卡脚本">
+<meta property="og:url" content="https://violetwsh.com/2021/01/10/wozaixiaoyuan/index.html">
+<meta property="og:site_name" content="马猴小站">
+<meta property="og:description" content="我在校园自动打卡脚本(部署在服务器上)很久没有跟新了，要不是腾讯云提醒我域名要到期我都快忘了我还有个博客，最近疫情的原因每天总是需要打卡，但是有些时候还得专门定闹钟起来给自己打卡，就很烦。 得知网安那边搞了个自动打卡的脚本最开始我是很兴奋的，毕竟可以偷懒了，但是我听说Token只能有效4天，于是我又放弃了打算。 在几天前韩松傲给我解释了为什么无法自动得到Token的原理之后，虽然我没听懂，但是">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12861759-886a4cf6ebbbde2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/977/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12861759-15eca07692c21f42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/446/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12861759-49350fae1201d4f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/555/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12861759-55c8ca710a3d7d1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/555/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12861759-5276527aabe9dbd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/612/format/webp">
+<meta property="og:image" content="https://img-blog.csdn.net/20180615135359223?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmdodWl6aTE5OTI5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmiwrphq24j30qv0t3taq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmixk0w5luj31hc0t4wgq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmixsrwvuij31hc0t4410.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmixu4buuxj30ur0gz0td.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmixvltp0rj30gv0ixgmd.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmiy2khqfrj31bb0ix4qq.jpg">
+<meta property="article:published_time" content="2021-01-10T10:26:00.000Z">
+<meta property="article:modified_time" content="2021-01-10T14:07:38.669Z">
+<meta property="article:author" content="Wang Shihao">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="脚本">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12861759-886a4cf6ebbbde2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/977/format/webp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://violetwsh.com/2021/01/10/wozaixiaoyuan/"/>
+
+
+
+
+
+  <title>我在校园自动打卡脚本 | 马猴小站</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?00b59b544107b2bf1b78e6f4fc6df486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">马猴小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">俄罗斯方块奇观建筑师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://violetwsh.com/2021/01/10/wozaixiaoyuan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Shihao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马猴小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我在校园自动打卡脚本</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-10T18:26:00+08:00">
+                2021-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/01/10/wozaixiaoyuan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/01/10/wozaixiaoyuan/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+                <div>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- 文章头部 -->
+                        <ins class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-7913970091878122"
+                                data-ad-slot="9305010076"
+                                data-ad-format="auto"
+                                data-full-width-responsive="true"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+
+    
+
+        <meta name="referrer" content="no-referrer"/>
+
+<h2 id="我在校园自动打卡脚本-部署在服务器上"><a href="#我在校园自动打卡脚本-部署在服务器上" class="headerlink" title="我在校园自动打卡脚本(部署在服务器上)"></a>我在校园自动打卡脚本(部署在服务器上)</h2><p>很久没有跟新了，要不是腾讯云提醒我域名要到期我都快忘了我还有个博客，最近疫情的原因每天总是需要打卡，但是有些时候还得专门定闹钟起来给自己打卡，就很烦。</p>
+<p>得知网安那边搞了个自动打卡的脚本最开始我是很兴奋的，毕竟可以偷懒了，但是我听说Token只能有效4天，于是我又放弃了打算。</p>
+<p>在几天前韩松傲给我解释了为什么无法自动得到Token的原理之后，<del>虽然我没听懂</del>，但是我还是明白一个道理，反正我是没办法了，当然，要是有办法也轮不到我在这写这个教程了。</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><div class="note danger"><p>此脚本更改和公开已经得到某位秦姓男子的同意，我就当他们同意了。</p>
+<p>此脚本只是用于分享，切勿用于不法通途。</p>
+<p>此脚本并没有解决原来脚本的弊端，只是增加了提醒功能而已。</p></div>
+
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><ul>
+<li>charles抓包工具获取token，可以去官网下载</li>
+</ul>
+<p><a href="https://www.charlesproxy.com/download/" target="_blank" rel="noopener" class="LinkCard">charles</a></p>
+<p> 也可以试试直接点下面的链接，<del>如果还没失效的话。</del></p>
+<p><a href="https://www.charlesproxy.com/assets/release/4.6.1/charles-proxy-4.6.1-win64.msi?k=993432c69c" target="_blank" rel="noopener" class="LinkCard">charles下载</a></p>
+<ul>
+<li>python运行环境</li>
+<li>微信电脑版</li>
+<li>（可选）24小时运行的服务器，装上宝塔面板</li>
+</ul>
+<h4 id="charles相关"><a href="#charles相关" class="headerlink" title="charles相关"></a>charles相关</h4><p>打开charles，由于有些人第一次用，有些地方可能不知道，我先说一下charles的前期配置。</p>
+<ul>
+<li><p>安装证书，可以看下面的教程，下面的教程转自简书。</p>
+<p><a href="https://www.jianshu.com/p/8346143aba53" target="_blank" rel="noopener" class="LinkCard">charles证书安装</a></p>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/12861759-886a4cf6ebbbde2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/977/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12861759-15eca07692c21f42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/446/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12861759-49350fae1201d4f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/555/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12861759-55c8ca710a3d7d1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/555/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12861759-5276527aabe9dbd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/612/format/webp" alt="img"></p>
+<p>好了，到这里证书安装完成。</p>
+<ul>
+<li><strong>安装证书好之后，去 <code>Proxy-&gt; ssl  proxying settings</code>，添加一个443端口</strong>，这里很重要。</li>
+</ul>
+<p><img src="https://img-blog.csdn.net/20180615135359223?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmdodWl6aTE5OTI5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<ul>
+<li>然后打开本地代理<code>proxy-&gt;windows iproxy</code></li>
+</ul>
+<h4 id="得到token"><a href="#得到token" class="headerlink" title="得到token"></a>得到token</h4><p>charles不要关，登陆电脑微信，打开我在校园。</p>
+<p>这时，charles会出现一个链接为<code>https://student.wozaixiaoyuan.com</code>的地址，这就是我在校园的地址。</p>
+<p>找到改目录下<code>student</code>-&gt;<code>home.json</code>-&gt;<code>Content</code>-&gt;<code>token</code>(其实也不一定，只要找到Content里是有Token的目录就行)</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmiwrphq24j30qv0t3taq.jpg" alt="QQ截图20210110211304.png"></p>
+<p>这时我们就得到token了。</p>
+<h4 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h4><p>去我的仓库下载<a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/Check.py" target="_blank" rel="noopener">Check.py</a>，除了python环境以外，还需要python的<code>requests</code>和<code>email</code>库，这个自行百度，每个人环境也不一样。</p>
+<p><a href="https://github.com/solywsh/wozaixiaoyuancheck" target="_blank" rel="noopener" class="LinkCard">我在校园打卡脚本仓库</a></p>
+<h5 id="配置脚本"><a href="#配置脚本" class="headerlink" title="配置脚本"></a>配置脚本</h5><h6 id="自动提醒邮箱部分"><a href="#自动提醒邮箱部分" class="headerlink" title="自动提醒邮箱部分"></a>自动提醒邮箱部分</h6><p>由于打卡成功和失败我需要一个反馈，所以我用了邮箱提醒。</p>
+<p>邮箱使用的网易的SMTP，在<code>Check.py</code>做出相应的修改。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mail_host = <span class="string">"smtp.163.com"</span>        <span class="comment"># SMTP服务器</span></span><br><span class="line">mail_user = <span class="string">"@163.com"</span> <span class="comment"># 用户名为邮箱</span></span><br><span class="line">mail_pass = <span class="string">""</span>    <span class="comment"># 授权密码，非登录密码 </span></span><br><span class="line">sender = <span class="string">'@163.com'</span>    <span class="comment"># 发件人邮箱</span></span><br><span class="line">receivers = [<span class="string">'@outlook.com'</span>]  <span class="comment"># 接收邮件</span></span><br><span class="line">title = <span class="string">'我在校园自动打卡提醒'</span>  <span class="comment"># 邮件主题</span></span><br></pre></td></tr></table></figure></div>
+
+<p>其中<code>授权密码</code>，去163邮箱的设置，有个<code>POP3/SMTP/IMAP</code>，打开之后会给你个授权密码。</p>
+<p>其他的看注释就是了。</p>
+<h6 id="更换token"><a href="#更换token" class="headerlink" title="更换token"></a>更换token</h6><p>将Token更换即可，总共需要更换三处，分别为晨检，午检，每日健康打卡。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">HealthCheckIn</span><span class="params">()</span>:</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'content-length'</span> : <span class="string">'296'</span>,</span><br><span class="line">        <span class="string">'cookie'</span> : <span class="string">'SESSION=NGY4ZGYwNGMtZTQ3ZC00ZDRmLTg2MmEtNDRhMDYyOTZlYTAw;path=/;HttpOnly'</span>,</span><br><span class="line">        <span class="string">'user-agent'</span> : <span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat'</span>,</span><br><span class="line">        <span class="string">'content-type'</span> : <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">        <span class="string">'token'</span> : <span class="string">'这里换为你的Token'</span>,</span><br><span class="line">        <span class="string">'refer'</span> : <span class="string">'https://servicewechat.com/wxce6d08f781975d91/143/page-frame.html'</span>,</span><br><span class="line">        <span class="string">'accept-encoding'</span> : <span class="string">'gzip, deflate, br'</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h6 id="更换地址，和其他信息"><a href="#更换地址，和其他信息" class="headerlink" title="更换地址，和其他信息"></a>更换地址，和其他信息</h6><p>现在都还在学校，<span style="background-color:#39c5bb">暂时不用变，等回家了再说吧。</span></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Hpostdata = &#123;</span><br><span class="line">        <span class="string">'answers'</span> : <span class="string">'["0","36.5"]'</span>,<span class="comment">#这里36.5为温度</span></span><br><span class="line">        <span class="string">'latitude'</span> : <span class="string">'34.108216'</span>,<span class="comment">#这里和下面都是经纬度</span></span><br><span class="line">        <span class="string">'longitude'</span> : <span class="string">'108.605084'</span>,</span><br><span class="line">        <span class="string">'country'</span> : <span class="string">'中国'</span>,</span><br><span class="line">        <span class="string">'city'</span> : <span class="string">'西安市'</span>,</span><br><span class="line">        <span class="string">'district'</span> : <span class="string">'鄠邑区'</span>,</span><br><span class="line">        <span class="string">'province'</span> : <span class="string">'陕西省'</span>,</span><br><span class="line">        <span class="string">'township'</span> : <span class="string">'甘亭街道'</span>,</span><br><span class="line">        <span class="string">'street'</span> : <span class="string">'东街'</span>,</span><br><span class="line">        <span class="string">'areacode'</span> : <span class="string">'610118'</span><span class="comment"># </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h6 id="更换打卡时间"><a href="#更换打卡时间" class="headerlink" title="更换打卡时间"></a>更换打卡时间</h6><p>这里设置的是早上6:30和中午12:00，自己设置就可以了，晨检为6点开始，午检为11点开始，注意需要设置两个连续的秒，因为主函数里是每两秒一个循环。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> time_now == <span class="string">"06:30:10"</span> <span class="keyword">or</span> time_now == <span class="string">"06:30:11"</span>:<span class="comment">#不知道是奇数还是偶数</span></span><br><span class="line">            HealthCheckIn()<span class="comment">#健康打卡</span></span><br><span class="line">            MorningCheck()<span class="comment">#晨间</span></span><br><span class="line">            subject = time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, time.localtime()) + <span class="string">" 晨间打卡/健康"</span></span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> time_now == <span class="string">"11:20:10"</span> <span class="keyword">or</span> time_now == <span class="string">"11:20:11"</span>:</span><br><span class="line">            NoonInspection()<span class="comment">#午检</span></span><br><span class="line">            subject = time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, time.localtime()) + <span class="string">" 午检打卡"</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>然后运行就是了，只要不关闭它，在Token失效之前可以一直用。</p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><h4 id="宝塔面板下部署脚本-推荐"><a href="#宝塔面板下部署脚本-推荐" class="headerlink" title="宝塔面板下部署脚本(推荐)"></a>宝塔面板下部署脚本(推荐)</h4><p>如果你有linux服务器或者云服务器，那么就更好了，我们可以24小时不关机时刻运行。它消耗的内存才18.32M。</p>
+<p>不管是ubuntu还是centos系统，这里都建议装上宝塔系统。</p>
+<p>centos一键安装:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure></div>
+
+<p>其他的系统可以看看下面的官方教程。</p>
+<p><a href="https://www.bt.cn/bbs/thread-19376-1-1.html" target="_blank" rel="noopener" class="LinkCard">宝塔Linux面板安装教程</a></p>
+<p>网页进入宝塔面板之后。下载安装。<code>Python项目管理器 1.9</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmixk0w5luj31hc0t4wgq.jpg" alt="QQ截图20210110214052.png"></p>
+<p>安装好了之后，去之前我的场库下载<a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/requirements.txt" target="_blank" rel="noopener">requirements.txt</a>，里边记录了需要告诉宝塔安装的python库。</p>
+<p><a href="https://github.com/solywsh/wozaixiaoyuancheck" target="_blank" rel="noopener" class="LinkCard">我在校园打卡脚本仓库</a></p>
+<p>准备好之前的<code>Check.py</code>和<code>requirements.txt</code>，宝塔面板的文件选项卡，找个路径上传。我的是<code>根目录/home/py/打卡</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmixsrwvuij31hc0t4410.jpg" alt="QQ截图20210110214924.png"></p>
+<p>然后再去刚才下载安装的<code>Python项目管理器 1.9</code>，添加项目。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmixu4buuxj30ur0gz0td.jpg" alt="QQ截图20210110215042.png"></p>
+<p>按照下面的设置就行。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmixvltp0rj30gv0ixgmd.jpg" alt="QQ截图20210110215202.png"></p>
+<p>确定之后运行即可。</p>
+<h4 id="如果不按照宝塔面板"><a href="#如果不按照宝塔面板" class="headerlink" title="如果不按照宝塔面板"></a>如果不按照宝塔面板</h4><p>cd进<code>check.py</code>所在的目录</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python -u check.py &gt; test.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></div>
+
+<p>此方法我也没试过。。。。。。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmiy2khqfrj31bb0ix4qq.jpg" alt="IMG_4985.PNG"></p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+        
+         <div>
+   
+	<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+		<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+		<span> 感谢阅读 --------</span> 
+	</div> 
+  
+</div> 
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://ww1.sinaimg.cn/large/006b3a9lgy1gegabrqt8gj30l30l3tbz.jpg" alt="Wang Shihao wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎订阅我的公众号magic码上来，公众号还在建设当中~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Wang Shihao 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Wang Shihao 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Wang Shihao
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://violetwsh.com/2021/01/10/wozaixiaoyuan/" title="我在校园自动打卡脚本">https://violetwsh.com/2021/01/10/wozaixiaoyuan/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i>
+
+ python</a>
+          
+            <a href="/tags/%E8%84%9A%E6%9C%AC/" rel="tag"><i class="fa fa-tag"></i>
+
+ 脚本</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/16/GitNotePart2/" rel="next" title="git学习笔记part2-高级篇">
+                <i class="fa fa-chevron-left"></i> git学习笔记part2-高级篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- 文章头部 -->
+			<ins class="adsbygoogle"
+     				style="display:block"
+    				data-ad-client="ca-pub-7913970091878122"
+     				data-ad-slot="9305010076"
+     				data-ad-format="auto"
+     				data-full-width-responsive="true"></ins>
+			<script>
+     		(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+         	</div>
+          	
+
+
+          	
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+           </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+
+
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif"
+                alt="Wang Shihao" />
+            
+              <p class="site-author-name" itemprop="name">Wang Shihao</p>
+              <p class="site-description motion-element" itemprop="description">坐而言不如起而行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+             
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/solywsh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:someonelikeyouwsh@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                大佬们的链接 | 我的推荐
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://labjh.xyz/" title="Qin Jiahe" target="_blank">Qin Jiahe</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ptdexww.com/" title="Liu Yinglei" target="_blank">Liu Yinglei</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hb-2002.github.io" title="Hu Bo" target="_blank">Hu Bo</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+		<!--网易云模块-->
+    	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=0&id=3074802976&auto=0&height=32"></iframe>
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我在校园自动打卡脚本-部署在服务器上"><span class="nav-number">1.</span> <span class="nav-text">我在校园自动打卡脚本(部署在服务器上)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">1.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程"><span class="nav-number">1.2.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前期准备"><span class="nav-number">1.2.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#charles相关"><span class="nav-number">1.2.2.</span> <span class="nav-text">charles相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得到token"><span class="nav-number">1.2.3.</span> <span class="nav-text">得到token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载脚本"><span class="nav-number">1.2.4.</span> <span class="nav-text">下载脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置脚本"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">配置脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#自动提醒邮箱部分"><span class="nav-number">1.2.4.1.1.</span> <span class="nav-text">自动提醒邮箱部分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换token"><span class="nav-number">1.2.4.1.2.</span> <span class="nav-text">更换token</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换地址，和其他信息"><span class="nav-number">1.2.4.1.3.</span> <span class="nav-text">更换地址，和其他信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换打卡时间"><span class="nav-number">1.2.4.1.4.</span> <span class="nav-text">更换打卡时间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">1.2.5.</span> <span class="nav-text">运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶"><span class="nav-number">1.3.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#宝塔面板下部署脚本-推荐"><span class="nav-number">1.3.1.</span> <span class="nav-text">宝塔面板下部署脚本(推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果不按照宝塔面板"><span class="nav-number">1.3.2.</span> <span class="nav-text">如果不按照宝塔面板</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang Shihao</span>
+
+  
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+  <script>
+    function timer() {
+      var ages = moment.preciseDiff(moment(),moment(20200301,"YYYYMMDD"));
+      ages = ages.replace(/years?/, "年");
+      ages = ages.replace(/months?/, "月");
+      ages = ages.replace(/days?/, "天");
+      ages = ages.replace(/hours?/, "小时");
+      ages = ages.replace(/minutes?/, "分");
+      ages = ages.replace(/seconds?/, "秒");
+      ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+      div.innerHTML = `运行时间 ${ages}`;
+    }
+    var div = document.createElement("div");
+    //插入到copyright之后
+    var copyright = document.querySelector(".copyright");
+    document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+    timer();
+    setInterval("timer()",1000)
+  </script>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      共有
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      位朋友
+    </span>
+  
+
+  
+    <span class="site-pv">
+      在不同的时空，与你相遇
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+
+  
+  <script type="text/javascript" src="/js/src/linkcard.js"></script>
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://solywsh.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://violetwsh.com/2021/01/10/wozaixiaoyuan/';
+          this.page.identifier = '2021/01/10/wozaixiaoyuan/';
+          this.page.title = '我在校园自动打卡脚本';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://solywsh.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'TyR1lO2i3STntfdtUYGrm8Qt-gzGzoHsz',
+        appKey: 'yd7AA5qYu730549Ts8siG2lI',
+        placeholder: 'ヾ≧∀≦)快来评论吧（注意写上邮箱哦~）',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+
+
+  <script src="/js/src/wobblewindow.js"></script>
+  <script>
+    //只在桌面版网页启用特效
+    if (window.innerWidth > 768) {
+      $(document).ready(function () {
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.sidebar').wobbleWindow({
+          radius: 50,
+          movementLeft: false,
+          movementTop: false,
+          movementBottom: false,
+          position: 'fixed',
+          debug: false,
+        });
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.footer').wobbleWindow({
+          radius: 50,
+          movementBottom: false,
+          movementLeft: false,
+          movementRight: false,
+          
+          position: 'absolute',
+          debug: false,
+        });
+        
+      });
+    }
+  </script>
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

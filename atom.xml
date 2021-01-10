@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://violetwsh.com/"/>
-  <updated>2020-05-16T13:24:28.847Z</updated>
+  <updated>2021-01-10T14:07:38.669Z</updated>
   <id>https://violetwsh.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我在校园自动打卡脚本</title>
+    <link href="https://violetwsh.com/2021/01/10/wozaixiaoyuan/"/>
+    <id>https://violetwsh.com/2021/01/10/wozaixiaoyuan/</id>
+    <published>2021-01-10T10:26:00.000Z</published>
+    <updated>2021-01-10T14:07:38.669Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://violetwsh.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://violetwsh.com/tags/python/"/>
+    
+      <category term="脚本" scheme="https://violetwsh.com/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>git学习笔记part2-高级篇</title>
@@ -479,9 +508,9 @@
     
       <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
     
-      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
-    
       <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
     
       <category term="加密" scheme="https://violetwsh.com/tags/%E5%8A%A0%E5%AF%86/"/>
     
@@ -506,9 +535,9 @@
     
       <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
     
-      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
-    
       <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
     
       <category term="加密" scheme="https://violetwsh.com/tags/%E5%8A%A0%E5%AF%86/"/>
     
@@ -600,33 +629,6 @@
       <category term="个人" scheme="https://violetwsh.com/tags/%E4%B8%AA%E4%BA%BA/"/>
     
       <category term="video，share" scheme="https://violetwsh.com/tags/video%EF%BC%8Cshare/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人用：hexo next主题配置文件详细说明</title>
-    <link href="https://violetwsh.com/2020/03/20/index/"/>
-    <id>https://violetwsh.com/2020/03/20/index/</id>
-    <published>2020-03-20T04:00:00.000Z</published>
-    <updated>2020-04-11T10:22:53.641Z</updated>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;
-
-&lt;p&gt;这只是我自己拿来方便查找的&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="next" scheme="https://violetwsh.com/categories/next/"/>
-    
-    
-      <category term="个人" scheme="https://violetwsh.com/tags/%E4%B8%AA%E4%BA%BA/"/>
-    
-      <category term="hexo" scheme="https://violetwsh.com/tags/hexo/"/>
-    
-      <category term="next" scheme="https://violetwsh.com/tags/next/"/>
     
   </entry>
   
