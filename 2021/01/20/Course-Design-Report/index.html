@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="9HmzmBcH88a5AOd6-NVhyaQfv09HwIlkky0an9zyZoQ" />
+
+
+<script data-ad-client="ca-pub-7913970091878122" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|ZCOOL KuaiLe:300,300italic,400,400italic,700,700italic|Noto Sans SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Varela Round:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="分享,c++,课程设计," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="马猴小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前言这只是我c++课程设计的作业，上传至博客。工程文件已经上传至github的场库，下链接为场库地址。 Curriculum-Design-Community-Property-Management-System 系统概述经过对小区物业管理进行调研和需求分析，小区物业管理系统实现有以下功能:  管理员模块。实现管理员的认证，密码修改。  房屋和业主模块。实现业主和房屋信息的录入，生成ID，信息修改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++课程设计-小区物业管理系统(控制台)">
+<meta property="og:url" content="https://violetwsh.com/2021/01/20/Course-Design-Report/index.html">
+<meta property="og:site_name" content="马猴小站">
+<meta property="og:description" content="前言这只是我c++课程设计的作业，上传至博客。工程文件已经上传至github的场库，下链接为场库地址。 Curriculum-Design-Community-Property-Management-System 系统概述经过对小区物业管理进行调研和需求分析，小区物业管理系统实现有以下功能:  管理员模块。实现管理员的认证，密码修改。  房屋和业主模块。实现业主和房屋信息的录入，生成ID，信息修改">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuc921on2j30pp0crt91.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuca1r798j31cs2c3thn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuca8k2cxj30qv0ist92.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucaq3x3wj30ps0isjrx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucbg0cgnj30pn0isq3a.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucbps9sij30pn0is0t7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucbw6cy5j30pn0iswev.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucccsef0j30pn0iswer.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuccunfwcj30qb0is74y.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucd3coj9j30qb0isjrj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucdpq5x5j311l0ivmy6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuce125f0j311g0iswg9.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuce8ykikj30ps0isjrx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucee7hqbj30ps08yq3b.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucfq37gtj30pn0m4tb1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuch3damlj30px0c2wfc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuchdztdkj30pv09wjrn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucho44s0j30pp09374q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuci084gqj30py09iwf0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuci76ymhj30ps09v3yz.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuciwq53gj30ps09o3z0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucj31rkbj30pw0a6t9e.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjbn7m1j30oz0tutac.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjj34cmj30pv0ajgm6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjpeqysj30p610p77q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjvzobpj30os0ggta1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuck2kwx9j30pb09ijrq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckcas2vj30pc0ataau.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckk3j3qj30pq0b4gmf.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckstv85j30pb0aoq3q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckxmxrgj30oy0akt9k.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucl6bzxsj30p30ajdgn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucldh5czj30p00ix75t.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuclkyor7j30qu114n0n.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuclton7oj30ow0ijdhc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucm0nj51j30j103r74g.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucm7ultej30p5112gpk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucmept94j30pn10wwii.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucmmd7htj30p909bt94.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucmmd7htj30p909bt94.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucn3zs2hj30p908uwf6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucncg35gj30pw0didgt.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucnjpvv2j30p708hwf3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucnqtbmtj30pe08jjrn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucnxp25ij30pc07iaat.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuco74v0dj30p807k3z8.jpg">
+<meta property="article:published_time" content="2021-01-20T12:37:00.000Z">
+<meta property="article:modified_time" content="2021-01-20T12:45:05.073Z">
+<meta property="article:author" content="Wang Shihao">
+<meta property="article:tag" content="分享">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="课程设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuc921on2j30pp0crt91.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://violetwsh.com/2021/01/20/Course-Design-Report/"/>
+
+
+
+
+
+  <title>c++课程设计-小区物业管理系统(控制台) | 马猴小站</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?00b59b544107b2bf1b78e6f4fc6df486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">马猴小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">俄罗斯方块奇观建筑师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://violetwsh.com/2021/01/20/Course-Design-Report/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Shihao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马猴小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">c++课程设计-小区物业管理系统(控制台)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-20T20:37:00+08:00">
+                2021-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/01/20/Course-Design-Report/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/01/20/Course-Design-Report/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+                <div>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- 文章头部 -->
+                        <ins class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-7913970091878122"
+                                data-ad-slot="9305010076"
+                                data-ad-format="auto"
+                                data-full-width-responsive="true"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+
+    
+
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这只是我c++课程设计的作业，上传至博客。工程文件已经上传至github的场库，下链接为场库地址。</p>
+<p><a href="https://github.com/solywsh/Curriculum-Design-Community-Property-Management-System" target="_blank" rel="noopener" class="LinkCard">Curriculum-Design-Community-Property-Management-System</a></p>
+<h1 id="系统概述"><a href="#系统概述" class="headerlink" title="系统概述"></a>系统概述</h1><p>经过对小区物业管理进行调研和需求分析，小区物业管理系统实现有以下功能:</p>
+<ul>
+<li><p>管理员模块。实现管理员的认证，密码修改。</p>
+</li>
+<li><p>房屋和业主模块。实现业主和房屋信息的录入，生成ID，信息修改，文件读写删除。</p>
+</li>
+<li><p>费用模块。实现按业主ID+季度进行费用信息录入，修改，保存，删除，以及导入所有信息。</p>
+<ul>
+<li>统计。按照季度或者楼号实现排序功能，并保存。</li>
+<li>查询。业主ID为楼号+房号通过ID和季度信息可查询业主的缴费信息。</li>
+</ul>
+</li>
+<li><p>小区维修模块。实现维修信息的录入，并通过录入时间进行区分，进而实现查询，删除。</p>
+</li>
+<li><p>公告模块。实现公告的录入，删除，保存。</p>
+</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuc921on2j30pp0crt91.jpg" alt="QQ截图20210113225740.png"></p>
+<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><h2 id="功能模块设计"><a href="#功能模块设计" class="headerlink" title="功能模块设计"></a>功能模块设计</h2><p>总体框架图</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuca1r798j31cs2c3thn.jpg" alt="小区物业管理系统.png"></p>
+<p>此系统由管理员类，业主类，费用类，维修类，公告类，文件类以及菜单实现和主函数组成。在功能上分为信息操作和文件操作。不同类的信息在录入或修改之后存入缓存，通过文件操作实现本地化，同时通过文件操作还可以实现查询读取等等功能。</p>
+<h2 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h2><h4 id="管理员登陆界面"><a href="#管理员登陆界面" class="headerlink" title="管理员登陆界面"></a>管理员登陆界面</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuca8k2cxj30qv0ist92.jpg" alt="QQ截图20210113232655.png"></p>
+<h4 id="主菜单界面"><a href="#主菜单界面" class="headerlink" title="主菜单界面"></a>主菜单界面</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucaq3x3wj30ps0isjrx.jpg" alt="QQ截图20210114171340.png"></p>
+<h4 id="业主模块界面"><a href="#业主模块界面" class="headerlink" title="业主模块界面"></a>业主模块界面</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucbg0cgnj30pn0isq3a.jpg" alt="QQ截图20210113232848.png"></p>
+<h4 id="费用模块界面"><a href="#费用模块界面" class="headerlink" title="费用模块界面"></a>费用模块界面</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucbps9sij30pn0is0t7.jpg" alt="QQ截图20210113232923.png"></p>
+<h4 id="维修模块界面"><a href="#维修模块界面" class="headerlink" title="维修模块界面"></a>维修模块界面</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucbw6cy5j30pn0iswev.jpg" alt="QQ截图20210113233000.png"></p>
+<h4 id="公告模块界面"><a href="#公告模块界面" class="headerlink" title="公告模块界面"></a>公告模块界面</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucccsef0j30pn0iswer.jpg" alt="QQ截图20210113233137.png"></p>
+<h1 id="系统实现"><a href="#系统实现" class="headerlink" title="系统实现"></a>系统实现</h1><h2 id="自定义类以及数据结构"><a href="#自定义类以及数据结构" class="headerlink" title="自定义类以及数据结构"></a>自定义类以及数据结构</h2><ul>
+<li>管理员类</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">admin</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">char</span> user_name[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">char</span> password[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">admin_set</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">admin_print</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">char</span>* <span class="title">admin_get_name</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">char</span>* <span class="title">admin_get_password</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">admin_set_password</span><span class="params">(<span class="keyword">char</span> *pw)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">admin_set_username</span><span class="params">(<span class="keyword">char</span>* user)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>业主类</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">owner</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">char</span> sex[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">char</span> phone_number[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">floor</span>;<span class="comment">//楼号</span></span><br><span class="line">	<span class="keyword">int</span> room_number;<span class="comment">//房号</span></span><br><span class="line">	<span class="keyword">double</span> area = <span class="number">0</span>;<span class="comment">//面积，由于后面涉及计算，这里采用浮点数</span></span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="comment">/*由于业主类，费用类，维修类都需要建立一个文件，为了统一，设置了一个id的变量</span></span><br><span class="line"><span class="comment">		id需要唯一性，于是采用了楼号+房号作为id的数字，也方便后面的操作*/</span></span><br><span class="line">	<span class="comment">//为后面方便计算，规定,楼号为1 - 99之间两位数字, 房号为1 - 9999之间4位数字</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_set</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_print</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">owner_get_id</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">owner_get_floor</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">char</span>* <span class="title">owner_get_name</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">owner_create_id</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;<span class="comment">//使楼号和房号相连，返回ID</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_set_id</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">owner_get_area</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_set_name</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_set_sex</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_set_phone_number</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">owner_set_area</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>费用类</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">fee</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">int</span> quarterly;<span class="comment">//季度</span></span><br><span class="line">	<span class="keyword">double</span> cube;<span class="comment">//水的用量，立方</span></span><br><span class="line">	<span class="keyword">bool</span> paid;<span class="comment">//判断是否缴费</span></span><br><span class="line">	<span class="keyword">double</span> property_costs_k = <span class="number">0.75</span>;<span class="comment">//物业费k=0.75</span></span><br><span class="line">	<span class="keyword">double</span> elevator_fee_k = <span class="number">0.3</span>;<span class="comment">//电梯费k=0.3</span></span><br><span class="line">	<span class="keyword">double</span> heating_costs_k = <span class="number">20</span>;<span class="comment">//暖气费k=20</span></span><br><span class="line">	<span class="keyword">double</span> water_fee_k = <span class="number">0.28</span>;<span class="comment">//水费k=0.28</span></span><br><span class="line">	<span class="keyword">double</span> property_costs;<span class="comment">//物业费=k*面积</span></span><br><span class="line">	<span class="keyword">double</span> elevator_fee;<span class="comment">//电梯费=k*面积</span></span><br><span class="line">	<span class="keyword">double</span> heating_costs;<span class="comment">//暖气费=k*面积</span></span><br><span class="line">	<span class="keyword">double</span> water_fee;<span class="comment">//水费=k*立方</span></span><br><span class="line">	<span class="keyword">double</span> all;<span class="comment">//收费总和</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set</span><span class="params">(<span class="keyword">double</span> area, <span class="keyword">int</span> id)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_id</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_property_costs</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_elevator_fee</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_heating_costs</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_water_fee</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_quarterly</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_all</span><span class="params">()</span></span>;<span class="comment">//使得所有费用相加</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fee_set_paid</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fee_print</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_get_paid</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fee_get_id</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fee_get_quarterly</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>维修类</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">repair</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">int</span> Year, Month, Day, Hour, Minute, Second, DayOfWeek;<span class="comment">//调用系统时间</span></span><br><span class="line">	<span class="keyword">char</span> reason[<span class="number">100</span>];<span class="comment">//维修原因</span></span><br><span class="line">	<span class="keyword">char</span> situation[<span class="number">100</span>];<span class="comment">//维修情况</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">repair_set</span><span class="params">(<span class="keyword">int</span> id_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">repair_print</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">repair_set_id</span><span class="params">(<span class="keyword">int</span> id_p)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">repair_get_id</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_year</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_month</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_day</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_hour</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_minute</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_second</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">repair_get_week</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>公告类</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">announcement</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> Year, Month, Day, Hour, Minute, Second, DayOfWeek;</span><br><span class="line">	<span class="keyword">char</span> title[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">char</span> content[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">announcement_set</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">announcement_print</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_year</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_month</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_day</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_hour</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_minute</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_second</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">announcement_get_week</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>文件类</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">doc</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">char</span> owner_file_name[<span class="number">100</span>] = <span class="string">"owner_infor.dat"</span>;<span class="comment">//业主信息文件</span></span><br><span class="line">	<span class="keyword">char</span> fee_file_name[<span class="number">100</span>] = <span class="string">"fee_infor.dat"</span>;<span class="comment">//费用信息文件</span></span><br><span class="line">	<span class="keyword">char</span> unpaid_by_floor_name[<span class="number">100</span>] = <span class="string">"unpaid_by_floor.dat"</span>;<span class="comment">//未缴费名单-按楼号排序</span></span><br><span class="line">	<span class="keyword">char</span> unpaid_by_quarterly_name[<span class="number">100</span>] = <span class="string">"unpaid_by_quarterly.dat"</span>;<span class="comment">//未缴费名单-按季度排序</span></span><br><span class="line">	<span class="keyword">char</span> repair_file_name[<span class="number">100</span>] = <span class="string">"repair_infor.dat"</span>;<span class="comment">//维修信息文件</span></span><br><span class="line">	<span class="keyword">char</span> admin_file_name[<span class="number">100</span>] = <span class="string">"admin_infor.dat"</span>;<span class="comment">//管理员信息文件</span></span><br><span class="line">	<span class="keyword">char</span> announcement_file_name[<span class="number">100</span>] = <span class="string">"announcement_infor.dat"</span>;<span class="comment">//公告信息文件</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">owner_write</span><span class="params">(owner &amp;owner_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">owner_read_all</span><span class="params">(owner &amp;owner_p)</span></span>;<span class="comment">//读取文件所有信息并打印</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">owner_rewrite</span><span class="params">(owner &amp;owner_p)</span></span>;<span class="comment">//修改或重写</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">owner_delete</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">	<span class="function">owner <span class="title">owner_find_by_id</span><span class="params">(<span class="keyword">int</span> id)</span></span>;<span class="comment">//查询</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_write</span><span class="params">(fee &amp;fee_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_real_all</span><span class="params">(fee &amp;fee_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_rewrite</span><span class="params">(fee&amp; fee_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_delete</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> quarterly)</span></span>;</span><br><span class="line">	<span class="function">fee <span class="title">fee_find_by_id_quarterly</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> quarterly)</span></span>;<span class="comment">//通过季度+ID的信息去查找</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_find_by_id</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_find_one</span><span class="params">(<span class="keyword">int</span> id)</span></span>;<span class="comment">//多次查找同一个业主的缴费信息</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_statistics_read</span><span class="params">(<span class="keyword">int</span> flag_int)</span></span>;<span class="comment">//统计未缴费</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_statistics_by_floor</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_statistics_by_quarterly</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_unpaid_write</span><span class="params">(fee&amp; fee_pp,<span class="keyword">int</span> flag)</span></span>;<span class="comment">//未缴费写入，flag = 0时按照楼号， flag = 1时按照季度</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fee_clean_unpaid</span><span class="params">(<span class="keyword">int</span> flag)</span></span>;<span class="comment">//清空之前的文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">repair_write</span><span class="params">(class repair &amp;repair_p)</span></span>;<span class="comment">//这几处加class是因为编译器报错，查询资料得出此修改方法</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">repair_read_all</span><span class="params">(class repair&amp; repair_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">repair_delete</span><span class="params">(<span class="keyword">int</span> id_p,<span class="keyword">int</span> year_p,<span class="keyword">int</span> month_p,<span class="keyword">int</span> day_p,<span class="keyword">int</span> hour_p,<span class="keyword">int</span> min_p)</span></span>;</span><br><span class="line">	<span class="function">class repair <span class="title">repair_find_by_id</span><span class="params">(<span class="keyword">int</span> id_p)</span></span>;<span class="comment">//这个函数找到一个时就会停止查找</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">repair_find</span><span class="params">(<span class="keyword">int</span> id_p)</span></span>;<span class="comment">//这个函数找到所有函数并显示</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">admin_write</span><span class="params">(admin&amp; admin_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">char</span>* <span class="title">admin_find</span><span class="params">(<span class="keyword">char</span>* username_p)</span></span>;<span class="comment">//输入用户名，返回一个密码</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">admin_rewrite</span><span class="params">(admin&amp; admin_p)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">announcement_write</span><span class="params">(announcement&amp; announcement_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">announcement_read_all</span><span class="params">(announcement&amp; announcement_p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">announcement_delete</span><span class="params">(<span class="keyword">int</span> year_p, <span class="keyword">int</span> month_p, <span class="keyword">int</span> day_p, <span class="keyword">int</span> hour_p, <span class="keyword">int</span> min_p)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="主要功能模块实现"><a href="#主要功能模块实现" class="headerlink" title="主要功能模块实现"></a>主要功能模块实现</h2><h3 id="管理员登陆验证"><a href="#管理员登陆验证" class="headerlink" title="管理员登陆验证"></a>管理员登陆验证</h3><ul>
+<li>通过管理员界面进行限制</li>
+</ul>
+<p>我们在主函数main主要写了两个界面，一个管理员界面，一个主菜单界面，通过两个while循环进行控制。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> flag_menu = <span class="literal">false</span>;<span class="comment">//当管理员登陆之后为true，才能进入管理界面</span></span><br><span class="line">    <span class="keyword">bool</span> flag_admin = <span class="literal">true</span>;<span class="comment">//控制管理员菜单的循环</span></span><br><span class="line">    <span class="keyword">while</span> (flag_admin)&#123;</span><br><span class="line">       <span class="comment">//管理员界面</span></span><br><span class="line">       <span class="keyword">if</span>(密码正确)&#123;</span><br><span class="line">       		flag_admin = <span class="literal">false</span>;</span><br><span class="line">       		flag_menu = <span class="literal">true</span>;</span><br><span class="line">       		<span class="keyword">break</span>;<span class="comment">//此break跳出while循环       </span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (flag_menu)&#123;</span><br><span class="line">        <span class="comment">//主菜单界面</span></span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>管理员信息的比较</li>
+</ul>
+<p>我们首先定义了管理员需要的用户名<code>user_name</code>，以及密码<code>password</code>，写入文件<code>admin_infor.dat</code>。</p>
+<p>在验证管理员时，利用<code>char* doc::admin_find(char* username_p)</code>函数进行查找，输入一个用户名，在函数里调用<code>admin_get_name()</code>返回用户名，<code>strcmp()</code>会将<code>admin_p.admin_get_name()</code>和<code>username_p</code>进行比较，如果相同，<code>strcpy()</code>把<code>admin_p.admin_get_password()</code>赋值给<code>passoword_p</code>，停止查找，返回<code>passoword_p</code>。</p>
+<p>返回<code>password_p</code>之后</p>
+<p>代码实现:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">doc::admin_find</span><span class="params">(<span class="keyword">char</span>* username_p)</span> </span>&#123;</span><br><span class="line">	admin admin_p;</span><br><span class="line">	fstream iof;</span><br><span class="line">	<span class="keyword">char</span> passoword_p[<span class="number">100</span>];</span><br><span class="line">	iof.open(admin_file_name, ios::in | ios::out);</span><br><span class="line">	iof.seekg(<span class="number">0</span>, ios::end);</span><br><span class="line">	<span class="keyword">long</span> poEnd = iof.tellg();</span><br><span class="line">	iof.seekg(<span class="number">0</span>, ios::beg);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (iof.tellg() != poEnd) &#123;</span><br><span class="line">		iof.read((<span class="keyword">char</span>*)&amp;admin_p, <span class="keyword">sizeof</span>(admin));</span><br><span class="line">		<span class="comment">//strcmp()两个字符串比较，如果相同，则返回0</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(admin_p.admin_get_name(),username_p) == <span class="number">0</span> ) &#123;</span><br><span class="line">			<span class="built_in">strcpy</span>(passoword_p, admin_p.admin_get_password());</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	iof.close();</span><br><span class="line">	<span class="keyword">return</span> passoword_p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>返回密码之后，主函数main里会和用户输入的密码进行比较，如果相同，则结束管理员菜单的循环，打开主菜单的循环。</p>
+<h3 id="用户ID生成-公告、维修登记的区分"><a href="#用户ID生成-公告、维修登记的区分" class="headerlink" title="用户ID生成/公告、维修登记的区分"></a>用户ID生成/公告、维修登记的区分</h3><ul>
+<li>生成用户ID</li>
+</ul>
+<p>在文件读写的时候为了区分，我们给每个业主都赋了一个唯一的ID，也就是楼号+房号，后面的费用、维修对应业主的信息也是依靠ID进行匹配。</p>
+<p>实现方面，在<code>int owner::owner_create_id(int x, int y)</code>函数中，将楼号<code>floor</code>赋值给形参<code>x</code>，房号<code>room_number</code>赋值给形参<code>y</code>，然后通过使<code>x</code>不断乘以10，再与<code>y</code>相加，于是得到ID；</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">owner::owner_create_id</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans;</span><br><span class="line">	x *= <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">for</span> (ans = y / <span class="number">10</span>; ans != <span class="number">0</span>; ans /= <span class="number">10</span>) &#123;</span><br><span class="line">		x *= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>公告、维修登记区分</li>
+</ul>
+<p>在设置公告和维修登记的时候，为了区分数据，我们并没有设置有规律的ID给它们，而是在添加信息的时候调用系统时间，出于方便考虑并没有精确到秒，只是精确到分钟。这样，每组信息都有了独立的”ID”，时间。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;	</span></span></span><br><span class="line">    SYSTEMTIME sys;</span><br><span class="line">	GetLocalTime(&amp;sys);</span><br><span class="line">	Year = sys.wYear; Month = sys.wMonth; Day = sys.wDay;</span><br><span class="line">	Hour = sys.wHour; Minute = sys.wMinute; Second = sys.wSecond;</span><br><span class="line">	DayOfWeek = sys.wDayOfWeek;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="文件读写删除修改"><a href="#文件读写删除修改" class="headerlink" title="文件读写删除修改"></a>文件读写删除修改</h3><p>由于大多数数据都要进行文件读写，我们将所有与文件相关的函数都放到<code>class doc</code>类里。也就是文件类。</p>
+<ul>
+<li>文件读取</li>
+</ul>
+<p>为了方便，我们并没有将数据存入换成，在需要写入的时候再写入，而是在每一次设置新的信息的时候，就调用写入函数<code>write()</code>，每个函数有不同<code>write()</code>。如业主类的写入函数<code>bool owner_write(owner &amp;owner_p);</code>，费用写入函数<code>bool fee_write(fee &amp;fee_p);</code>等等。</p>
+<p>以业主写入函数为例子。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">doc::owner_write</span><span class="params">(owner&amp; owner_p)</span> </span>&#123;</span><br><span class="line">	fstream datafile;</span><br><span class="line">	<span class="comment">//打开文件</span></span><br><span class="line">	datafile.open(owner_file_name, ios::in | ios::out);</span><br><span class="line">	<span class="comment">//把文件指针移动到末尾</span></span><br><span class="line">	datafile.seekp(<span class="number">0</span>, ios::end);</span><br><span class="line">	<span class="comment">//写入内容</span></span><br><span class="line">	datafile.write((<span class="keyword">char</span>*)&amp;owner_p, <span class="keyword">sizeof</span>(class owner));</span><br><span class="line">	<span class="comment">//关闭</span></span><br><span class="line">	datafile.close();</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>信息删除</li>
+</ul>
+<p>由于c++文件流没有真正的信息删除函数，所以最开始写的时候我们认为只需要把对应信息的ID变为0，也就是隐藏起来就可以了。后来发现在查找信息等等情况下会出现很多问题，于是我们把文件所有信息先写入缓存，然后在清除文件里的信息，在写入时与将要删除的信息进行比对，如果是就不写入，如果不是要删除的信息，就写入。</p>
+<p>以业主类为例子。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">doc::owner_delete</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">	owner owner_p[<span class="number">40</span>];</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>,j =<span class="number">0</span>;</span><br><span class="line">	fstream datafile;</span><br><span class="line">	datafile.open(owner_file_name, ios::in | ios::out);</span><br><span class="line">	datafile.seekg(<span class="number">0</span>, ios::end);</span><br><span class="line">	<span class="keyword">long</span> poEnd = datafile.tellg();</span><br><span class="line">	datafile.seekg(<span class="number">0</span>, ios::beg);</span><br><span class="line">	<span class="keyword">while</span> (datafile.tellg() != poEnd) &#123;</span><br><span class="line">		datafile.read((<span class="keyword">char</span>*)&amp;owner_p[i], <span class="keyword">sizeof</span>(owner));</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	datafile.close();<span class="comment">//将所有数据读取</span></span><br><span class="line"></span><br><span class="line">	datafile.open(owner_file_name, ios::in | ios::out |ios::trunc);<span class="comment">//打开文件并清除原来的内容</span></span><br><span class="line">	datafile.seekg(<span class="number">0</span>, ios::beg);</span><br><span class="line">	<span class="keyword">while</span> (j != i)&#123;</span><br><span class="line">		<span class="keyword">if</span> (owner_p[j].owner_get_id() != id) &#123;</span><br><span class="line">			datafile.write((<span class="keyword">char</span>*)&amp;owner_p[j], <span class="keyword">sizeof</span>(class owner));<span class="comment">//如果不等于就写人	</span></span><br><span class="line">		&#125;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	datafile.close();<span class="comment">//将所有数据读取</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>文件修改</li>
+</ul>
+<p>与文件删除类似，只是在重新写入的时候，如果发现和要写入的某个信息（如ID）匹配，则换成新的信息。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">datafile.open(owner_file_name, ios::in | ios::out | ios::trunc);<span class="comment">//打开文件并清除原来的内容</span></span><br><span class="line">	datafile.seekg(<span class="number">0</span>, ios::beg);</span><br><span class="line">	<span class="keyword">while</span> (j != i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (owner_pw[j].owner_get_id() != id) &#123;</span><br><span class="line">			datafile.write((<span class="keyword">char</span>*)&amp;owner_pw[j], <span class="keyword">sizeof</span>(class owner));<span class="comment">//如果不等于就写人	</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> datafile.write((<span class="keyword">char</span>*)&amp;owner_p, <span class="keyword">sizeof</span>(class owner));<span class="comment">//等于时写入新的信息</span></span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	datafile.close();</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="数据查找"><a href="#数据查找" class="headerlink" title="数据查找"></a>数据查找</h3><p>在定义每个类的信息的时候，我们基本上为每个信息都定义了一个<code>get</code>函数，方便外部访问，如业主类的:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">owner_get_id</span><span class="params">()</span></span>;<span class="comment">//返回ID</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">owner_get_floor</span><span class="params">()</span></span>;<span class="comment">//返回楼号，这里是方便后面排序用</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">owner_get_name</span><span class="params">()</span></span>;<span class="comment">//返回姓名，其他与业主相关的类并没有存入业主的姓名，所以需要姓名是调用</span></span><br></pre></td></tr></table></figure></div>
+
+<p>实现方面，打开文件依次对文件进行读取，调用get函数，与输入的信息进行比对，找到后结束循环，返回。</p>
+<p>以业主查找的<code>owner doc::owner_find_by_id(int id)</code>函数为例。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">owner <span class="title">doc::owner_find_by_id</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">	owner owner_p;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">0</span>;<span class="comment">//用户不存在</span></span><br><span class="line">	fstream iof;</span><br><span class="line">	iof.open(owner_file_name, ios::in | ios::out);</span><br><span class="line">	iof.seekg(<span class="number">0</span>, ios::end);</span><br><span class="line">	<span class="keyword">long</span> poEnd = iof.tellg();</span><br><span class="line">	iof.seekg(<span class="number">0</span>, ios::beg);</span><br><span class="line">	<span class="keyword">while</span> (iof.tellg() != poEnd) &#123;</span><br><span class="line">		iof.read((<span class="keyword">char</span>*)&amp;owner_p, <span class="keyword">sizeof</span>(owner));</span><br><span class="line">		<span class="keyword">if</span> (owner_p.owner_get_id() == id) &#123;<span class="comment">//找到了,存在</span></span><br><span class="line">			flag = <span class="number">1</span>;<span class="comment">//存在</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//即便是没找到</span></span><br><span class="line">	<span class="keyword">if</span> (flag == <span class="number">0</span>) &#123;</span><br><span class="line">		owner_p.owner_set_id(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	iof.close();</span><br><span class="line">	<span class="keyword">return</span> owner_p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="统计排序"><a href="#统计排序" class="headerlink" title="统计排序"></a>统计排序</h3><p> 在统计未缴费的名单时有两种要求，一个是按照季度排序，一个是按照楼号排序。</p>
+<ul>
+<li>按照季度排序，由于只有4个季度，所以只需要反复执行四次循环就是了。</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">doc::fee_statistics_by_quarterly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> id, i = <span class="number">1</span>, quarterly;</span><br><span class="line">	<span class="keyword">int</span> write_type = <span class="number">1</span>;</span><br><span class="line">	fee fee_p;</span><br><span class="line">	owner owner_object;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">false</span>, flag_while = <span class="literal">true</span>;</span><br><span class="line">	fstream iof;</span><br><span class="line">	iof.open(fee_file_name, ios::in | ios::out);</span><br><span class="line">	iof.seekg(<span class="number">0</span>, ios::end);</span><br><span class="line">	<span class="keyword">long</span> poEnd = iof.tellg();</span><br><span class="line">	iof.seekg(<span class="number">0</span>, ios::beg);</span><br><span class="line">	<span class="keyword">while</span> (flag_while) &#123;</span><br><span class="line">		iof.read((<span class="keyword">char</span>*)&amp;fee_p, <span class="keyword">sizeof</span>(fee));<span class="comment">//从头开始读取</span></span><br><span class="line">		id = fee_p.fee_get_id();<span class="comment">//取费用类的id</span></span><br><span class="line">		quarterly = fee_p.fee_get_quarterly();<span class="comment">//取季度信息</span></span><br><span class="line">		owner_object = owner_find_by_id(id);<span class="comment">//用费用类的id去找到业主类相应的对象</span></span><br><span class="line">		<span class="comment">//floor = owner_object.owner_get_floor();找到业主类的楼号</span></span><br><span class="line">		<span class="keyword">if</span> (fee_p.fee_get_paid());<span class="comment">//返回是否缴费的信息，未缴费返回false，如果缴费跳过</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (quarterly == i) &#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"第"</span> &lt;&lt; quarterly &lt;&lt; <span class="string">"季度"</span> &lt;&lt;</span><br><span class="line">					owner_object.owner_get_name() &lt;&lt; <span class="string">"的费用信息: "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				fee_p.fee_print();</span><br><span class="line">				system(<span class="string">"pause"</span>);</span><br><span class="line">				flag = fee_unpaid_write(fee_p, write_type);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (iof.tellg() == poEnd)<span class="comment">//第一次轮回到结束</span></span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			iof.seekg(<span class="number">0</span>, ios::beg);<span class="comment">//指针回到开始</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">4</span>)<span class="comment">//一年4个季度</span></span><br><span class="line">		&#123;</span><br><span class="line">			flag_while = <span class="literal">false</span>;<span class="comment">//到4结束循环</span></span><br><span class="line">			flag = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	iof.close();</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>楼号排序</li>
+</ul>
+<p>与季度排序差不多，只是需要执行99次。</p>
+<h1 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h1><h3 id="管理员模块"><a href="#管理员模块" class="headerlink" title="管理员模块"></a>管理员模块</h3><h4 id="管理员登陆"><a href="#管理员登陆" class="headerlink" title="管理员登陆"></a>管理员登陆</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuccunfwcj30qb0is74y.jpg" alt="QQ截图20210114170556.png"></p>
+<p>登陆成功</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucd3coj9j30qb0isjrj.jpg" alt="QQ截图20210114170719.png"></p>
+<p>登陆失败</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucdpq5x5j311l0ivmy6.jpg" alt="QQ截图20210114170815.png"></p>
+<h4 id="管理员密码修改"><a href="#管理员密码修改" class="headerlink" title="管理员密码修改"></a>管理员密码修改</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuce125f0j311g0iswg9.jpg" alt="QQ截图20210114171015.png"></p>
+<h3 id="主菜单界面-1"><a href="#主菜单界面-1" class="headerlink" title="主菜单界面"></a>主菜单界面</h3><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuce8ykikj30ps0isjrx.jpg" alt="QQ截图20210114171340.png"></p>
+<h3 id="业主管理"><a href="#业主管理" class="headerlink" title="业主管理"></a>业主管理</h3><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucee7hqbj30ps08yq3b.jpg" alt="QQ截图20210114171451.png"></p>
+<h4 id="业主信息录入"><a href="#业主信息录入" class="headerlink" title="业主信息录入"></a>业主信息录入</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucfq37gtj30pn0m4tb1.jpg" alt="123"></p>
+<h4 id="业主信息修改"><a href="#业主信息修改" class="headerlink" title="业主信息修改"></a>业主信息修改</h4><ul>
+<li>查找</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuch3damlj30px0c2wfc.jpg" alt="QQ截图20210114172138.png"></p>
+<p>   <img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuchdztdkj30pv09wjrn.jpg" alt="QQ截图20210114172218.png"></p>
+<ul>
+<li>修改姓名</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucho44s0j30pp09374q.jpg" alt="QQ截图20210114172846.png"></p>
+<ul>
+<li>修改性别</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuci084gqj30py09iwf0.jpg" alt="QQ截图20210114172951.png"></p>
+<ul>
+<li>修改电话</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuci76ymhj30ps09v3yz.jpg" alt="QQ截图20210114173019.png"></p>
+<ul>
+<li>修改面积</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuciwq53gj30ps09o3z0.jpg" alt="QQ截图20210114173055.png"></p>
+<h4 id="业主删除"><a href="#业主删除" class="headerlink" title="业主删除"></a>业主删除</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucj31rkbj30pw0a6t9e.jpg" alt="QQ截图20210114173445.png"></p>
+<h4 id="查看所以业主信息"><a href="#查看所以业主信息" class="headerlink" title="查看所以业主信息"></a>查看所以业主信息</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjbn7m1j30oz0tutac.jpg" alt="QQ截图20210114173514.png"></p>
+<h3 id="费用管理"><a href="#费用管理" class="headerlink" title="费用管理"></a>费用管理</h3><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjj34cmj30pv0ajgm6.jpg" alt="QQ截图20210114173644.png"></p>
+<h4 id="费用录入"><a href="#费用录入" class="headerlink" title="费用录入"></a>费用录入</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjpeqysj30p610p77q.jpg" alt="QQ截图20210114174050.png"></p>
+<h4 id="费用信息修改"><a href="#费用信息修改" class="headerlink" title="费用信息修改"></a>费用信息修改</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucjvzobpj30os0ggta1.jpg" alt="QQ截图20210114174400.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuck2kwx9j30pb09ijrq.jpg" alt="QQ截图20210114174529.png"></p>
+<ul>
+<li>修改物业费</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckcas2vj30pc0ataau.jpg" alt="QQ截图20210114175027.png"></p>
+<ul>
+<li>修改电梯费</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckk3j3qj30pq0b4gmf.jpg" alt="QQ截图20210114180126.png"></p>
+<ul>
+<li>修改暖气费</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckstv85j30pb0aoq3q.jpg" alt="QQ截图20210114180218.png"></p>
+<ul>
+<li>修改水费</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuckxmxrgj30oy0akt9k.jpg" alt="QQ截图20210114180314.png"></p>
+<ul>
+<li>修改缴费情况</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucl6bzxsj30p30ajdgn.jpg" alt="QQ截图20210114180407.png"></p>
+<ul>
+<li>4.4.3费用信息删除</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucldh5czj30p00ix75t.jpg" alt="QQ截图20210114180553.png"></p>
+<h4 id="查看所有费用信息"><a href="#查看所有费用信息" class="headerlink" title="查看所有费用信息"></a>查看所有费用信息</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuclkyor7j30qu114n0n.jpg" alt="QQ截图20210114181236.png"></p>
+<h4 id="统计未缴费"><a href="#统计未缴费" class="headerlink" title="统计未缴费"></a>统计未缴费</h4><ul>
+<li>查看文件</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuclton7oj30ow0ijdhc.jpg" alt="QQ截图20210114181434.png"></p>
+<ul>
+<li>删除文件</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucm0nj51j30j103r74g.jpg" alt="QQ截图20210114181501.png"></p>
+<ul>
+<li>按楼号统计</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucm7ultej30p5112gpk.jpg" alt="QQ截图20210114181550.png"></p>
+<ul>
+<li>按季度统计</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucmept94j30pn10wwii.jpg" alt="QQ截图20210114181658.png"></p>
+<h3 id="维修管理"><a href="#维修管理" class="headerlink" title="维修管理"></a>维修管理</h3><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucmmd7htj30p909bt94.jpg" alt="QQ截图20210114181744.png"></p>
+<h4 id="维修登记"><a href="#维修登记" class="headerlink" title="维修登记"></a>维修登记</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucmmd7htj30p909bt94.jpg" alt="QQ截图20210114181744.png"></p>
+<h4 id="显示所有维修"><a href="#显示所有维修" class="headerlink" title="显示所有维修"></a>显示所有维修</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucn3zs2hj30p908uwf6.jpg" alt="QQ截图20210114181941.png"></p>
+<h4 id="维修记录删除"><a href="#维修记录删除" class="headerlink" title="维修记录删除"></a>维修记录删除</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucncg35gj30pw0didgt.jpg" alt="QQ截图20210114182121.png"></p>
+<h4 id="维修记录查找"><a href="#维修记录查找" class="headerlink" title="维修记录查找"></a>维修记录查找</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucnjpvv2j30p708hwf3.jpg" alt="QQ截图20210114182218.png"></p>
+<h3 id="公告管理"><a href="#公告管理" class="headerlink" title="公告管理"></a>公告管理</h3><p>!<img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucnqtbmtj30pe08jjrn.jpg" alt="QQ截图20210114182311.png"></p>
+<h4 id="添加公告"><a href="#添加公告" class="headerlink" title="添加公告"></a>添加公告</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmucnxp25ij30pc07iaat.jpg" alt="QQ截图20210114182505.png"></p>
+<h4 id="查看所有公告"><a href="#查看所有公告" class="headerlink" title="查看所有公告"></a>查看所有公告</h4><p><img src="http://ww1.sinaimg.cn/large/006b3a9lgy1gmuco74v0dj30p807k3z8.jpg" alt="QQ截图20210114182550.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>略</p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+        
+         <div>
+   
+	<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+		<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+		<span> 感谢阅读 --------</span> 
+	</div> 
+  
+</div> 
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://ww1.sinaimg.cn/large/006b3a9lgy1gegabrqt8gj30l30l3tbz.jpg" alt="Wang Shihao wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎订阅我的公众号magic码上来，公众号还在建设当中~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Wang Shihao 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Wang Shihao 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Wang Shihao
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://violetwsh.com/2021/01/20/Course-Design-Report/" title="c++课程设计-小区物业管理系统(控制台)">https://violetwsh.com/2021/01/20/Course-Design-Report/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"><i class="fa fa-tag"></i>
+
+ 分享</a>
+          
+            <a href="/tags/c/" rel="tag"><i class="fa fa-tag"></i>
+
+ c++</a>
+          
+            <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" rel="tag"><i class="fa fa-tag"></i>
+
+ 课程设计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/10/wozaixiaoyuan/" rel="next" title="我在校园自动打卡脚本">
+                <i class="fa fa-chevron-left"></i> 我在校园自动打卡脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- 文章头部 -->
+			<ins class="adsbygoogle"
+     				style="display:block"
+    				data-ad-client="ca-pub-7913970091878122"
+     				data-ad-slot="9305010076"
+     				data-ad-format="auto"
+     				data-full-width-responsive="true"></ins>
+			<script>
+     		(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+         	</div>
+          	
+
+
+          	
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+           </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+
+
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif"
+                alt="Wang Shihao" />
+            
+              <p class="site-author-name" itemprop="name">Wang Shihao</p>
+              <p class="site-description motion-element" itemprop="description">坐而言不如起而行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+             
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/solywsh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:someonelikeyouwsh@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                大佬们的链接 | 我的推荐
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://labjh.xyz/" title="Qin Jiahe" target="_blank">Qin Jiahe</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ptdexww.com/" title="Liu Yinglei" target="_blank">Liu Yinglei</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hb-2002.github.io" title="Hu Bo" target="_blank">Hu Bo</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+		<!--网易云模块-->
+    	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=0&id=3074802976&auto=0&height=32"></iframe>
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统概述"><span class="nav-number">2.</span> <span class="nav-text">系统概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统设计"><span class="nav-number">3.</span> <span class="nav-text">系统设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能模块设计"><span class="nav-number">3.1.</span> <span class="nav-text">功能模块设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#界面设计"><span class="nav-number">3.2.</span> <span class="nav-text">界面设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#管理员登陆界面"><span class="nav-number">3.2.0.1.</span> <span class="nav-text">管理员登陆界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主菜单界面"><span class="nav-number">3.2.0.2.</span> <span class="nav-text">主菜单界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#业主模块界面"><span class="nav-number">3.2.0.3.</span> <span class="nav-text">业主模块界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#费用模块界面"><span class="nav-number">3.2.0.4.</span> <span class="nav-text">费用模块界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#维修模块界面"><span class="nav-number">3.2.0.5.</span> <span class="nav-text">维修模块界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公告模块界面"><span class="nav-number">3.2.0.6.</span> <span class="nav-text">公告模块界面</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统实现"><span class="nav-number">4.</span> <span class="nav-text">系统实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义类以及数据结构"><span class="nav-number">4.1.</span> <span class="nav-text">自定义类以及数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要功能模块实现"><span class="nav-number">4.2.</span> <span class="nav-text">主要功能模块实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管理员登陆验证"><span class="nav-number">4.2.1.</span> <span class="nav-text">管理员登陆验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户ID生成-公告、维修登记的区分"><span class="nav-number">4.2.2.</span> <span class="nav-text">用户ID生成&#x2F;公告、维修登记的区分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件读写删除修改"><span class="nav-number">4.2.3.</span> <span class="nav-text">文件读写删除修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据查找"><span class="nav-number">4.2.4.</span> <span class="nav-text">数据查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计排序"><span class="nav-number">4.2.5.</span> <span class="nav-text">统计排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统测试"><span class="nav-number">5.</span> <span class="nav-text">系统测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管理员模块"><span class="nav-number">5.0.1.</span> <span class="nav-text">管理员模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#管理员登陆"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">管理员登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理员密码修改"><span class="nav-number">5.0.1.2.</span> <span class="nav-text">管理员密码修改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主菜单界面-1"><span class="nav-number">5.0.2.</span> <span class="nav-text">主菜单界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业主管理"><span class="nav-number">5.0.3.</span> <span class="nav-text">业主管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#业主信息录入"><span class="nav-number">5.0.3.1.</span> <span class="nav-text">业主信息录入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#业主信息修改"><span class="nav-number">5.0.3.2.</span> <span class="nav-text">业主信息修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#业主删除"><span class="nav-number">5.0.3.3.</span> <span class="nav-text">业主删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看所以业主信息"><span class="nav-number">5.0.3.4.</span> <span class="nav-text">查看所以业主信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#费用管理"><span class="nav-number">5.0.4.</span> <span class="nav-text">费用管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#费用录入"><span class="nav-number">5.0.4.1.</span> <span class="nav-text">费用录入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#费用信息修改"><span class="nav-number">5.0.4.2.</span> <span class="nav-text">费用信息修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看所有费用信息"><span class="nav-number">5.0.4.3.</span> <span class="nav-text">查看所有费用信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#统计未缴费"><span class="nav-number">5.0.4.4.</span> <span class="nav-text">统计未缴费</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#维修管理"><span class="nav-number">5.0.5.</span> <span class="nav-text">维修管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#维修登记"><span class="nav-number">5.0.5.1.</span> <span class="nav-text">维修登记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示所有维修"><span class="nav-number">5.0.5.2.</span> <span class="nav-text">显示所有维修</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#维修记录删除"><span class="nav-number">5.0.5.3.</span> <span class="nav-text">维修记录删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#维修记录查找"><span class="nav-number">5.0.5.4.</span> <span class="nav-text">维修记录查找</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公告管理"><span class="nav-number">5.0.6.</span> <span class="nav-text">公告管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加公告"><span class="nav-number">5.0.6.1.</span> <span class="nav-text">添加公告</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看所有公告"><span class="nav-number">5.0.6.2.</span> <span class="nav-text">查看所有公告</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang Shihao</span>
+
+  
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+  <script>
+    function timer() {
+      var ages = moment.preciseDiff(moment(),moment(20200301,"YYYYMMDD"));
+      ages = ages.replace(/years?/, "年");
+      ages = ages.replace(/months?/, "月");
+      ages = ages.replace(/days?/, "天");
+      ages = ages.replace(/hours?/, "小时");
+      ages = ages.replace(/minutes?/, "分");
+      ages = ages.replace(/seconds?/, "秒");
+      ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+      div.innerHTML = `运行时间 ${ages}`;
+    }
+    var div = document.createElement("div");
+    //插入到copyright之后
+    var copyright = document.querySelector(".copyright");
+    document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+    timer();
+    setInterval("timer()",1000)
+  </script>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      共有
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      位朋友
+    </span>
+  
+
+  
+    <span class="site-pv">
+      在不同的时空，与你相遇
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+
+  
+  <script type="text/javascript" src="/js/src/linkcard.js"></script>
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://solywsh.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://violetwsh.com/2021/01/20/Course-Design-Report/';
+          this.page.identifier = '2021/01/20/Course-Design-Report/';
+          this.page.title = 'c++课程设计-小区物业管理系统(控制台)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://solywsh.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'TyR1lO2i3STntfdtUYGrm8Qt-gzGzoHsz',
+        appKey: 'yd7AA5qYu730549Ts8siG2lI',
+        placeholder: 'ヾ≧∀≦)快来评论吧（注意写上邮箱哦~）',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+
+
+  <script src="/js/src/wobblewindow.js"></script>
+  <script>
+    //只在桌面版网页启用特效
+    if (window.innerWidth > 768) {
+      $(document).ready(function () {
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.sidebar').wobbleWindow({
+          radius: 50,
+          movementLeft: false,
+          movementTop: false,
+          movementBottom: false,
+          position: 'fixed',
+          debug: false,
+        });
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.footer').wobbleWindow({
+          radius: 50,
+          movementBottom: false,
+          movementLeft: false,
+          movementRight: false,
+          
+          position: 'absolute',
+          debug: false,
+        });
+        
+      });
+    }
+  </script>
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
