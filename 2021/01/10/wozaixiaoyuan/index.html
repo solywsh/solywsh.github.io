@@ -163,7 +163,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmixvltp0rj30gv0ixgmd.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gmiy2khqfrj31bb0ix4qq.jpg">
 <meta property="article:published_time" content="2021-01-10T10:26:00.000Z">
-<meta property="article:modified_time" content="2021-01-27T05:54:39.611Z">
+<meta property="article:modified_time" content="2021-02-03T03:21:26.329Z">
 <meta property="article:author" content="Wang Shihao">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="脚本">
@@ -557,12 +557,23 @@
 <ul>
 <li>然后打开本地代理<code>proxy-&gt;windows iproxy</code></li>
 </ul>
-<h4 id="得到token"><a href="#得到token" class="headerlink" title="得到token"></a>得到token</h4><p>charles不要关，登陆电脑微信，打开我在校园。</p>
+<h4 id="得到我在校园token"><a href="#得到我在校园token" class="headerlink" title="得到我在校园token"></a>得到我在校园token</h4><p>charles不要关，登陆电脑微信，打开我在校园。</p>
 <p>这时，charles会出现一个链接为<code>https://student.wozaixiaoyuan.com</code>的地址，这就是我在校园的地址。</p>
 <p>找到改目录下<code>student</code>-&gt;<code>home.json</code>-&gt;<code>Content</code>-&gt;<code>token</code>(其实也不一定，只要找到Content里是有Token的目录就行)</p>
 <p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmiwrphq24j30qv0t3taq.jpg" alt="QQ截图20210110211304.png"></p>
 <p>这时我们就得到token了。</p>
-<h4 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h4><p>去我的仓库下载<a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/Check.py" target="_blank" rel="noopener">Check.py</a>，除了python环境以外，还需要python的<code>requests</code>和<code>email</code>库，这个自行百度，每个人环境也不一样。</p>
+<h4 id="下载对应脚本"><a href="#下载对应脚本" class="headerlink" title="下载对应脚本"></a>下载对应脚本</h4><ul>
+<li>使用邮箱推送消息<ul>
+<li>去仓库下载下载<a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/Check.py" target="_blank" rel="noopener">check.py</a><code>晨检，午检，每日打卡一起</code><a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/%E6%AF%8F%E6%97%A5%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1.py" target="_blank" rel="noopener">或者每日健康打卡.py</a><code>只有每日健康打卡</code>。</li>
+<li>需要安装<code>email</code>和<code>request</code>库，这个自行百度，每个人环境也不一样。</li>
+</ul>
+</li>
+<li>使用微信推送<span style="background-color:#39c5bb"><strong>推荐</strong></span><ul>
+<li>去仓库下载<a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/Check_pushplus.py" target="_blank" rel="noopener">Check_pushplus.py</a><code>晨检，午检，每日打卡一起</code>或者<a href="https://github.com/solywsh/wozaixiaoyuancheck/blob/master/%E6%AF%8F%E6%97%A5%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1_pushplus.py" target="_blank" rel="noopener">每日健康打卡_pushplus.py</a><code>(只有每日健康打卡)</code>。</li>
+<li>需要安装<code>request</code>库。</li>
+</ul>
+</li>
+</ul>
 <p><a href="https://github.com/solywsh/wozaixiaoyuancheck" target="_blank" rel="noopener" class="LinkCard">我在校园打卡脚本仓库</a></p>
 <h5 id="配置脚本"><a href="#配置脚本" class="headerlink" title="配置脚本"></a>配置脚本</h5><h6 id="自动提醒邮箱部分"><a href="#自动提醒邮箱部分" class="headerlink" title="自动提醒邮箱部分"></a>自动提醒邮箱部分</h6><p>由于打卡成功和失败我需要一个反馈，所以我用了邮箱提醒。</p>
 <p>邮箱使用的网易的SMTP，在<code>Check.py</code>做出相应的修改。</p>
@@ -570,6 +581,9 @@
 
 <p>其中<code>授权密码</code>，去163邮箱的设置，有个<code>POP3/SMTP/IMAP</code>，打开之后会给你个授权密码。</p>
 <p>其他的看注释就是了。</p>
+<h6 id="使用微信推送"><a href="#使用微信推送" class="headerlink" title="使用微信推送"></a>使用微信推送</h6><p>在 <a href="http://pushplus.hxtrip.com/" target="_blank" rel="noopener">push+</a>登陆后得到一个Token，在<code>Check_pushplus.py</code>或者<code>每日健康打卡_pushplus.py</code>中替换自己的token</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pushplus_token = <span class="string">'你的Token'</span></span><br></pre></td></tr></table></figure></div>
+
 <h6 id="更换token"><a href="#更换token" class="headerlink" title="更换token"></a>更换token</h6><p>将Token更换即可，总共需要更换三处，分别为晨检，午检，每日健康打卡。</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">HealthCheckIn</span><span class="params">()</span>:</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'content-length'</span> : <span class="string">'296'</span>,</span><br><span class="line">        <span class="string">'cookie'</span> : <span class="string">'SESSION=NGY4ZGYwNGMtZTQ3ZC00ZDRmLTg2MmEtNDRhMDYyOTZlYTAw;path=/;HttpOnly'</span>,</span><br><span class="line">        <span class="string">'user-agent'</span> : <span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat'</span>,</span><br><span class="line">        <span class="string">'content-type'</span> : <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">        <span class="string">'token'</span> : <span class="string">'这里换为你的Token'</span>,</span><br><span class="line">        <span class="string">'refer'</span> : <span class="string">'https://servicewechat.com/wxce6d08f781975d91/143/page-frame.html'</span>,</span><br><span class="line">        <span class="string">'accept-encoding'</span> : <span class="string">'gzip, deflate, br'</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
 
@@ -606,9 +620,9 @@
 <p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmixvltp0rj30gv0ixgmd.jpg" alt="QQ截图20210110215202.png"></p>
 <p>确定之后运行即可。</p>
 <h4 id="如果不按照宝塔面板"><a href="#如果不按照宝塔面板" class="headerlink" title="如果不按照宝塔面板"></a>如果不按照宝塔面板</h4><p>cd进<code>check.py</code>所在的目录</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python -u check.py &gt; test.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python -u check.py &gt; test.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></div>
 
-<p>此方法我也没试过。。。。。。</p>
+<p><span style="background-color:#39c5bb">此方法我也没试过。。。。。。</span></p>
 <p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gmiy2khqfrj31bb0ix4qq.jpg" alt="IMG_4985.PNG"></p>
 
       
@@ -938,7 +952,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我在校园自动打卡脚本-部署在服务器上"><span class="nav-number">1.</span> <span class="nav-text">我在校园自动打卡脚本(部署在服务器上)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">1.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程"><span class="nav-number">1.2.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前期准备"><span class="nav-number">1.2.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#charles相关"><span class="nav-number">1.2.2.</span> <span class="nav-text">charles相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得到token"><span class="nav-number">1.2.3.</span> <span class="nav-text">得到token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载脚本"><span class="nav-number">1.2.4.</span> <span class="nav-text">下载脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置脚本"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">配置脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#自动提醒邮箱部分"><span class="nav-number">1.2.4.1.1.</span> <span class="nav-text">自动提醒邮箱部分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换token"><span class="nav-number">1.2.4.1.2.</span> <span class="nav-text">更换token</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换地址，和其他信息"><span class="nav-number">1.2.4.1.3.</span> <span class="nav-text">更换地址，和其他信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换打卡时间"><span class="nav-number">1.2.4.1.4.</span> <span class="nav-text">更换打卡时间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">1.2.5.</span> <span class="nav-text">运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶"><span class="nav-number">1.3.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#宝塔面板下部署脚本-推荐"><span class="nav-number">1.3.1.</span> <span class="nav-text">宝塔面板下部署脚本(推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果不按照宝塔面板"><span class="nav-number">1.3.2.</span> <span class="nav-text">如果不按照宝塔面板</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我在校园自动打卡脚本-部署在服务器上"><span class="nav-number">1.</span> <span class="nav-text">我在校园自动打卡脚本(部署在服务器上)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">1.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程"><span class="nav-number">1.2.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前期准备"><span class="nav-number">1.2.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#charles相关"><span class="nav-number">1.2.2.</span> <span class="nav-text">charles相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得到我在校园token"><span class="nav-number">1.2.3.</span> <span class="nav-text">得到我在校园token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载对应脚本"><span class="nav-number">1.2.4.</span> <span class="nav-text">下载对应脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置脚本"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">配置脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#自动提醒邮箱部分"><span class="nav-number">1.2.4.1.1.</span> <span class="nav-text">自动提醒邮箱部分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用微信推送"><span class="nav-number">1.2.4.1.2.</span> <span class="nav-text">使用微信推送</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换token"><span class="nav-number">1.2.4.1.3.</span> <span class="nav-text">更换token</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换地址，和其他信息"><span class="nav-number">1.2.4.1.4.</span> <span class="nav-text">更换地址，和其他信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#更换打卡时间"><span class="nav-number">1.2.4.1.5.</span> <span class="nav-text">更换打卡时间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">1.2.5.</span> <span class="nav-text">运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶"><span class="nav-number">1.3.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#宝塔面板下部署脚本-推荐"><span class="nav-number">1.3.1.</span> <span class="nav-text">宝塔面板下部署脚本(推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果不按照宝塔面板"><span class="nav-number">1.3.2.</span> <span class="nav-text">如果不按照宝塔面板</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
