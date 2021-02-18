@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://violetwsh.com/"/>
-  <updated>2021-01-20T12:45:05.073Z</updated>
+  <updated>2021-02-18T12:23:43.387Z</updated>
   <id>https://violetwsh.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>折腾日记1-网络唤醒ubuntu</title>
+    <link href="https://violetwsh.com/2021/02/18/Toss_diary_1/"/>
+    <id>https://violetwsh.com/2021/02/18/Toss_diary_1/</id>
+    <published>2021-02-18T12:20:42.000Z</published>
+    <updated>2021-02-18T12:23:43.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="https://violetwsh.com/categories/ubuntu/"/>
+    
+    
+      <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="ubuntu" scheme="https://violetwsh.com/tags/ubuntu/"/>
+    
+      <category term="折腾" scheme="https://violetwsh.com/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="网络" scheme="https://violetwsh.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>c++课程设计-小区物业管理系统(控制台)</title>
@@ -539,9 +572,9 @@
     
       <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
     
-      <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
+    
+      <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
       <category term="加密" scheme="https://violetwsh.com/tags/%E5%8A%A0%E5%AF%86/"/>
     
@@ -566,9 +599,9 @@
     
       <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
     
-      <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
+    
+      <category term="工具" scheme="https://violetwsh.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
       <category term="加密" scheme="https://violetwsh.com/tags/%E5%8A%A0%E5%AF%86/"/>
     
@@ -604,37 +637,6 @@
       <category term="程序设计" scheme="https://violetwsh.com/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
     
       <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bootstrap Callout导致hexo博客.md文档标题无法正常显示的办法</title>
-    <link href="https://violetwsh.com/2020/03/25/TitleProblem/"/>
-    <id>https://violetwsh.com/2020/03/25/TitleProblem/</id>
-    <published>2020-03-25T08:26:42.000Z</published>
-    <updated>2020-04-11T10:22:16.501Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-      <category term="problem" scheme="https://violetwsh.com/categories/problem/"/>
-    
-    
-      <category term="分享" scheme="https://violetwsh.com/tags/%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
-    
-      <category term="problem" scheme="https://violetwsh.com/tags/problem/"/>
     
   </entry>
   
