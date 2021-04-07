@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="9HmzmBcH88a5AOd6-NVhyaQfv09HwIlkky0an9zyZoQ" />
+
+
+<script data-ad-client="ca-pub-7913970091878122" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|ZCOOL KuaiLe:300,300italic,400,400italic,700,700italic|Noto Sans SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Varela Round:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="马猴小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript快速上手hello world（js引用） 在html文件内。 1234&lt;script&gt;    &#x2F;&#x2F;alert：在浏览器显示弹窗    alert(&#39;hello,world!&#39;);&lt;&#x2F;script&gt;  在JavaScript文件内  在js\test_js.js目录下：  1alert(&#39;hello world&#39;);   在html文件内引用：  1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript笔记">
+<meta property="og:url" content="https://violetwsh.com/2021/04/07/JavaScript_note/index.html">
+<meta property="og:site_name" content="马猴小站">
+<meta property="og:description" content="JavaScript快速上手hello world（js引用） 在html文件内。 1234&lt;script&gt;    &#x2F;&#x2F;alert：在浏览器显示弹窗    alert(&#39;hello,world!&#39;);&lt;&#x2F;script&gt;  在JavaScript文件内  在js\test_js.js目录下：  1alert(&#39;hello world&#39;);   在html文件内引用：  1">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2016/05/74151F80-4F7D-4492-8288-1231025B41B6.jpeg">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2016/05/js_strict.gif">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1goyqklbyn2j309t051a9z.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1goyr1qrgekj30lj0gz0t9.jpg">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/850375/201907/850375-20190708153139577-2105652554.png">
+<meta property="article:published_time" content="2021-04-07T14:49:00.000Z">
+<meta property="article:modified_time" content="2021-04-07T14:53:01.321Z">
+<meta property="article:author" content="Wang Shihao">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2016/05/74151F80-4F7D-4492-8288-1231025B41B6.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://violetwsh.com/2021/04/07/JavaScript_note/"/>
+
+
+
+
+
+  <title>JavaScript笔记 | 马猴小站</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?00b59b544107b2bf1b78e6f4fc6df486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">马猴小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">俄罗斯方块奇观建筑师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://violetwsh.com/2021/04/07/JavaScript_note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Shihao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马猴小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-07T22:49:00+08:00">
+                2021-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/07/JavaScript_note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/04/07/JavaScript_note/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+                <div>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- 文章头部 -->
+                        <ins class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-7913970091878122"
+                                data-ad-slot="9305010076"
+                                data-ad-format="auto"
+                                data-full-width-responsive="true"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+
+    
+
+        <meta name="referrer" content="no-referrer"/>
+
+<h1 id="JavaScript快速上手"><a href="#JavaScript快速上手" class="headerlink" title="JavaScript快速上手"></a>JavaScript快速上手</h1><h2 id="hello-world（js引用）"><a href="#hello-world（js引用）" class="headerlink" title="hello world（js引用）"></a>hello world（js引用）</h2><ul>
+<li><p>在<code>html</code>文件内。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//alert：在浏览器显示弹窗</span></span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">'hello,world!'</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>在JavaScript文件内</p>
+<ul>
+<li>在<code>js\test_js.js</code>目录下：</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'hello world'</span>);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>在<code>html</code>文件内引用：</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/test_js.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<p>注意:</p>
+<ul>
+<li><code>script</code>标签必须成对出现。</li>
+<li>在<code>&lt;script type=&quot;text/javascript&quot;&gt;</code>中不用定义<code>type</code>，默认为<code>javascript</code>。</li>
+</ul>
+<h2 id="基本语法入门"><a href="#基本语法入门" class="headerlink" title="基本语法入门"></a>基本语法入门</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><code>JavaScript</code>的变量没有<code>int、string......</code>等。</p>
+<p>JavaScript 使用关键字 <strong>var</strong> 来定义变量， 使用等号来为变量赋值：</p>
+<p>==不能以数字开头==</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x, length</span><br><span class="line">x = <span class="number">5</span></span><br><span class="line">length = <span class="number">6</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>let(局部变量)、var(全局变量)、const(常量)</code></li>
+</ul>
+<p>数据类型</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> length = <span class="number">16</span>;                                  <span class="comment">// Number 通过数字字面量赋值</span></span><br><span class="line"><span class="keyword">var</span> points = x * <span class="number">10</span>;                              <span class="comment">// Number 通过表达式字面量赋值</span></span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">"Johnson"</span>;                         <span class="comment">// String 通过字符串字面量赋值</span></span><br><span class="line"><span class="keyword">var</span> cars = [<span class="string">"Saab"</span>, <span class="string">"Volvo"</span>, <span class="string">"BMW"</span>];              <span class="comment">// Array  通过数组字面量赋值</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;<span class="attr">firstName</span>:<span class="string">"John"</span>, <span class="attr">lastName</span>:<span class="string">"Doe"</span>&#125;;  <span class="comment">// Object 通过对象字面量赋值</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="条件语句if"><a href="#条件语句if" class="headerlink" title="条件语句if"></a>条件语句if</h3><p>在 JavaScript 中，我们可使用如下条件语句：</p>
+<ul>
+<li>使用 if 来规定要执行的代码块，如果指定条件为 true</li>
+<li>使用 else 来规定要执行的代码块，如果相同的条件为 false</li>
+<li>使用 else if 来规定要测试的新条件，如果第一个条件为 false</li>
+<li>使用 switch 来规定多个被执行的备选代码块</li>
+</ul>
+<h4 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件) &#123;</span><br><span class="line">    如果条件为 <span class="literal">true</span> 时执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>注释</strong>：if使用小写字母。大写字母（IF 或 If）会产生 JavaScript 错误。</p>
+<h4 id="else-语句"><a href="#else-语句" class="headerlink" title="else 语句"></a>else 语句</h4><p>请使用 else 语句来规定假如条件为 false 时的代码块。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件) &#123;</span><br><span class="line">    条件为 <span class="literal">true</span> 时执行的代码块</span><br><span class="line">&#125; <span class="keyword">else</span> &#123; </span><br><span class="line">    条件为 <span class="literal">false</span> 时执行的代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>####　else if 语句</p>
+<p>请使用 else if 来规定当首个条件为 false 时的新条件。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件 <span class="number">1</span>) &#123;</span><br><span class="line">    条件 <span class="number">1</span> 为 <span class="literal">true</span> 时执行的代码块</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (条件 <span class="number">2</span>) &#123;</span><br><span class="line">    条件 <span class="number">1</span> 为 <span class="literal">false</span> 而条件 <span class="number">2</span> 为 <span class="literal">true</span> 时执行的代码块</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    条件 <span class="number">1</span> 和条件 <span class="number">2</span> 同时为 <span class="literal">false</span> 时执行的代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="浏览器控制台使用上"><a href="#浏览器控制台使用上" class="headerlink" title="浏览器控制台使用上"></a>浏览器控制台使用上</h3><h4 id="打印变量"><a href="#打印变量" class="headerlink" title="打印变量"></a>打印变量</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.logo.(变量名)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>调试在控制台上完成</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>其他的和C差不多，写下需要注意的吧。</p>
+<ul>
+<li><p>数字Number</p>
+<ul>
+<li>不区分小数和整数</li>
+<li><code>NaN</code>：not a number</li>
+<li><code>Infinity</code>：无穷</li>
+</ul>
+</li>
+<li><p>比较运算符</p>
+<ul>
+<li><p><code>==</code>：等于（类型不一样、值一样。==也会判断为true==）</p>
+</li>
+<li><p><code>===</code>：<strong>绝对等于（类型一样、值一样）</strong></p>
+</li>
+</ul>
+<p><code>JS</code>的缺陷，坚持不要使用<code>==</code>比较。</p>
+<ul>
+<li><code>NaN===NaN</code>返回<code>false</code>，<code>NaN</code>与所有的数值都不相等，只能通过<code>isNaN(NaN)</code>来判断。</li>
+</ul>
+</li>
+<li><p>浮点数问题：<code>(1/3)===(1-2/3)</code>返回<code>false</code>。</p>
+<ul>
+<li>尽量避免使用浮点数进行运算，存在精度问题。</li>
+<li>如何判断：<code>Math.abs(1/3-(1-2/3))&lt;0.00000001</code></li>
+</ul>
+</li>
+<li><p><code>null和undefined</code></p>
+<ul>
+<li><code>null</code>：空</li>
+<li><code>undefined</code>：未定义</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>保证代码可读性，尽量使用[]</p>
+<p>在JavaScript中，使用以下数组也不会报错:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'hello'</span>,<span class="literal">null</span>,<span class="literal">true</span>]</span><br></pre></td></tr></table></figure></div>
+
+<p>也可以这样定义:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'hello'</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>在<code>菜鸟笔记</code>中，这样定义</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">cars[<span class="number">0</span>]=<span class="string">"Saab"</span>;</span><br><span class="line">cars[<span class="number">1</span>]=<span class="string">"Volvo"</span>;</span><br><span class="line">cars[<span class="number">2</span>]=<span class="string">"BMW"</span>;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者 (condensed array):</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Saab"</span>,<span class="string">"Volvo"</span>,<span class="string">"BMW"</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>或者 (literal array):</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars=[<span class="string">"Saab"</span>,<span class="string">"Volvo"</span>,<span class="string">"BMW"</span>];</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>对象是大括号，数组是中括号。</p>
+<p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">firstname</span>:<span class="string">"John"</span>, <span class="attr">lastname</span>:<span class="string">"Doe"</span>, <span class="attr">id</span>:<span class="number">5566</span>&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
+<p>空格和折行无关紧要。声明可横跨多行：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;</span><br><span class="line">firstname : <span class="string">"John"</span>,</span><br><span class="line">lastname  : <span class="string">"Doe"</span>,</span><br><span class="line">id        :  <span class="number">5566</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>对象属性有两种寻址方式：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=person.lastname;</span><br><span class="line">name=person[<span class="string">"lastname"</span>];</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="JavaScript-严格模式-use-strict"><a href="#JavaScript-严格模式-use-strict" class="headerlink" title="JavaScript 严格模式(use strict)"></a>JavaScript 严格模式(use strict)</h2><p>“use strict” 指令在 JavaScript 1.8.5 (ECMAScript5) 中新增。</p>
+<p>它不是一条语句，但是是一个字面量表达式，在 JavaScript 旧版本中会被忽略。</p>
+<p>“use strict” 的目的是指定代码在严格条件下执行。</p>
+<p>严格模式下你不能使用未声明的变量。</p>
+<h3 id="严格模式声明"><a href="#严格模式声明" class="headerlink" title="严格模式声明"></a>严格模式声明</h3><p>严格模式通过在脚本或函数的头部添加 <strong>use strict</strong>; 表达式来声明。</p>
+<p>实例中我们可以在浏览器按下 <strong>F12 (或点击”工具&gt;更多工具&gt;开发者工具”)</strong> 开启调试模式，查看报错信息。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/05/74151F80-4F7D-4492-8288-1231025B41B6.jpeg" alt="img"></p>
+<p>也可以通过右击鼠标，选择 <strong>“检查”</strong> 来查看，Gif 图演示如下：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/05/js_strict.gif" alt="img"></p>
+<p>实例：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">x = <span class="number">3.14</span>;       <span class="comment">// 报错 (x 未定义)</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>局部变量建议使用<code>let</code>去定义。</li>
+<li><code>&quot;use strict&quot;;</code>必须写在第一行。</li>
+<li><code>let(局部变量)、var(全局变量)、const(常量)</code></li>
+</ul>
+<h2 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>正常的字符串，使用单引号、 双引号包裹。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        `<span class="keyword">use</span> strict`;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"a"</span>)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'a'</span>)</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>你可以使用索引位置来访问字符串中的每个字符：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> carname = <span class="string">"Volvo XC60"</span>;</span><br><span class="line"><span class="keyword">var</span> carname = <span class="string">'Volvo XC60'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> character = carname[<span class="number">7</span>];</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="多行字符串的编写"><a href="#多行字符串的编写" class="headerlink" title="多行字符串的编写"></a>多行字符串的编写</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//tab键上的 `~ 键</span></span><br><span class="line"><span class="keyword">var</span> msg = <span class="string">`</span></span><br><span class="line"><span class="string">sdhusd</span></span><br><span class="line"><span class="string">sdghusia</span></span><br><span class="line"><span class="string">sldhuasi</span></span><br><span class="line"><span class="string">shdusds</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        `<span class="keyword">use</span> strict`;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> name = <span class="string">"wangshihao"</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> msg = <span class="string">`你好，<span class="subst">$&#123;name&#125;</span>`</span></span></span><br><span class="line">        alert(msg)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h4><p>可以使用内置属性 <strong>length</strong> 来计算字符串的长度：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> txt = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;</span><br><span class="line"><span class="keyword">var</span> sln = txt.length;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>特殊字符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">&#39;</th>
+<th align="left">单引号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">代码</td>
+<td align="left">输出</td>
+</tr>
+<tr>
+<td align="left">&quot;</td>
+<td align="left">双引号</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">反斜杠</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">换行</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="left">回车</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">tab(制表符)</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">退格符</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="left">换页符</td>
+</tr>
+<tr>
+<td align="left">\u4e2d</td>
+<td align="left">unicode字符”中”</td>
+</tr>
+<tr>
+<td align="left">\x41</td>
+<td align="left">Ascll字符’A’</td>
+</tr>
+</tbody></table>
+<h4 id="可变性"><a href="#可变性" class="headerlink" title="可变性"></a>可变性</h4><blockquote>
+<p>字符串的可变性，但不可变。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1goyqklbyn2j309t051a9z.jpg" alt="QQ截图20210327202758.png"></p>
+<h4 id="字符串方法-函数"><a href="#字符串方法-函数" class="headerlink" title="字符串方法(函数)"></a>字符串方法(函数)</h4><p>更多方法实例可以参见：<a href="https://www.runoob.com/jsref/jsref-obj-string.html" target="_blank" rel="noopener">JavaScript String 对象</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">charAt()</td>
+<td align="left">返回指定索引位置的字符</td>
+</tr>
+<tr>
+<td align="left">charCodeAt()</td>
+<td align="left">返回指定索引位置字符的 Unicode 值</td>
+</tr>
+<tr>
+<td align="left">concat()</td>
+<td align="left">连接两个或多个字符串，返回连接后的字符串</td>
+</tr>
+<tr>
+<td align="left">fromCharCode()</td>
+<td align="left">将 Unicode 转换为字符串</td>
+</tr>
+<tr>
+<td align="left"><strong>indexOf()</strong></td>
+<td align="left">返回字符串中检索指定字符第一次出现的位置</td>
+</tr>
+<tr>
+<td align="left">lastIndexOf()</td>
+<td align="left">返回字符串中检索指定字符最后一次出现的位置</td>
+</tr>
+<tr>
+<td align="left">localeCompare()</td>
+<td align="left">用本地特定的顺序来比较两个字符串</td>
+</tr>
+<tr>
+<td align="left">match()</td>
+<td align="left">找到一个或多个正则表达式的匹配</td>
+</tr>
+<tr>
+<td align="left">replace()</td>
+<td align="left">替换与正则表达式匹配的子串</td>
+</tr>
+<tr>
+<td align="left">search()</td>
+<td align="left">检索与正则表达式相匹配的值</td>
+</tr>
+<tr>
+<td align="left">slice()</td>
+<td align="left">提取字符串的片断，并在新的字符串中返回被提取的部分</td>
+</tr>
+<tr>
+<td align="left">split()</td>
+<td align="left">把字符串分割为子字符串数组</td>
+</tr>
+<tr>
+<td align="left">substr()</td>
+<td align="left">从起始索引号提取字符串中指定数目的字符</td>
+</tr>
+<tr>
+<td align="left"><strong>substring()</strong></td>
+<td align="left">提取字符串中两个指定的索引号之间的字符</td>
+</tr>
+<tr>
+<td align="left">toLocaleLowerCase()</td>
+<td align="left">根据主机的语言环境把字符串转换为小写，只有几种语言（如土耳其语）具有地方特有的大小写映射</td>
+</tr>
+<tr>
+<td align="left">toLocaleUpperCase()</td>
+<td align="left">根据主机的语言环境把字符串转换为大写，只有几种语言（如土耳其语）具有地方特有的大小写映射</td>
+</tr>
+<tr>
+<td align="left"><strong>toLowerCase()</strong></td>
+<td align="left">把字符串转换为小写</td>
+</tr>
+<tr>
+<td align="left">toString()</td>
+<td align="left">返回字符串对象值</td>
+</tr>
+<tr>
+<td align="left"><strong>toUpperCase()</strong></td>
+<td align="left">把字符串转换为大写</td>
+</tr>
+<tr>
+<td align="left">trim()</td>
+<td align="left">移除字符串首尾空白</td>
+</tr>
+<tr>
+<td align="left">valueOf()</td>
+<td align="left">返回某个字符串对象的原始值</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><code>substring()</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">student.substring(<span class="number">1</span>)<span class="comment">//截取从第一个到最后一个字符串</span></span><br><span class="line">student.substring(<span class="number">1</span>,<span class="number">3</span>)<span class="comment">//从第一个到第二个，类似于[1,3)</span></span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<h3 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h3><p><strong>Array可以包含任意的数据类型</strong></p>
+<p>保证代码可读性，尽量使用[]</p>
+<p>在JavaScript中，使用以下数组也不会报错:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'hello'</span>,<span class="literal">null</span>,<span class="literal">true</span>]</span><br></pre></td></tr></table></figure></div>
+
+<p>也可以这样定义:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'hello'</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>在<code>菜鸟笔记</code>中，这样定义</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">cars[<span class="number">0</span>]=<span class="string">"Saab"</span>;</span><br><span class="line">cars[<span class="number">1</span>]=<span class="string">"Volvo"</span>;</span><br><span class="line">cars[<span class="number">2</span>]=<span class="string">"BMW"</span>;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者 (condensed array):</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Saab"</span>,<span class="string">"Volvo"</span>,<span class="string">"BMW"</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>或者 (literal array):</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars=[<span class="string">"Saab"</span>,<span class="string">"Volvo"</span>,<span class="string">"BMW"</span>];</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure></div>
+
+<p>给<code>arr.length</code>赋值增大，数组大小会发生变化。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.length = <span class="number">10</span></span><br></pre></td></tr></table></figure></div>
+
+<p>给<code>arr.length</code>赋值减小，数组大小会发生变化，元素丢失。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.length = <span class="number">2</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1goyr1qrgekj30lj0gz0t9.jpg" alt="QQ截图20210327204530.png"></p>
+<h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h4><p>通过元素下标索引</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.indexOf(<span class="number">2</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>注意：字符串“1”和数字1是不同的。</p>
+</blockquote>
+<h4 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h4><p>截取Array的一部分，返回一个新的数组。 类似于string中的substring。</p>
+<p><strong>语法</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.slice(start,end)</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">start</td>
+<td align="left">必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</td>
+</tr>
+<tr>
+<td align="left">end</td>
+<td align="left">可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</td>
+</tr>
+</tbody></table>
+<p><strong>返回值</strong></p>
+<p>返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。</p>
+<blockquote>
+<p><strong>说明</strong></p>
+<p>请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。</p>
+</blockquote>
+<h4 id="push、pop"><a href="#push、pop" class="headerlink" title="push、pop"></a>push、pop</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push:压入到尾部（往尾部添加元素）</span><br><span class="line">pop:弹出尾部的一个元素</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="unshift、shift"><a href="#unshift、shift" class="headerlink" title="unshift、shift"></a>unshift、shift</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unshift: 压入到数组头部</span><br><span class="line">shift: 弹出头部的一个元素</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="sort排序"><a href="#sort排序" class="headerlink" title="sort排序"></a>sort排序</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.sort()</span><br><span class="line">&gt; (3)[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="reverse元素反转"><a href="#reverse元素反转" class="headerlink" title="reverse元素反转"></a>reverse元素反转</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr</span><br><span class="line">&gt; (3)[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]</span><br><span class="line">arr.reverse()</span><br><span class="line">&gt; (3)[&quot;C&quot;,&quot;B&quot;,&quot;A&quot;]</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="concat拼接"><a href="#concat拼接" class="headerlink" title="concat拼接"></a>concat拼接</h4><blockquote>
+<p>并没有干掉原来的数组，只是返回了一个新的数组。</p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">arr</span><br><span class="line">&gt; (3)[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]</span><br><span class="line">arr.concat([1,2,3])</span><br><span class="line">&gt; (3)[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,1,2,3]</span><br><span class="line">arr</span><br><span class="line">&gt; (3)[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="join连接符"><a href="#join连接符" class="headerlink" title="join连接符"></a>join连接符</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr</span><br><span class="line">&gt; (3)[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]</span><br><span class="line">arr.join(&quot;-&quot;)</span><br><span class="line">&gt; &quot;A-B-C&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>其他教程<a href="https://www.w3school.com.cn/js/js_arrays.asp" target="_blank" rel="noopener">W3C</a></p>
+<h3 id="对象-1"><a href="#对象-1" class="headerlink" title="对象"></a>对象</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="keyword">var</span> 对象名&#123;</span><br><span class="line">	属性名： 属性值，</span><br><span class="line">	属性名： 属性值，</span><br><span class="line">	属性名： 属性值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h4><p>对象也可以有<em>方法</em>。</p>
+<p>方法是在对象上执行的<em>动作</em>。</p>
+<p>方法以<em>函数定义</em>被存储在属性中。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">firstName</td>
+<td align="left">Bill</td>
+</tr>
+<tr>
+<td align="left">lastName</td>
+<td align="left">Gates</td>
+</tr>
+<tr>
+<td align="left">age</td>
+<td align="left">62</td>
+</tr>
+<tr>
+<td align="left">eyeColor</td>
+<td align="left">blue</td>
+</tr>
+<tr>
+<td align="left">fullName</td>
+<td align="left">function() {return this.firstName + “ “ + this.lastName;}</td>
+</tr>
+</tbody></table>
+<p>方法是作为属性来存储的函数。</p>
+<p><strong>实例</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  firstName: <span class="string">"Bill"</span>,</span><br><span class="line">  lastName : <span class="string">"Gates"</span>,</span><br><span class="line">  id       : <span class="number">678</span>,</span><br><span class="line">  fullName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person.name = <span class="string">"wangshihao"</span></span><br><span class="line">&gt; <span class="string">"wangshihao"</span></span><br><span class="line">person.name</span><br><span class="line">&gt; <span class="string">"wangshihao"</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>使用不存在的对象赋值，不会报错！<code>undefined</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.hah</span><br><span class="line">&gt; <span class="literal">undefined</span></span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<h4 id="动态删减属性"><a href="#动态删减属性" class="headerlink" title="动态删减属性"></a>动态删减属性</h4><p>通过<code>delete</code>删除对象属性</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> person.name</span><br><span class="line">&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>动态添加，直接给新的属性添加值即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.haha = <span class="string">"haha"</span></span><br><span class="line"><span class="string">"haha"</span></span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<h4 id="判断存在"><a href="#判断存在" class="headerlink" title="判断存在"></a>判断存在</h4><ul>
+<li><p>使用<code>XXXX  in  XXXX</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'age'</span> <span class="keyword">in</span> person</span><br><span class="line">&gt; <span class="literal">true</span></span><br><span class="line"><span class="comment">//继承</span></span><br><span class="line"><span class="string">'toString'</span> <span class="keyword">in</span> person</span><br><span class="line">&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>在<code>javascript</code> 中所有键都是字符串，值是任意对象。</p>
+</li>
+<li><p>判断一个属性是否有是这个对象自身拥有的</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person.hasOwnProperty(<span class="string">'toString'</span>)</span><br><span class="line">&gt; <span class="literal">false</span></span><br><span class="line">person.hasOwnProperty(<span class="string">'toString'</span>)</span><br><span class="line">&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><ul>
+<li>if判断</li>
+<li>while循环</li>
+<li>for循环</li>
+<li>forEach循环</li>
+<li>for…in</li>
+</ul>
+<h3 id="Map-和-Set"><a href="#Map-和-Set" class="headerlink" title="Map 和 Set"></a>Map 和 Set</h3><h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><ul>
+<li>类似于python的字典</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'tom'</span>,<span class="number">100</span>],[<span class="string">'jack'</span>,<span class="number">99</span>],[<span class="string">'zhangshan'</span>,<span class="number">88</span>]]);</span><br><span class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'tom'</span>));</span><br><span class="line">map.set(<span class="string">'admin'</span>,<span class="number">1234</span>);</span><br><span class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'admin'</span>));</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><ul>
+<li>无序不重复的集合</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">set</span> = new Set([3,1,1,1,2,3]);</span><br><span class="line">console.log(<span class="keyword">set</span>);</span><br><span class="line">&gt; Set(3) &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">[[Entries]]</span><br><span class="line"><span class="number">0</span>: <span class="number">3</span></span><br><span class="line"><span class="number">1</span>: <span class="number">1</span></span><br><span class="line"><span class="number">2</span>: <span class="number">2</span></span><br><span class="line">size: (...)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><ul>
+<li>打印数组的下标：for…in</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x <span class="keyword">in</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>打印数组的值：for…of</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li>方法：（对象，方法）</li>
+<li>函数（函数在对象里就是方法）</li>
+</ul>
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//也可以这样定义</span></span><br><span class="line"><span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>一旦自行到return代表函数结束，返回结束。</li>
+<li>如果没有自行return，函数执行完也会返回结果，<code>ubdefined</code></li>
+</ul>
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>可以传入任意个参数，也可以不传递</p>
+</li>
+<li><p>参数进来是否存在问题</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//手动抛出异常</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> x != <span class="string">'number'</span>)&#123;</span><br><span class="line">             <span class="keyword">throw</span> <span class="string">'not a number'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  -x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+</li>
+</ul>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p><code>arguments</code>是JavaScript免费赠送得关键字。代表传递进来的所有参数，是一个数组。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[i])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(x&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  -x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>rest</code>是ES6引入的新特性，获取出了已经定义的参数之外的所有参数。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abc</span>(<span class="params">a,b,...rest</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="built_in">console</span>.log(b);</span><br><span class="line">    <span class="built_in">console</span>.log(rest)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><ul>
+<li><p>在JavaScript中var定义的变量实际是有作用域的。</p>
+</li>
+<li><p>假设在函数体中声明，则在函数体外不可使用。（用闭包解决）</p>
+</li>
+<li><p>如果两个函数使用了相同的函数名，只要在函数内部就不冲突。</p>
+</li>
+<li><p>函数嵌套时：内部函数可以访问外部函数，外部函数不可以访问内部函数。</p>
+</li>
+<li><p>假设内部函数和外部函数变量重名，函数会从自身变量开始查找，即由内向外开始查找。（就近原则）</p>
+</li>
+<li><p>提升变量的作用域</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">"x_"</span> + y;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">    <span class="keyword">var</span> y = <span class="string">'y'</span></span><br><span class="line">&#125;</span><br><span class="line">f()</span><br><span class="line">\\结果</span><br><span class="line">&gt; x_undefined</span><br><span class="line"></span><br><span class="line">\\注意：在这种情况下行不通</span><br><span class="line"><span class="string">`use strict`</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">"x_"</span> + y;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<p>JavaScript执行引擎自动提升了y的声明，但是不会提升变量y的赋值。</p>
+<p><strong>所以，建议在一开始将所有变量声明。</strong>便于代码维护。</p>
+<h3 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br><span class="line"><span class="built_in">console</span>.log(x)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>默认所有的全局变量都会绑定在<code>windows</code>对象下；</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> = <span class="string">'xxx'</span>;</span><br><span class="line"><span class="comment">//以下两者等价</span></span><br><span class="line">alert(x);</span><br><span class="line">alert(<span class="built_in">window</span>.x);</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.alert(x);</span><br><span class="line"><span class="keyword">var</span> old_alert = <span class="built_in">window</span>.alert;</span><br><span class="line">old_alert(x);</span><br><span class="line"></span><br><span class="line"><span class="comment">//alert被重写，失效</span></span><br><span class="line"><span class="built_in">window</span>.alert = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//重新定义，恢复</span></span><br><span class="line"><span class="built_in">window</span>.alert = old_alert;</span><br><span class="line"><span class="built_in">window</span>.alert(<span class="number">123</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>JavaScript实际上只有一个全局作用域，任何变量（函数也可以视为变量），假设没有函数作用范围内找到，就会向外查找，如果全局作用域都没找到，就会报错。<code>RefrenceError(引用异常)</code></p>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>由于我们所有的全局变量都会绑定到我们的window上，如果不同的js文件，冲突，如何能减少冲突。</p>
+<ul>
+<li>把自己自己的代码放入自己定义的唯一空间名字中，降低全局命名冲突问题。</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个唯一的全局变量</span></span><br><span class="line"><span class="keyword">var</span> solywsh = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义全局变量</span></span><br><span class="line">solywsh.name = <span class="string">'wangshihao'</span>;</span><br><span class="line">solywsh.add =  <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="局部作用域-let"><a href="#局部作用域-let" class="headerlink" title="局部作用域 let"></a>局部作用域 let</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(i+<span class="number">1</span>);<span class="comment">//发现i出了作用域还能使用</span></span><br><span class="line">&#125;</span><br><span class="line">aaa()</span><br></pre></td></tr></table></figure></div>
+
+<p>let关键字，解决局部作用域冲突问题/</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(i+<span class="number">1</span>);<span class="comment">//发现i出了作用域还能使用</span></span><br><span class="line">&#125;</span><br><span class="line">aaa()</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="常量const"><a href="#常量const" class="headerlink" title="常量const"></a>常量const</h3><p>在ES6之前，只有用全部大写字母命名的变量就是常量；建议不要修改这样的值。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> PI = <span class="string">'3.14'</span>;</span><br><span class="line"><span class="comment">//但是仍然可以修改</span></span><br><span class="line">PI = <span class="string">'sdad'</span>;</span><br></pre></td></tr></table></figure></div>
+
+<p>在ES6引入的常量关键字<code>const</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PI = <span class="string">'3.14'</span>;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>定义方法：就是把函数放在对象里边。对象只有两个东西：属性和方法。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> solywsh = &#123;</span><br><span class="line">    name: <span class="string">'wangshihao'</span>,</span><br><span class="line">    birth: <span class="string">'2001'</span>,</span><br><span class="line">    age : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> this_year = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">        <span class="keyword">return</span> this_year - <span class="keyword">this</span>.birth</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(solywsh.age())</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>this：当前对象。</li>
+</ul>
+<p>也可以拆开写：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> this_year = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">	<span class="keyword">return</span> this_year - <span class="keyword">this</span>.birth</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> solywsh = &#123;</span><br><span class="line">    name: <span class="string">'wangshihao'</span>,</span><br><span class="line">    birth: <span class="string">'2001'</span>,</span><br><span class="line">    age : getAge</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(solywsh.age())<span class="comment">//这样调用可以</span></span><br><span class="line">getAge()<span class="comment">//这样不行，返回NaN</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p>在js中可以控制this指定。</p>
+<p>apply() 方法与 call() 方法非常相似：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    fullName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">    firstName: <span class="string">"Bill"</span>,</span><br><span class="line">    lastName: <span class="string">"Gates"</span>,</span><br><span class="line">&#125;</span><br><span class="line">person.fullName.apply(person1);  <span class="comment">// 将返回 "Bill Gates"</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="特殊（内部）对象"><a href="#特殊（内部）对象" class="headerlink" title="特殊（内部）对象"></a>特殊（内部）对象</h2><ul>
+<li>typeof<ul>
+<li><code>typeof 123</code>返回<code>number</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">now.getFullYear();<span class="comment">//年</span></span><br><span class="line">now.getMonth();<span class="comment">//月 0-11月</span></span><br><span class="line">now.getDate() <span class="comment">//日</span></span><br><span class="line">now.getDay();<span class="comment">//星期几</span></span><br><span class="line">now.getHours();<span class="comment">//时</span></span><br><span class="line">now.getMinutes();<span class="comment">//分</span></span><br><span class="line">now.getSeconds();<span class="comment">//秒</span></span><br><span class="line"></span><br><span class="line">now.getTime();<span class="comment">//时间戳  全世界统一 eg:1617801395994</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//时间戳转为时间</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1617801395994</span>))</span><br><span class="line">&gt; Wed Apr <span class="number">07</span> <span class="number">2021</span> <span class="number">21</span>:<span class="number">16</span>:<span class="number">35</span> GMT+<span class="number">0800</span> (香港标准时间)</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>时间戳：是使用<a href="https://baike.baidu.com/item/数字签名/212550" target="_blank" rel="noopener">数字签名</a>技术产生的<a href="https://baike.baidu.com/item/数据/5947370" target="_blank" rel="noopener">数据</a>，签名的对象包括了原始文件信息、签名参数、签名时间等信息。时间戳系统用来产生和管理时间戳，对签名对象进行数字签名产生时间戳，以证明原始文件在签名时间之前已经存在。 [1] </p>
+<p>可信时间戳是由联合信任时间戳服务中心签发的一个<a href="https://baike.baidu.com/item/电子凭证/2291709" target="_blank" rel="noopener">电子凭证</a>，用于证明电子数据文件自申请可信时间戳后内容保持完整、未被更改。可信时间戳接入核准书的颁发，标志着可信时间戳在档案领域规范化应用已经开始，并将起到电子档案和档案数字化副本内容防篡改、保障档案的法律凭证的作用。根据《<a href="https://baike.baidu.com/item/电子签名法/591065" target="_blank" rel="noopener">电子签名法</a>》有关数据电文原件形式的要求，申请了可信时间戳认证的电子文件、电子档案或纸质档案的数字化副本等可视为法规规定的原件形式。 [2]</p>
+</blockquote>
+<ul>
+<li><p>转换</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">now.toLocaleString()<span class="comment">//调用本地时间</span></span><br><span class="line">&gt; <span class="string">"2021/4/7下午9:21:10"</span></span><br><span class="line">now.toGMTString()<span class="comment">//调用格林威治时间</span></span><br><span class="line">&gt; <span class="string">"Wed, 07 Apr 2021 13:21:10 GMT"</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/JSON" target="_blank" rel="noopener">JSON</a>(<a href="https://baike.baidu.com/item/JavaScript" target="_blank" rel="noopener">JavaScript</a> Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。它基于 <a href="https://baike.baidu.com/item/ECMAScript" target="_blank" rel="noopener">ECMAScript</a> (欧洲计算机协会制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。</p>
+</blockquote>
+<p>早期使用的数据文件为XML，BSON为JSON的二进制。</p>
+<p>格式：</p>
+<ul>
+<li>对象：{}</li>
+<li>数组：[]</li>
+<li>键值对：<code>key:value</code></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> usr = &#123;</span><br><span class="line">    name : <span class="string">"wangshihao"</span>,</span><br><span class="line">    age : <span class="number">12</span>,</span><br><span class="line">    sex : <span class="string">"男"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>对象转换为JSON字符串</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonUsr = <span class="built_in">JSON</span>.stringify(usr);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>字符串转换为对象</li>
+</ul>
+<blockquote>
+<p>注意</p>
+<p>如果字符里边为双引号，那外边由单引号括起来。</p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">'&#123;name: "wangshihao", age: 12, sex: "男"&#125;'</span>);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>JSON和js对象的区别</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">"wangshihao"</span>, <span class="attr">age</span>: <span class="number">12</span>, <span class="attr">sex</span>: <span class="string">"男"</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> json = &#123;<span class="string">"name"</span>: <span class="string">"wangshihao"</span>, <span class="string">"age"</span>: <span class="string">"12"</span>, <span class="string">"sex"</span>: <span class="string">"男"</span>&#125;;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="AJax"><a href="#AJax" class="headerlink" title="AJax"></a>AJax</h2><ul>
+<li>原生的JS写法，xhr异步请求</li>
+<li>jQuey 封装好的，方法<code>$(&quot;#name&quot;).ajax(&quot;&quot;)</code></li>
+<li>axios请求</li>
+</ul>
+<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><ul>
+<li>对象构造器</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">first, last, age, eyecolor</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.firstName = first;</span><br><span class="line">  <span class="keyword">this</span>.lastName = last;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.eyeColor = eyecolor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myFather = <span class="keyword">new</span> Person(<span class="string">"John"</span>, <span class="string">"Doe"</span>, <span class="number">50</span>, <span class="string">"blue"</span>);</span><br><span class="line"><span class="keyword">var</span> myMother = <span class="keyword">new</span> Person(<span class="string">"Sally"</span>, <span class="string">"Rally"</span>, <span class="number">48</span>, <span class="string">"green"</span>);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>对象的继承</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student = &#123;</span><br><span class="line">    name:<span class="string">""</span>,</span><br><span class="line">    age : <span class="number">0</span>,</span><br><span class="line">    run : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" run...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> zhangsan = &#123;</span><br><span class="line">    name : <span class="string">"zhangsan"</span>,</span><br><span class="line">    age : <span class="number">17</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从student继承</span></span><br><span class="line">zhangsan.__proto__ = student;</span><br><span class="line"></span><br><span class="line">zhangsan.run()</span><br><span class="line">&gt; zhangsan run....</span><br></pre></td></tr></table></figure></div>
+
+</li>
+</ul>
+<p>利用<code>__proto__</code>可以从别的对象那里继承:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">name</span>: <span class="string">"zhangsan"</span>, <span class="attr">age</span>: <span class="number">17</span>&#125;</span><br><span class="line"><span class="number">1</span>	age: <span class="number">17</span></span><br><span class="line">	name: <span class="string">"zhangsan"</span></span><br><span class="line">	__proto__:</span><br><span class="line">		age: <span class="number">0</span></span><br><span class="line">		name: <span class="string">""</span></span><br><span class="line">		run: ƒ ()</span><br><span class="line">			<span class="built_in">arguments</span>: <span class="literal">null</span></span><br><span class="line">			caller: <span class="literal">null</span></span><br><span class="line">			length: <span class="number">0</span></span><br><span class="line">			name: <span class="string">"run"</span></span><br><span class="line">			prototype: &#123;<span class="attr">constructor</span>: ƒ&#125;</span><br><span class="line">			__proto__: ƒ ()</span><br><span class="line">			[[FunctionLocation]]: index.html?_ijt=jrhd…<span class="number">36</span>lduci368epitnh:<span class="number">17</span></span><br><span class="line">			[[Scopes]]: Scopes[<span class="number">1</span>]</span><br><span class="line">		__proto__: <span class="built_in">Object</span></span><br></pre></td></tr></table></figure></div>
+
+<p>但是这种继承有种非常鬼畜的现象：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student = &#123;</span><br><span class="line">    name:<span class="string">""</span>,</span><br><span class="line">    age : <span class="number">0</span>,</span><br><span class="line">    run : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"run...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> zhangsan = &#123;</span><br><span class="line">    name : <span class="string">"zhangsan"</span>,</span><br><span class="line">    age : <span class="number">17</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从student继承</span></span><br><span class="line">zhangsan.__proto__ = student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bird = &#123;</span><br><span class="line">    fly : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" fly...."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">zhangsan.__proto__ = bird;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//zhangsan这个对象先从student继承了，然后又从bird继承</span></span><br><span class="line">zhangsan.fly()</span><br><span class="line">&gt; zhangsan fly....</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="prototype-继承"><a href="#prototype-继承" class="headerlink" title="prototype 继承"></a>prototype 继承</h2><h3 id="添加属性和方法"><a href="#添加属性和方法" class="headerlink" title="添加属性和方法"></a>添加属性和方法</h3><p>有的时候我们想要在所有已经存在的对象添加新的属性或方法。</p>
+<p>另外，有时候我们想要在对象的构造函数中添加属性或方法。</p>
+<p>使用 prototype 属性就可以给对象的构造函数添加新的属性：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">first, last, age, eyecolor</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.firstName = first;</span><br><span class="line">  <span class="keyword">this</span>.lastName = last;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.eyeColor = eyecolor;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Person.prototype.nationality = <span class="string">"English"</span>;</span><br></pre></td></tr></table></figure></div>
+
+<p>当然我们也可以使用 prototype 属性就可以给对象的构造函数添加新的方法：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">first, last, age, eyecolor</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.firstName = first;</span><br><span class="line">  <span class="keyword">this</span>.lastName = last;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.eyeColor = eyecolor;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Person.prototype.name = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="（推荐）class继承"><a href="#（推荐）class继承" class="headerlink" title="（推荐）class继承"></a>（推荐）class继承</h2><h3 id="class语法"><a href="#class语法" class="headerlink" title="class语法"></a>class语法</h3><p><code>class</code>关键字，是在ES6引入。==推荐==</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        hello()&#123;</span><br><span class="line">            alert(<span class="string">'hello,'</span>+ <span class="keyword">this</span>.name)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> zhangsan = <span class="keyword">new</span> student(<span class="string">"zhangsan"</span>);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>constructor：构造器</li>
+</ul>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
+<li><code>super()</code>：为父类的变量赋值。</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">College_Students</span> <span class="keyword">extends</span> <span class="title">student</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name,grade) &#123;</span><br><span class="line">        <span class="keyword">super</span>(name);</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    myGrade()&#123;</span><br><span class="line">        alert(<span class="string">'my grade is '</span> + <span class="keyword">this</span>.grade);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p><img src="https://img2018.cnblogs.com/blog/850375/201907/850375-20190708153139577-2105652554.png" alt="img"></p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+        
+         <div>
+   
+	<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+		<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+		<span> 感谢阅读 --------</span> 
+	</div> 
+  
+</div> 
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://ww1.sinaimg.cn/large/006b3a9lgy1gegabrqt8gj30l30l3tbz.jpg" alt="Wang Shihao wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎订阅我的公众号magic码上来，公众号还在建设当中~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Wang Shihao 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Wang Shihao 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Wang Shihao
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://violetwsh.com/2021/04/07/JavaScript_note/" title="JavaScript笔记">https://violetwsh.com/2021/04/07/JavaScript_note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/share/" rel="tag"><i class="fa fa-tag"></i>
+
+ share</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i>
+
+ JavaScript</a>
+          
+            <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i>
+
+ note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/03/25/CssNotePart1/" rel="next" title="css笔记">
+                <i class="fa fa-chevron-left"></i> css笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- 文章头部 -->
+			<ins class="adsbygoogle"
+     				style="display:block"
+    				data-ad-client="ca-pub-7913970091878122"
+     				data-ad-slot="9305010076"
+     				data-ad-format="auto"
+     				data-full-width-responsive="true"></ins>
+			<script>
+     		(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+         	</div>
+          	
+
+
+          	
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+           </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+
+
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif"
+                alt="Wang Shihao" />
+            
+              <p class="site-author-name" itemprop="name">Wang Shihao</p>
+              <p class="site-description motion-element" itemprop="description">坐而言不如起而行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+             
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/solywsh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:someonelikeyouwsh@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                大佬们的链接 | 我的推荐
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://labjh.xyz/" title="Qin Jiahe" target="_blank">Qin Jiahe</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ptdexww.com/" title="Liu Yinglei" target="_blank">Liu Yinglei</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hb-2002.github.io" title="Hu Bo" target="_blank">Hu Bo</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+		<!--网易云模块-->
+    	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=0&id=3074802976&auto=0&height=32"></iframe>
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript快速上手"><span class="nav-number">1.</span> <span class="nav-text">JavaScript快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hello-world（js引用）"><span class="nav-number">1.1.</span> <span class="nav-text">hello world（js引用）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法入门"><span class="nav-number">1.2.</span> <span class="nav-text">基本语法入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件语句if"><span class="nav-number">1.2.2.</span> <span class="nav-text">条件语句if</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-语句"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#else-语句"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">else 语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器控制台使用上"><span class="nav-number">1.2.3.</span> <span class="nav-text">浏览器控制台使用上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打印变量"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">打印变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">1.3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.3.2.</span> <span class="nav-text">对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-严格模式-use-strict"><span class="nav-number">1.4.</span> <span class="nav-text">JavaScript 严格模式(use strict)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#严格模式声明"><span class="nav-number">1.4.1.</span> <span class="nav-text">严格模式声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型-1"><span class="nav-number">1.5.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.5.1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多行字符串的编写"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">多行字符串的编写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">模版字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串长度"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">字符串长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可变性"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">可变性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串方法-函数"><span class="nav-number">1.5.1.5.</span> <span class="nav-text">字符串方法(函数)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#长度"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#slice"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#push、pop"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">push、pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unshift、shift"><span class="nav-number">1.5.2.5.</span> <span class="nav-text">unshift、shift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sort排序"><span class="nav-number">1.5.2.6.</span> <span class="nav-text">sort排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reverse元素反转"><span class="nav-number">1.5.2.7.</span> <span class="nav-text">reverse元素反转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#concat拼接"><span class="nav-number">1.5.2.8.</span> <span class="nav-text">concat拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#join连接符"><span class="nav-number">1.5.2.9.</span> <span class="nav-text">join连接符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-1"><span class="nav-number">1.5.3.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象方法"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">对象方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象赋值"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">对象赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态删减属性"><span class="nav-number">1.5.3.3.</span> <span class="nav-text">动态删减属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断存在"><span class="nav-number">1.5.3.4.</span> <span class="nav-text">判断存在</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程控制"><span class="nav-number">1.5.4.</span> <span class="nav-text">流程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map-和-Set"><span class="nav-number">1.5.5.</span> <span class="nav-text">Map 和 Set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">1.5.5.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">1.5.5.2.</span> <span class="nav-text">set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iterator"><span class="nav-number">1.5.6.</span> <span class="nav-text">iterator</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义函数"><span class="nav-number">2.1.</span> <span class="nav-text">定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数调用"><span class="nav-number">2.1.1.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments"><span class="nav-number">2.1.2.</span> <span class="nav-text">arguments</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的作用域"><span class="nav-number">2.2.</span> <span class="nav-text">变量的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局函数"><span class="nav-number">2.2.1.</span> <span class="nav-text">全局函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量"><span class="nav-number">2.2.2.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规范"><span class="nav-number">2.2.3.</span> <span class="nav-text">规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部作用域-let"><span class="nav-number">2.2.4.</span> <span class="nav-text">局部作用域 let</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量const"><span class="nav-number">2.2.5.</span> <span class="nav-text">常量const</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">2.3.1.</span> <span class="nav-text">apply</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊（内部）对象"><span class="nav-number">2.4.</span> <span class="nav-text">特殊（内部）对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-number">2.4.1.</span> <span class="nav-text">date</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">2.5.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJax"><span class="nav-number">2.6.</span> <span class="nav-text">AJax</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象编程"><span class="nav-number">3.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype-继承"><span class="nav-number">3.1.</span> <span class="nav-text">prototype 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加属性和方法"><span class="nav-number">3.1.1.</span> <span class="nav-text">添加属性和方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（推荐）class继承"><span class="nav-number">3.2.</span> <span class="nav-text">（推荐）class继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class语法"><span class="nav-number">3.2.1.</span> <span class="nav-text">class语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">3.2.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链"><span class="nav-number">3.2.3.</span> <span class="nav-text">原型链</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang Shihao</span>
+
+  
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+  <script>
+    function timer() {
+      var ages = moment.preciseDiff(moment(),moment(20200301,"YYYYMMDD"));
+      ages = ages.replace(/years?/, "年");
+      ages = ages.replace(/months?/, "月");
+      ages = ages.replace(/days?/, "天");
+      ages = ages.replace(/hours?/, "小时");
+      ages = ages.replace(/minutes?/, "分");
+      ages = ages.replace(/seconds?/, "秒");
+      ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+      div.innerHTML = `运行时间 ${ages}`;
+    }
+    var div = document.createElement("div");
+    //插入到copyright之后
+    var copyright = document.querySelector(".copyright");
+    document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+    timer();
+    setInterval("timer()",1000)
+  </script>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      共有
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      位朋友
+    </span>
+  
+
+  
+    <span class="site-pv">
+      在不同的时空，与你相遇
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+
+  
+  <script type="text/javascript" src="/js/src/linkcard.js"></script>
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://solywsh.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://violetwsh.com/2021/04/07/JavaScript_note/';
+          this.page.identifier = '2021/04/07/JavaScript_note/';
+          this.page.title = 'JavaScript笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://solywsh.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'TyR1lO2i3STntfdtUYGrm8Qt-gzGzoHsz',
+        appKey: 'yd7AA5qYu730549Ts8siG2lI',
+        placeholder: 'ヾ≧∀≦)快来评论吧（注意写上邮箱哦~）',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+
+
+  <script src="/js/src/wobblewindow.js"></script>
+  <script>
+    //只在桌面版网页启用特效
+    if (window.innerWidth > 768) {
+      $(document).ready(function () {
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.sidebar').wobbleWindow({
+          radius: 50,
+          movementLeft: false,
+          movementTop: false,
+          movementBottom: false,
+          position: 'fixed',
+          debug: false,
+        });
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.footer').wobbleWindow({
+          radius: 50,
+          movementBottom: false,
+          movementLeft: false,
+          movementRight: false,
+          
+          position: 'absolute',
+          debug: false,
+        });
+        
+      });
+    }
+  </script>
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
