@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="9HmzmBcH88a5AOd6-NVhyaQfv09HwIlkky0an9zyZoQ" />
+
+
+<script data-ad-client="ca-pub-7913970091878122" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|ZCOOL KuaiLe:300,300italic,400,400italic,700,700italic|Noto Sans SC:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Varela Round:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HCIA" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="马猴小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="OSI模型 IOS   国际标准化组织（International Organization for Standardization，简称为ISO）是标准化领域中的一个国际性非政府组织。ISO一来源于希腊语“ISOS”，即“EQUAL”——平等之意。ISO成立于1947年，是全球最大最权威的国际标准化组织，全体大会是ISO最高权力机构，理事会是ISO重要决策机构，中国是ISO常任理事国。 [6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HCIA-OSI、子网划分">
+<meta property="og:url" content="https://violetwsh.com/2021/05/17/HCIA_OSI/index.html">
+<meta property="og:site_name" content="马猴小站">
+<meta property="og:description" content="OSI模型 IOS   国际标准化组织（International Organization for Standardization，简称为ISO）是标准化领域中的一个国际性非政府组织。ISO一来源于希腊语“ISOS”，即“EQUAL”——平等之意。ISO成立于1947年，是全球最大最权威的国际标准化组织，全体大会是ISO最高权力机构，理事会是ISO重要决策机构，中国是ISO常任理事国。 [6">
+<meta property="og:image" content="https://bkimg.cdn.bcebos.com/pic/77c6a7efce1b9d16a9ef96c9f2deb48f8c546469?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto">
+<meta property="og:image" content="https://img-blog.csdn.net/20180808105159546?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2p1bjIwMTY0MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gpf50249kbj30ck0430ss.jpg">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/603942/201610/603942-20161024110345781-1165410356.png">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gpf5do9549j30g30ie41q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006b3a9lly1gpf5lmgq91j30ei08egnq.jpg">
+<meta property="og:image" content="c:%5CUsers%5Csolywsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210516100831299.png">
+<meta property="article:published_time" content="2021-05-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-17T10:04:15.749Z">
+<meta property="article:author" content="Wang Shihao">
+<meta property="article:tag" content="HCIA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bkimg.cdn.bcebos.com/pic/77c6a7efce1b9d16a9ef96c9f2deb48f8c546469?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://violetwsh.com/2021/05/17/HCIA_OSI/"/>
+
+
+
+
+
+  <title>HCIA-OSI、子网划分 | 马猴小站</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?00b59b544107b2bf1b78e6f4fc6df486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">马猴小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">俄罗斯方块奇观建筑师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://violetwsh.com/2021/05/17/HCIA_OSI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Shihao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马猴小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HCIA-OSI、子网划分</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-17T23:00:00+08:00">
+                2021-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HCIA/" itemprop="url" rel="index">
+                    <span itemprop="name">HCIA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/05/17/HCIA_OSI/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/05/17/HCIA_OSI/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+                <div>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- 文章头部 -->
+                        <ins class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-7913970091878122"
+                                data-ad-slot="9305010076"
+                                data-ad-format="auto"
+                                data-full-width-responsive="true"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+
+    
+
+        <meta name="referrer" content="no-referrer"/>
+
+<h1 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h1><ul>
+<li>IOS</li>
+</ul>
+<blockquote>
+<p>国际标准化组织（International Organization for Standardization，简称为ISO）是<a href="https://baike.baidu.com/item/标准化/219789" target="_blank" rel="noopener">标准化</a>领域中的一个国际性<a href="https://baike.baidu.com/item/非政府组织/1416088" target="_blank" rel="noopener">非政府组织</a>。ISO一来源于<a href="https://baike.baidu.com/item/希腊语/675775" target="_blank" rel="noopener">希腊语</a>“ISOS”，即“EQUAL”——<a href="https://baike.baidu.com/item/平等/2699794" target="_blank" rel="noopener">平等</a>之意。ISO成立于1947年，是全球最大最权威的国际标准化组织，全体大会是ISO最高权力机构，理事会是ISO重要决策机构，中国是ISO常任理事国。 [6] 中国是ISO的正式成员，代表中国参加ISO的<a href="https://baike.baidu.com/item/国家机构/1779733" target="_blank" rel="noopener">国家机构</a>是中国<a href="https://baike.baidu.com/item/国家标准化管理委员会/2876778" target="_blank" rel="noopener">国家标准化管理委员会</a>（由<a href="https://baike.baidu.com/item/国家市场监督管理总局/6360238" target="_blank" rel="noopener">国家市场监督管理总局</a>管理）。 </p>
+</blockquote>
+<ul>
+<li>OSI</li>
+</ul>
+<blockquote>
+<p>意为开放式系统互联。<a href="https://baike.baidu.com/item/国际标准组织/6039607" target="_blank" rel="noopener">国际标准组织</a>（<a href="https://baike.baidu.com/item/国际标准化组织/779832" target="_blank" rel="noopener">国际标准化组织</a>）制定了OSI（Open System Interconnection）模型。这个模型把<a href="https://baike.baidu.com/item/网络通信" target="_blank" rel="noopener">网络通信</a>的工作分为7层,分别是<a href="https://baike.baidu.com/item/物理层" target="_blank" rel="noopener">物理层</a>,<a href="https://baike.baidu.com/item/数据链路层" target="_blank" rel="noopener">数据链路层</a>,<a href="https://baike.baidu.com/item/网络层" target="_blank" rel="noopener">网络层</a>,<a href="https://baike.baidu.com/item/传输层" target="_blank" rel="noopener">传输层</a>,会话层,<a href="https://baike.baidu.com/item/表示层" target="_blank" rel="noopener">表示层</a>和<a href="https://baike.baidu.com/item/应用层" target="_blank" rel="noopener">应用层</a>。1至4层被认为是低层，这些层与数据移动密切相关。5至7层是高层，包含应用程序级的数据。每一层负责一项具体的工作，然后把<a href="https://baike.baidu.com/item/数据传送" target="_blank" rel="noopener">数据传送</a>到下一层。</p>
+</blockquote>
+<p><img src="https://bkimg.cdn.bcebos.com/pic/77c6a7efce1b9d16a9ef96c9f2deb48f8c546469?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto" alt="img"></p>
+<ul>
+<li><p>控制层面</p>
+<p>7应用层、6表示层、5会话</p>
+</li>
+<li><p>数据层面</p>
+<p>4==传输层==、3==网络层==、2==数据链路层==、1物理层</p>
+</li>
+</ul>
+<h2 id="分层的思想"><a href="#分层的思想" class="headerlink" title="分层的思想"></a>分层的思想</h2><p>上三层：</p>
+<blockquote>
+<p>思科默认这三层没有PUD，华为有，如7层APUD</p>
+</blockquote>
+<ul>
+<li><p>应用层：接收用户的数据，<strong>人机交互的接口</strong>，面向的应用程序。</p>
+</li>
+<li><p>表示层：将逻辑语言（软件语言）转换为机器语言（二进制语言），<strong>翻译</strong> ，<strong>加密</strong></p>
+</li>
+<li><p>会话层：针对传输的每一种数据（流量）建立（管理：维持、终止）一条==虚连接==（为了防止不同类型的数据互相影响）</p>
+</li>
+</ul>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><blockquote>
+<p>PDU： 协议数据单元（数据在不同层的表示方式）</p>
+</blockquote>
+<p>==<strong>4层PDU：segment 分段 分片</strong>==</p>
+<ul>
+<li><p><strong>作用</strong>：1.区分流量（端口号）  2.定义数据传输方式（TCP/UDP）</p>
+</li>
+<li><p>端口号： <code>port ID</code> , 数值范围<code>1-65535</code></p>
+</li>
+<li><p>静态端口：又称为注明端口范围<code>1-1023</code></p>
+</li>
+<li><p>动态端口：范围<code>1024-65535</code></p>
+</li>
+</ul>
+<h3 id="常见端口号"><a href="#常见端口号" class="headerlink" title="常见端口号"></a>常见端口号</h3><table>
+<thead>
+<tr>
+<th>HTTP</th>
+<th>80 TCP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTTPS</td>
+<td>443 TCP</td>
+</tr>
+<tr>
+<td>RIP</td>
+<td>520 UDP</td>
+</tr>
+<tr>
+<td>Telnet</td>
+<td>23 TCP 远程登录服务</td>
+</tr>
+<tr>
+<td>SSH</td>
+<td>22 TCP 远程登录（安全性较高  加密 认证）</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>53  TCP和UDP 域名解析</td>
+</tr>
+</tbody></table>
+<h3 id="TCP-可靠传输-UDP-不可靠传输"><a href="#TCP-可靠传输-UDP-不可靠传输" class="headerlink" title="TCP(可靠传输)/UDP(不可靠传输)"></a>TCP(可靠传输)/UDP(不可靠传输)</h3><blockquote>
+<p>可靠：把信息一定要传递给对方；不可靠：只管传输。</p>
+</blockquote>
+<blockquote>
+<p>TCP：<strong>传输控制协议</strong>，是一种面向连接的可靠传输协议</p>
+<p>UDP：<strong>用户数据报协议</strong>，是一种非面向连接的不可靠的传输协议</p>
+</blockquote>
+<ul>
+<li>不可靠传输方式流量特点（具备一下特点时使用UDP）<ul>
+<li><strong>大流量</strong></li>
+<li>实时性较高</li>
+<li>对数据丢失不敏感</li>
+</ul>
+</li>
+<li>可靠传输<ul>
+<li>特点：1.确保数据一定传输给对方</li>
+<li><strong>如何保证可靠性： 1.确认机制 2.重传输机制</strong></li>
+</ul>
+</li>
+<li>三次握手机制： 保证了面向连接 ，又称为<strong>TCP的三次握手</strong></li>
+<li>确认机制：显式确认  隐式确认<ul>
+<li>显式确认：有明确回复的</li>
+<li>隐式确认：没有明确的回复（没有回复默认收到）</li>
+</ul>
+</li>
+<li>优化机制：<ul>
+<li>流控机制（滑动窗口机制）<a href="https://www.cnblogs.com/kubidemanong/p/9987810.html" target="_blank" rel="noopener">通俗易懂讲解TCP流量控制机制，了解一下 - 帅地 - 博客园 (cnblogs.com)</a></li>
+<li>重排序</li>
+</ul>
+</li>
+<li>数据的分段传输： 传输较大数据时按照MTU值进行分段传输。</li>
+<li>==MTU==： <strong>最大传输单元，默认为1500字节，可以修改（但不建议）</strong>。</li>
+</ul>
+<h4 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h4><p><a href="https://blog.csdn.net/jun2016425/article/details/81506353" target="_blank" rel="noopener">TCP三次握手详解-深入浅出(有图实例演示)_jun2016425的博客-CSDN博客_tcp三次握手</a></p>
+<p>TCP三次握手如图：</p>
+<p><img src="https://img-blog.csdn.net/20180808105159546?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2p1bjIwMTY0MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h5 id="第一次握手"><a href="#第一次握手" class="headerlink" title="第一次握手"></a>第一次握手</h5><p>客户主动（active open）去connect（/访问）服务器，并且发送SYN  request（同步请求）假设序列号为J,服务器是被动打开(passive open)</p>
+<h5 id="第二次握手"><a href="#第二次握手" class="headerlink" title="第二次握手"></a>第二次握手</h5><p>服务器在收到SYN后，它会发送一个SYN以及一个ACK（应答）给客户，ACK的序列号是 J+1表示是给SYN J的应答，新发送的SYN K 序列号是K</p>
+<ul>
+<li>这里的SYN确认客户端的端口是同步状态</li>
+</ul>
+<h5 id="第三次握手"><a href="#第三次握手" class="headerlink" title="第三次握手"></a>第三次握手</h5><p>客户在收到新SYN K, ACK J+1 后，也回应ACK K+1 （隐式确认）以表示收到了，然后两边就可以开始数据发送数据了</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>==三层PDU：packet 包==</p>
+<blockquote>
+<p>编址  寻址 </p>
+</blockquote>
+<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><blockquote>
+<p> 编址协议： IP （IPV4 IPV6）  IPX apple talk  novell </p>
+<p> 编址协议定义地址</p>
+</blockquote>
+<ul>
+<li><p>IPv4：采用32个二进制编址， 一个二进制 称为1位 bit 。</p>
+</li>
+<li><p>IP地址：32个二进制，0和1构成 用于编址</p>
+</li>
+<li><p>网络掩码：32个二进制，连续的1+连续的0构成，连续的1代表着网络位，连续的0代表主机位。</p>
+</li>
+</ul>
+<p>​                                                              <img src="http://ww1.sinaimg.cn/large/006b3a9lly1gpf50249kbj30ck0430ss.jpg" alt="QQ截图20210411005709.png"></p>
+<h4 id="数据单位"><a href="#数据单位" class="headerlink" title="数据单位"></a>数据单位</h4><p>Bit：比特 ，一个二进制  1000bit=1Kbit  1000kbit=1Mbit  1000Mbit=1Gbit</p>
+<p>Byte：字节，八个bit 1Byte=8bit  1000byte=1K 1000K=1M</p>
+<p>100M=100Mbps  （b=bit）</p>
+<p>100Mbps=12.5MBps  承诺突发</p>
+<h4 id="地址书写"><a href="#地址书写" class="headerlink" title="地址书写"></a>地址书写</h4><blockquote>
+<p>书写一个完整的IP地址时 ：IP地址+网络掩码</p>
+</blockquote>
+<p>地址分类：</p>
+<img src="https://images2015.cnblogs.com/blog/603942/201610/603942-20161024110345781-1165410356.png" alt="img" style="zoom:50%;" />
+
+<hr>
+<h5 id="A类地址：-第一位固定为0"><a href="#A类地址：-第一位固定为0" class="headerlink" title="A类地址： 第一位固定为0"></a>A类地址： 第一位固定为0</h5><p>0XXX XXXX —0-127（1-126），网络掩码默认为 255.0.0.0<br>有2^7^个网段</p>
+<h5 id="B类地址：前两位固定为10"><a href="#B类地址：前两位固定为10" class="headerlink" title="B类地址：前两位固定为10"></a>B类地址：前两位固定为10</h5><p>10XX XXXX—128-191，网络掩码默认为255.255.0.0<br>有2^14^个网段，看网络位，网络位有16位，减去2个固定的，剩下14个</p>
+<h5 id="C类地址：前三位固定110"><a href="#C类地址：前三位固定110" class="headerlink" title="C类地址：前三位固定110"></a>C类地址：前三位固定110</h5><p>110X XXXX—192-223，网络掩码默认为255.255.255.0<br>2^21^个网段</p>
+<h5 id="D类地址：前四位固定为1110"><a href="#D类地址：前四位固定为1110" class="headerlink" title="D类地址：前四位固定为1110"></a>D类地址：前四位固定为1110</h5><p>1110 XXXX—224-239，组播地址，无掩码</p>
+<h5 id="E类地址：前四位固定为1111"><a href="#E类地址：前四位固定为1111" class="headerlink" title="E类地址：前四位固定为1111"></a>E类地址：前四位固定为1111</h5><p>1111 XXXX—240-255，科研地址。</p>
+<hr>
+<h5 id="特殊地址"><a href="#特殊地址" class="headerlink" title="特殊地址"></a>特殊地址</h5><ul>
+<li><p>0.X.X.X 无效地址（保留地址），0.0.0.0 无效地址  占位</p>
+</li>
+<li><p>127.0.0.1 本地测试 （127.X.X.X 测试地址）</p>
+</li>
+<li><p>网络号，网络位不变 主机位全为0 的地址（==描述一个网段==）</p>
+<ul>
+<li><p>162.1.1.1-162.1.0.0</p>
+</li>
+<li><p>255.255.0.0</p>
+</li>
+</ul>
+</li>
+<li><p>受限广播地址（受限到自己的网段）</p>
+<ul>
+<li>255.255.255.255 </li>
+<li>代表所有地址的地址，<strong>但是只给自己网段内的用户发送</strong></li>
+</ul>
+</li>
+<li><p>定向（直接）广播地址，网络位不变，主机位全为1 </p>
+<p>==200.1.1==.1&gt;&gt;&gt;==200.1.1==.255 </p>
+<p>==255.255.255==.0</p>
+</li>
+<li><p>==本地链路地址：link-local { 169.254.0.0 255.255.0.0 }==，微软买的</p>
+</li>
+</ul>
+<blockquote>
+<p>在配地址的时候，主机位全为0以及主机位全为1的地址不能分配</p>
+</blockquote>
+<p>A B C 类地址称为单播地址</p>
+<p>单播：一对一的传输方式</p>
+<p>组播：一对多的传输方式</p>
+<p>广播：一对所有传输方式</p>
+<h5 id="公有地址"><a href="#公有地址" class="headerlink" title="公有地址"></a>公有地址</h5><p>具有全球唯一性标识地址</p>
+<h5 id="私有地址"><a href="#私有地址" class="headerlink" title="私有地址"></a>私有地址</h5><p>不具唯一性标识的地址</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">10.0.0.0 255.0.0.0 </span><br><span class="line"></span><br><span class="line">172.&#123;16-31&#125;.0.0 255.255.0.0 </span><br><span class="line"></span><br><span class="line">192.168.&#123;0-255&#125;.0 255.255.255.0</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><p>==二层PDU ：frame 帧==</p>
+<blockquote>
+<p>局域网（以太网 Ethernet）</p>
+<p> 广域网 （PPP HDLC ATM(异步传输网络) FR  以上为协议）</p>
+</blockquote>
+<ul>
+<li><p>二层地址：Mac地址（介质访问控制）—物理地址 硬件地址 烧录(BIA)地址</p>
+</li>
+<li><p>LLC层：逻辑(L)链路(L)控制(C)子层（描述上层使用什么协议:ipv4/ipv6…）</p>
+</li>
+<li><p>MAC层：介质（媒体）访问控制子层（描述二层地址）</p>
+</li>
+</ul>
+<h3 id="Mac地址构成"><a href="#Mac地址构成" class="headerlink" title="Mac地址构成"></a>Mac地址构成</h3><blockquote>
+<p> 48个二进制 书写使用12个十六进制 （一个十六进制需要使用4个二进制表示）</p>
+<p> 由IANA机构监管分配</p>
+</blockquote>
+<p>书写方式：减分十六 进制、点分十六进制 </p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">60-F2-62-3C-E3-53（减分16进制\差分16进制）</span><br><span class="line">60.F2.62.3C.E3.53（点分16进制）</span><br><span class="line">60F2.623C.E353</span><br></pre></td></tr></table></figure></div>
+
+<p>前24位：厂商 ID —-OUI（统一资源标识符）</p>
+<p>后24位：产品 ID —-interface ID （接口标识符）\一般由厂商决定</p>
+<p><strong>cmd查看局域网mac</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>伪装\覆盖mac地址</strong></p>
+<img src="http://ww1.sinaimg.cn/large/006b3a9lly1gpf5do9549j30g30ie41q.jpg" alt="QQ截图20210411011028.png" style="zoom: 80%;" />
+
+<p>或者使用软件：mac makeup</p>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><p>==一层PDU：bit    比特流==</p>
+<blockquote>
+<p>网络硬件的机械特性 光学特性 电学特性</p>
+</blockquote>
+<p>传输介质：光纤  、双绞线（RJ45）</p>
+<h3 id="一层各种线和设备"><a href="#一层各种线和设备" class="headerlink" title="一层各种线和设备"></a>一层各种线和设备</h3><p><strong>双绞线</strong>：红色线负责端口转发，其他不起作用（千兆以下，其他的可用来做电话线（两根一组）） </p>
+<blockquote>
+<p>按照屏蔽分类：屏蔽双绞线 （STP，也会屏蔽自身磁场，所以传输距离弱于非屏蔽线） ；非屏蔽双绞线（UTP）//<strong>屏蔽强电，强电有电磁场，但是自身的弱电也会屏蔽</strong></p>
+<p>按照拧度进行分类：3类 4类—（10Mbps） 5类  超5类(5类的屏蔽)—（100Mbps） 6类 超6类(6类的屏蔽) （1000Mbps–在6类线中8根同时使 用）</p>
+</blockquote>
+<ul>
+<li><p>568A线序（AT&amp;T公司）：绿白、绿、橙白、蓝、蓝白、橙、棕白、棕</p>
+</li>
+<li><p>568B线序（IBM公司）：==橙白（发1）、橙（发2）、绿白（收1）、蓝、蓝白、绿（收2）、棕白、棕==</p>
+</li>
+</ul>
+<hr>
+<p><strong>平行线</strong>（直通线）：又称为直通线 ，线序相同。不同层设备使用平行线。</p>
+<hr>
+<p><strong>交叉线</strong>：<strong>（同层设备使用）：线序不同（一头568A 、 一头568B）。同层设备使用交叉线。</strong></p>
+<blockquote>
+<p>同层设备如果使用平行线，这会造成一头发送另一头也发送，一头接收另一头也接收。</p>
+</blockquote>
+<hr>
+<p><strong>全反线</strong>：又称为console线，配置线，线序相反，用于用户控制网络设备。</p>
+<hr>
+<p><strong>路由器</strong>：三层设备（网络层），识别IP地址。不同的接口在不同的网段（广播域）</p>
+<hr>
+<p><strong>交换机（网桥）</strong>：二层（数据链路层）设备，使用MAC地址，所有的接口默认在同一个广播域，一个接口是一个冲突域。</p>
+<hr>
+<p><strong>集线器（hub）</strong>：放大器 放大信号，属于1层（物理层）设备，识别bit流，hub上所有的接口都在同一个冲突域中。</p>
+<p>也可以用于长距离时的信号放大。</p>
+<hr>
+<p><strong>主机（服务器）</strong></p>
+<hr>
+<h1 id="TCP-IP-模型"><a href="#TCP-IP-模型" class="headerlink" title="TCP/IP 模型"></a>TCP/IP 模型</h1><blockquote>
+<p>数据封装：产生数据的过程</p>
+<p>数据解封装：接收数据进行读取的过程</p>
+</blockquote>
+<p>5层：应用层（应用层 表示层 会话层）</p>
+<p>4层：主机到主机层（host to host）（传输层）</p>
+<p>3层： 互联网层（网络层 ）</p>
+<p>2层(习惯上叫)：网络接口层（network interface）（数据链路层 物理层）</p>
+<p><img src="http://ww1.sinaimg.cn/large/006b3a9lly1gpf5lmgq91j30ei08egnq.jpg" alt="QQ截图20210411011805.png"></p>
+<h1 id="子网划分、子网汇总"><a href="#子网划分、子网汇总" class="headerlink" title="子网划分、子网汇总"></a>子网划分、子网汇总</h1><h2 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h2><blockquote>
+<p>相同网段、网络位一致</p>
+<p>网路位是连续的1加连续的0</p>
+</blockquote>
+<p>好处：需要按照实际的情况，来分配IP地址</p>
+<p>缺点：浪费了IP地址</p>
+<p>exp：</p>
+<ul>
+<li>4个实验室，每个实验室大概60台主机，规定了指定网段。</li>
+<li>200.1.10 255.255.255.0</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1100 1000.0000 0001.0000 0001.==0000 0000==</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1111 1111.1111 1111.1111 1111.==XX==00 0000</td>
+</tr>
+<tr>
+<td>200.1.1.0/26</td>
+</tr>
+<tr>
+<td>200.1.1.64/26</td>
+</tr>
+<tr>
+<td>200.1.1.128/26</td>
+</tr>
+<tr>
+<td>200.1.1.192/26</td>
+</tr>
+</tbody></table>
+<h2 id="子网汇总"><a href="#子网汇总" class="headerlink" title="子网汇总"></a>子网汇总</h2><blockquote>
+<p>取相同位，去不同位</p>
+</blockquote>
+<p><img src="C:%5CUsers%5Csolywsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210516100831299.png" alt="image-20210516100831299"></p>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+        
+         <div>
+   
+	<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+		<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+		<span> 感谢阅读 --------</span> 
+	</div> 
+  
+</div> 
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://ww1.sinaimg.cn/large/006b3a9lgy1gegabrqt8gj30l30l3tbz.jpg" alt="Wang Shihao wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎订阅我的公众号magic码上来，公众号还在建设当中~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Wang Shihao 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Wang Shihao 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Wang Shihao
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://violetwsh.com/2021/05/17/HCIA_OSI/" title="HCIA-OSI、子网划分">https://violetwsh.com/2021/05/17/HCIA_OSI/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HCIA/" rel="tag"><i class="fa fa-tag"></i>
+
+ HCIA</a>
+          
+            <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i>
+
+ 网络</a>
+          
+            <a href="/tags/OSI/" rel="tag"><i class="fa fa-tag"></i>
+
+ OSI</a>
+          
+            <a href="/tags/%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86/" rel="tag"><i class="fa fa-tag"></i>
+
+ 子网划分</a>
+          
+            <a href="/tags/share/" rel="tag"><i class="fa fa-tag"></i>
+
+ share</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/23/HCIA_Experiment_Report_2/" rel="next" title="HCIA实验报告2">
+                <i class="fa fa-chevron-left"></i> HCIA实验报告2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- 文章头部 -->
+			<ins class="adsbygoogle"
+     				style="display:block"
+    				data-ad-client="ca-pub-7913970091878122"
+     				data-ad-slot="9305010076"
+     				data-ad-format="auto"
+     				data-full-width-responsive="true"></ins>
+			<script>
+     		(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+         	</div>
+          	
+
+
+          	
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+           </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+
+
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/006b3a9lgy1ge1v2uaqlrg309q09qdjr.gif"
+                alt="Wang Shihao" />
+            
+              <p class="site-author-name" itemprop="name">Wang Shihao</p>
+              <p class="site-description motion-element" itemprop="description">坐而言不如起而行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+             
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/solywsh" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:someonelikeyouwsh@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                大佬们的链接 | 我的推荐
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://labjh.xyz/" title="Qin Jiahe" target="_blank">Qin Jiahe</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ptdexww.com/" title="Liu Yinglei" target="_blank">Liu Yinglei</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hb-2002.github.io" title="Hu Bo" target="_blank">Hu Bo</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+		<!--网易云模块-->
+    	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=0&id=3074802976&auto=0&height=32"></iframe>
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI模型"><span class="nav-number">1.</span> <span class="nav-text">OSI模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分层的思想"><span class="nav-number">1.1.</span> <span class="nav-text">分层的思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输层"><span class="nav-number">1.2.</span> <span class="nav-text">传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见端口号"><span class="nav-number">1.2.1.</span> <span class="nav-text">常见端口号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-可靠传输-UDP-不可靠传输"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP(可靠传输)&#x2F;UDP(不可靠传输)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP三次握手"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">TCP三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一次握手"><span class="nav-number">1.2.2.1.1.</span> <span class="nav-text">第一次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二次握手"><span class="nav-number">1.2.2.1.2.</span> <span class="nav-text">第二次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三次握手"><span class="nav-number">1.2.2.1.3.</span> <span class="nav-text">第三次握手</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层"><span class="nav-number">1.3.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#地址"><span class="nav-number">1.3.1.</span> <span class="nav-text">地址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据单位"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">数据单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#地址书写"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">地址书写</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#A类地址：-第一位固定为0"><span class="nav-number">1.3.1.2.1.</span> <span class="nav-text">A类地址： 第一位固定为0</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#B类地址：前两位固定为10"><span class="nav-number">1.3.1.2.2.</span> <span class="nav-text">B类地址：前两位固定为10</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C类地址：前三位固定110"><span class="nav-number">1.3.1.2.3.</span> <span class="nav-text">C类地址：前三位固定110</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#D类地址：前四位固定为1110"><span class="nav-number">1.3.1.2.4.</span> <span class="nav-text">D类地址：前四位固定为1110</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#E类地址：前四位固定为1111"><span class="nav-number">1.3.1.2.5.</span> <span class="nav-text">E类地址：前四位固定为1111</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊地址"><span class="nav-number">1.3.1.2.6.</span> <span class="nav-text">特殊地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#公有地址"><span class="nav-number">1.3.1.2.7.</span> <span class="nav-text">公有地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#私有地址"><span class="nav-number">1.3.1.2.8.</span> <span class="nav-text">私有地址</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">1.4.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac地址构成"><span class="nav-number">1.4.1.</span> <span class="nav-text">Mac地址构成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理层"><span class="nav-number">1.5.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一层各种线和设备"><span class="nav-number">1.5.1.</span> <span class="nav-text">一层各种线和设备</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-模型"><span class="nav-number">2.</span> <span class="nav-text">TCP&#x2F;IP 模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#子网划分、子网汇总"><span class="nav-number">3.</span> <span class="nav-text">子网划分、子网汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#子网划分"><span class="nav-number">3.1.</span> <span class="nav-text">子网划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子网汇总"><span class="nav-number">3.2.</span> <span class="nav-text">子网汇总</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang Shihao</span>
+
+  
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+  <script>
+    function timer() {
+      var ages = moment.preciseDiff(moment(),moment(20200301,"YYYYMMDD"));
+      ages = ages.replace(/years?/, "年");
+      ages = ages.replace(/months?/, "月");
+      ages = ages.replace(/days?/, "天");
+      ages = ages.replace(/hours?/, "小时");
+      ages = ages.replace(/minutes?/, "分");
+      ages = ages.replace(/seconds?/, "秒");
+      ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+      div.innerHTML = `运行时间 ${ages}`;
+    }
+    var div = document.createElement("div");
+    //插入到copyright之后
+    var copyright = document.querySelector(".copyright");
+    document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+    timer();
+    setInterval("timer()",1000)
+  </script>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      共有
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      位朋友
+    </span>
+  
+
+  
+    <span class="site-pv">
+      在不同的时空，与你相遇
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+
+  
+  <script type="text/javascript" src="/js/src/linkcard.js"></script>
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://solywsh.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://violetwsh.com/2021/05/17/HCIA_OSI/';
+          this.page.identifier = '2021/05/17/HCIA_OSI/';
+          this.page.title = 'HCIA-OSI、子网划分';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://solywsh.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'TyR1lO2i3STntfdtUYGrm8Qt-gzGzoHsz',
+        appKey: 'yd7AA5qYu730549Ts8siG2lI',
+        placeholder: 'ヾ≧∀≦)快来评论吧（注意写上邮箱哦~）',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+
+
+
+
+
+  <script src="/js/src/wobblewindow.js"></script>
+  <script>
+    //只在桌面版网页启用特效
+    if (window.innerWidth > 768) {
+      $(document).ready(function () {
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.sidebar').wobbleWindow({
+          radius: 50,
+          movementLeft: false,
+          movementTop: false,
+          movementBottom: false,
+          position: 'fixed',
+          debug: false,
+        });
+        
+
+        
+         // 根据类名获取，而不是id
+        $('.footer').wobbleWindow({
+          radius: 50,
+          movementBottom: false,
+          movementLeft: false,
+          movementRight: false,
+          
+          position: 'absolute',
+          debug: false,
+        });
+        
+      });
+    }
+  </script>
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
