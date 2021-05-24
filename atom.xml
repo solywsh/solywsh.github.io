@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://violetwsh.com/"/>
-  <updated>2021-05-20T12:40:19.826Z</updated>
+  <updated>2021-05-24T10:23:46.305Z</updated>
   <id>https://violetwsh.com/</id>
   
   <author>
@@ -18,10 +18,39 @@
   
   <entry>
     <title>HCIA实验报告1-DHCP</title>
+    <link href="https://violetwsh.com/2021/05/20/HCIA_Experiment_Report_3_StaticLoopback/"/>
+    <id>https://violetwsh.com/2021/05/20/HCIA_Experiment_Report_3_StaticLoopback/</id>
+    <published>2021-05-20T08:15:00.000Z</published>
+    <updated>2021-05-24T10:23:46.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="HCIA" scheme="https://violetwsh.com/categories/HCIA/"/>
+    
+    
+      <category term="HCIA" scheme="https://violetwsh.com/tags/HCIA/"/>
+    
+      <category term="网络，实验" scheme="https://violetwsh.com/tags/%E7%BD%91%E7%BB%9C%EF%BC%8C%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HCIA实验报告1-DHCP</title>
     <link href="https://violetwsh.com/2021/05/20/DHCP_experimental_report/"/>
     <id>https://violetwsh.com/2021/05/20/DHCP_experimental_report/</id>
     <published>2021-05-20T08:15:00.000Z</published>
-    <updated>2021-05-20T12:40:19.826Z</updated>
+    <updated>2021-05-24T10:18:23.639Z</updated>
     
     <summary type="html">
     
@@ -606,37 +635,6 @@
       <category term="problem" scheme="https://violetwsh.com/tags/problem/"/>
     
       <category term="search" scheme="https://violetwsh.com/tags/search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>转载：Hexo NexT主题代码块美化</title>
-    <link href="https://violetwsh.com/2020/05/01/MacPanel/"/>
-    <id>https://violetwsh.com/2020/05/01/MacPanel/</id>
-    <published>2020-05-01T02:32:00.000Z</published>
-    <updated>2020-05-04T04:08:24.688Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://violetwsh.com/categories/hexo/"/>
-    
-    
-      <category term="share" scheme="https://violetwsh.com/tags/share/"/>
-    
-      <category term="blog" scheme="https://violetwsh.com/tags/blog/"/>
-    
-      <category term="hexo搭建" scheme="https://violetwsh.com/tags/hexo%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
