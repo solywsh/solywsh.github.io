@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - 马猴小站</title>
+        <link>http://blog.panic.ltd/posts/</link>
+        <description>All Posts | 马猴小站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dont@panic.ltd (solywsh)</managingEditor>
+            <webMaster>dont@panic.ltd (solywsh)</webMaster><lastBuildDate>Tue, 13 Dec 2022 14:28:32 &#43;0800</lastBuildDate><atom:link href="http://blog.panic.ltd/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>网站重新部署中</title>
+    <link>http://blog.panic.ltd/posts/first/</link>
+    <pubDate>Tue, 13 Dec 2022 14:28:32 &#43;0800</pubDate>
+    <author>solywsh</author>
+    <guid>http://blog.panic.ltd/posts/first/</guid>
+    <description><![CDATA[网站重新部署中 由于之前博客网站使用的hexo框架，时间一久各种问题频繁出现，上面也有很多最开始接触计算机时写的一些没营养的文章，于是准备重新]]></description>
+</item>
+</channel>
+</rss>
