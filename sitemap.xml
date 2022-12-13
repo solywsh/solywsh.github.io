@@ -5,5 +5,10 @@
             <loc>http://blog.panic.ltd/posts/</loc><lastmod>2022-12-13T14:28:32&#43;08:00</lastmod></url><url>
             <loc>http://blog.panic.ltd/posts/first/</loc><lastmod>2022-12-13T14:28:32&#43;08:00</lastmod></url><url>
             <loc>http://blog.panic.ltd/</loc><lastmod>2022-12-13T14:28:32&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod></url><url>
             <loc>http://blog.panic.ltd/categories/</loc></url><url>
-            <loc>http://blog.panic.ltd/tags/</loc></url></urlset>
+            <loc>http://blog.panic.ltd/categories/documentation/</loc></url><url>
+            <loc>http://blog.panic.ltd/tags/</loc></url><url>
+            <loc>http://blog.panic.ltd/tags/content/</loc></url><url>
+            <loc>http://blog.panic.ltd/tags/installation/</loc></url><url>
+            <loc>http://blog.panic.ltd/tags/configuration/</loc></url></urlset>
