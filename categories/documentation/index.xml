@@ -4,5 +4,5 @@
         <link>http://blog.panic.ltd/categories/documentation/</link>
         <description>Documentation - Category - 马猴小站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dont@panic.ltd (solywsh)</managingEditor>
-            <webMaster>dont@panic.ltd (solywsh)</webMaster><atom:link href="http://blog.panic.ltd/categories/documentation/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>dont@panic.ltd (solywsh)</webMaster><copyright>solywsh</copyright><atom:link href="http://blog.panic.ltd/categories/documentation/" rel="self" type="application/rss+xml" /></channel>
 </rss>

@@ -2,9 +2,9 @@
     <channel>
         <title>马猴小站</title>
         <link>http://blog.panic.ltd/</link>
-        <description>This is my cool site</description>
+        <description>马猴小站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dont@panic.ltd (solywsh)</managingEditor>
-            <webMaster>dont@panic.ltd (solywsh)</webMaster><lastBuildDate>Tue, 13 Dec 2022 14:28:32 &#43;0800</lastBuildDate>
+            <webMaster>dont@panic.ltd (solywsh)</webMaster><copyright>solywsh</copyright><lastBuildDate>Tue, 13 Dec 2022 14:28:32 &#43;0800</lastBuildDate>
             <atom:link href="http://blog.panic.ltd/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>网站重新部署中</title>
