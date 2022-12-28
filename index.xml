@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>马猴小站</title>
+        <title>秦岭以南</title>
         <link>http://blog.panic.ltd/</link>
-        <description>马猴小站</description>
+        <description>秦岭以南</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dont@panic.ltd (solywsh)</managingEditor>
             <webMaster>dont@panic.ltd (solywsh)</webMaster><copyright>solywsh</copyright><lastBuildDate>Tue, 13 Dec 2022 14:28:32 &#43;0800</lastBuildDate>
             <atom:link href="http://blog.panic.ltd/index.xml" rel="self" type="application/rss+xml" />
