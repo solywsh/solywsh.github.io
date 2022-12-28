@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>golang - Tag - 秦岭以南</title>
+        <link>http://blog.panic.ltd/tags/golang/</link>
+        <description>golang - Tag - 秦岭以南</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dont@panic.ltd (solywsh)</managingEditor>
+            <webMaster>dont@panic.ltd (solywsh)</webMaster><copyright>solywsh</copyright><lastBuildDate>Wed, 28 Dec 2022 23:55:35 &#43;0800</lastBuildDate><atom:link href="http://blog.panic.ltd/tags/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>一个golang的chatgpt实现</title>
+    <link>http://blog.panic.ltd/posts/chatgpt/</link>
+    <pubDate>Wed, 28 Dec 2022 23:55:35 &#43;0800</pubDate>
+    <author>solywsh</author>
+    <guid>http://blog.panic.ltd/posts/chatgpt/</guid>
+    <description><![CDATA[一直以来我也非常想要一个聊天式的机器人进行接入，在很多年前我的理想方案是微软小冰，可惜微软并没有提供公开的接口。chatgpt出现正好解决了]]></description>
+</item>
+</channel>
+</rss>

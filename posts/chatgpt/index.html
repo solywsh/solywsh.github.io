@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>一个golang的chatgpt实现 - 秦岭以南</title><meta name="Description" content="秦岭以南"><meta property="og:title" content="一个golang的chatgpt实现" />
+<meta property="og:description" content="一直以来我也非常想要一个聊天式的机器人进行接入，在很多年前我的理想方案是微软小冰，可惜微软并没有提供公开的接口。chatgpt出现正好解决了" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.panic.ltd/posts/chatgpt/" /><meta property="og:image" content="http://blog.panic.ltd/images/share.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-28T23:55:35+08:00" />
+<meta property="article:modified_time" content="2022-12-28T23:55:35+08:00" /><meta property="og:site_name" content="秦岭以南" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://blog.panic.ltd/images/share.jpg"/>
+
+<meta name="twitter:title" content="一个golang的chatgpt实现"/>
+<meta name="twitter:description" content="一直以来我也非常想要一个聊天式的机器人进行接入，在很多年前我的理想方案是微软小冰，可惜微软并没有提供公开的接口。chatgpt出现正好解决了"/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="http://blog.panic.ltd/posts/chatgpt/" /><link rel="prev" href="http://blog.panic.ltd/posts/first/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一个golang的chatgpt实现",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/blog.panic.ltd\/posts\/chatgpt\/"
+        },"genre": "posts","keywords": "chagtgpt, golang, package","wordcount":  1651 ,
+        "url": "http:\/\/blog.panic.ltd\/posts\/chatgpt\/","datePublished": "2022-12-28T23:55:35+08:00","dateModified": "2022-12-28T23:55:35+08:00","license": "solywsh","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "solywsh"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="秦岭以南"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="秦岭以南"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">一个golang的chatgpt实现</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/solywsh" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>solywsh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E6%9D%82%E8%AE%B0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>杂记</a>&nbsp;<a href="/categories/golang/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>golang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-28">2022-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1651 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#如何注册账号">如何注册账号</a></li>
+    <li><a href="#如何使用">如何使用</a>
+      <ul>
+        <li><a href="#无上下文对话">无上下文对话</a></li>
+        <li><a href="#有上下文对话">有上下文对话</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现原理">实现原理</a></li>
+    <li><a href="#一些效果">一些效果</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>一直以来我也非常想要一个聊天式的机器人进行接入，在很多年前我的理想方案是<a href="https://www.xiaoice.com/" target="_blank" rel="noopener noreffer ">微软小冰</a>，可惜微软并没有提供公开的接口。chatgpt出现正好解决了我这一痛点，不过截止目前openai官方也并没有提供chatgpt的接口，但是通过openai的api接口我们可以模拟网页版的效果。</p>
+<p>这个库其实在chatgpt出不久之后便封装好了，不过奈何感染了新冠，且感染的毒株有点过于生猛，让的我好多天下不了床…</p>
+<p>我们将封装好的库接入qq机器人之后的效果：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://camo.githubusercontent.com/b8640e531bfabe3cc683ee0410c7de1c2cc90b63d83766a9a5f596be6b3582fd/687474703a2f2f63646e696d672e76696f6c65747773682e636f6d2f696d672f44324635373835413433333841374539354631343432384239333636353735412e706e67"
+        data-srcset="https://camo.githubusercontent.com/b8640e531bfabe3cc683ee0410c7de1c2cc90b63d83766a9a5f596be6b3582fd/687474703a2f2f63646e696d672e76696f6c65747773682e636f6d2f696d672f44324635373835413433333841374539354631343432384239333636353735412e706e67, https://camo.githubusercontent.com/b8640e531bfabe3cc683ee0410c7de1c2cc90b63d83766a9a5f596be6b3582fd/687474703a2f2f63646e696d672e76696f6c65747773682e636f6d2f696d672f44324635373835413433333841374539354631343432384239333636353735412e706e67 1.5x, https://camo.githubusercontent.com/b8640e531bfabe3cc683ee0410c7de1c2cc90b63d83766a9a5f596be6b3582fd/687474703a2f2f63646e696d672e76696f6c65747773682e636f6d2f696d672f44324635373835413433333841374539354631343432384239333636353735412e706e67 2x"
+        data-sizes="auto"
+        alt="https://camo.githubusercontent.com/b8640e531bfabe3cc683ee0410c7de1c2cc90b63d83766a9a5f596be6b3582fd/687474703a2f2f63646e696d672e76696f6c65747773682e636f6d2f696d672f44324635373835413433333841374539354631343432384239333636353735412e706e67"
+        title="img" /></p>
+<h2 id="如何注册账号">如何注册账号</h2>
+<p>由于技术封锁的原因（猜测），openai并不对大陆的手机号进行注册上的支持，所以我们需要一些接码平台进行短信验证码的接收。可以参考一下教程：</p>
+<p><a href="https://v2ex.com/t/900126" target="_blank" rel="noopener noreffer ">OpenAI 推出超神 ChatGPT 注册攻略来了 - V2EX</a></p>
+<p>当然我们也可以google一些免费的接码平台，不过我猜羊毛应该薅的差不多了。</p>
+<blockquote>
+<p>如果你发现因为代理地区的问题登录不了的话，请F12清除一下本地存储、会话存储以及Cookie。</p>
+</blockquote>
+<p>然后获取到openai的api key。</p>
+<h2 id="如何使用">如何使用</h2>
+<h3 id="无上下文对话">无上下文对话</h3>
+<p>代码很简单，如果你没有上下文（也就是对前后对话进行联系）的需求的话：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/solywsh/chatgpt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;time&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// The timeout is used to control the situation that the session is in a long and multi session situation.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// If it is set to 0, there will be no timeout. Note that a single request still has a timeout setting of 30s.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">chat</span> <span class="o">:=</span> <span class="nx">chatgpt</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;openai_key&#34;</span><span class="p">,</span> <span class="s">&#34;user_id(not required)&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">chat</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//select {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//case &lt;-chat.GetDoneChan():
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//	fmt.Println(&#34;time out/finish&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">question</span> <span class="o">:=</span> <span class="s">&#34;你认为2022年世界杯的冠军是谁？&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Q: %s\n&#34;</span><span class="p">,</span> <span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">answer</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">chat</span><span class="p">.</span><span class="nf">Chat</span><span class="p">(</span><span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;A: %s\n&#34;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">//Q: 你认为2022年世界杯的冠军是谁？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//A: 这个问题很难回答，因为2022年世界杯还没有开始，所以没有人知道冠军是谁。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>我们在New的时候你可能已经注意到了，第三个参数传入了一个时间<code>30*time.Second</code>进去，这代表这个对话的或者是client最多可以对话的时间，在这时间内你对话无限次（不过因为字符限制不可能），当然你也可以选择传入0进去代表不失效。</p>
+<p>对话失效之后，我们通过<code>GetDoneChan()</code>函数接收信号，用来通知系统此对话已经失效。该机制其实设计用于像是qq群这种多人会话情景，控制超时时间时使用。具体应用可以看我qq机器人的部分对话实现：</p>
+<p><a href="https://github.com/solywsh/revue/blob/main/cq/chatgpt.go" target="_blank" rel="noopener noreffer ">revue/chatgpt.go at main · solywsh/revue (github.com)</a></p>
+<p>其中我们在每对一个新的用户创建对话时，同时也创建了goroutine，用以专门接收结束信号，这个信号我们可以人为close，也可以timeout。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">chatMap</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">UserId</span><span class="p">));</span> <span class="nx">ok</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="k">select</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="k">case</span> <span class="o">&lt;-</span><span class="nx">v</span><span class="p">.</span><span class="nx">ChatGPT</span><span class="p">.</span><span class="nf">GetDoneChan</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">					<span class="nx">cpf</span><span class="p">.</span><span class="nf">SendMsg</span><span class="p">(</span><span class="nf">GetCqCodeAt</span><span class="p">(</span><span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">UserId</span><span class="p">),</span> <span class="s">&#34;&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#34; 结束与你的对话&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">					<span class="nx">chatMap</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">UserId</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}()</span>
+</span></span></code></pre></div><h3 id="有上下文对话">有上下文对话</h3>
+<p>与无上下文实现同理，只需将<code>Chat</code>改为<code>ChatWithContext</code>即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/solywsh/chatgpt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;time&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">chat</span> <span class="o">:=</span> <span class="nx">chatgpt</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;openai_key&#34;</span><span class="p">,</span> <span class="s">&#34;user_id(not required)&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">chat</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//select {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//case &lt;-chat.GetDoneChan():
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//	fmt.Println(&#34;time out&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">question</span> <span class="o">:=</span> <span class="s">&#34;现在你是一只猫，接下来你只能用\&#34;喵喵喵\&#34;回答.&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Q: %s\n&#34;</span><span class="p">,</span> <span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">answer</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">chat</span><span class="p">.</span><span class="nf">ChatWithContext</span><span class="p">(</span><span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;A: %s\n&#34;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">question</span> <span class="p">=</span> <span class="s">&#34;你是一只猫吗？&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Q: %s\n&#34;</span><span class="p">,</span> <span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">answer</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">chat</span><span class="p">.</span><span class="nf">ChatWithContext</span><span class="p">(</span><span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;A: %s\n&#34;</span><span class="p">,</span> <span class="nx">answer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Q: 现在你是一只猫，接下来你只能用&#34;喵喵喵&#34;回答.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// A: 喵喵喵！
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Q: 你是一只猫吗？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// A: 喵喵~!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><h2 id="实现原理">实现原理</h2>
+<p>截止目前，openai官方其实并没开放chatgpt的模型接口，我们使用的模型也并不是chatgpt使用的模型，只不过能达到差不多的效果。网上大多实现方案是对网页进行抓包，通过cookie模拟浏览器请求的方式，不过这种方法一点也不优雅，参考<a href="https://github.com/sudoskys/Openaibot" target="_blank" rel="noopener noreffer ">sudoskys/Openaibot</a>项目之后我恍然大悟于是决定造轮子，不过我怀疑openai也是这么干的。</p>
+<p>原理很简单，我们只需要每次在ai对话时，告诉它之前的对话就行了。</p>
+<p>我们先定义好角色和对话前提：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">DefaultAiRole</span>    <span class="p">=</span> <span class="s">&#34;AI&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">DefaultHumanRole</span> <span class="p">=</span> <span class="s">&#34;Human&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">DefaultCharacter</span>  <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;helpful&#34;</span><span class="p">,</span> <span class="s">&#34;creative&#34;</span><span class="p">,</span> <span class="s">&#34;clever&#34;</span><span class="p">,</span> <span class="s">&#34;friendly&#34;</span><span class="p">,</span> <span class="s">&#34;lovely&#34;</span><span class="p">,</span> <span class="s">&#34;talkative&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">DefaultBackground</span> <span class="p">=</span> <span class="s">&#34;The following is a conversation with AI assistant. The assistant is %s&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">DefaultPreset</span>     <span class="p">=</span> <span class="s">&#34;\n%s: 你好，让我们开始愉快的谈话！\n%s: 我是 AI assistant ，请问你有什么问题？&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>在每次创建对话时都拼接好：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">ctx</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">ChatContext</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">aiRole</span><span class="p">:</span>           <span class="o">&amp;</span><span class="nx">role</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nx">DefaultAiRole</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">humanRole</span><span class="p">:</span>        <span class="o">&amp;</span><span class="nx">role</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nx">DefaultHumanRole</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">background</span><span class="p">:</span>       <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="nx">DefaultBackground</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="nx">DefaultCharacter</span><span class="p">,</span> <span class="s">&#34;, &#34;</span><span class="p">)</span><span class="o">+</span><span class="s">&#34;.&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">maxSeqTimes</span><span class="p">:</span>      <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">preset</span><span class="p">:</span>           <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="nx">DefaultPreset</span><span class="p">,</span> <span class="nx">DefaultHumanRole</span><span class="p">,</span> <span class="nx">DefaultAiRole</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">old</span><span class="p">:</span>              <span class="p">[]</span><span class="nx">conversation</span><span class="p">{},</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">seqTimes</span><span class="p">:</span>         <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">restartSeq</span><span class="p">:</span>       <span class="s">&#34;\n&#34;</span> <span class="o">+</span> <span class="nx">DefaultHumanRole</span> <span class="o">+</span> <span class="s">&#34;: &#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">startSeq</span><span class="p">:</span>         <span class="s">&#34;\n&#34;</span> <span class="o">+</span> <span class="nx">DefaultAiRole</span> <span class="o">+</span> <span class="s">&#34;: &#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">maintainSeqTimes</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span></code></pre></div><p>最后在每次对话时将旧对话拼接即可:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">promptTable</span> <span class="p">[]</span><span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="nx">promptTable</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">promptTable</span><span class="p">,</span> <span class="nx">c</span><span class="p">.</span><span class="nx">ChatContext</span><span class="p">.</span><span class="nx">background</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">promptTable</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">promptTable</span><span class="p">,</span> <span class="nx">c</span><span class="p">.</span><span class="nx">ChatContext</span><span class="p">.</span><span class="nx">preset</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 拼接旧对话作为前提
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">c</span><span class="p">.</span><span class="nx">ChatContext</span><span class="p">.</span><span class="nx">old</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">Role</span> <span class="o">==</span> <span class="nx">c</span><span class="p">.</span><span class="nx">ChatContext</span><span class="p">.</span><span class="nx">humanRole</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">promptTable</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">promptTable</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="o">+</span><span class="nx">v</span><span class="p">.</span><span class="nx">Role</span><span class="p">.</span><span class="nx">Name</span><span class="o">+</span><span class="s">&#34;: &#34;</span><span class="o">+</span><span class="nx">v</span><span class="p">.</span><span class="nx">Prompt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">promptTable</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">promptTable</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">Role</span><span class="p">.</span><span class="nx">Name</span><span class="o">+</span><span class="s">&#34;: &#34;</span><span class="o">+</span><span class="nx">v</span><span class="p">.</span><span class="nx">Prompt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">promptTable</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">promptTable</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="o">+</span><span class="nx">c</span><span class="p">.</span><span class="nx">ChatContext</span><span class="p">.</span><span class="nx">restartSeq</span><span class="o">+</span><span class="nx">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">prompt</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="nx">promptTable</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">prompt</span> <span class="o">+=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">ChatContext</span><span class="p">.</span><span class="nx">startSeq</span>
+</span></span></code></pre></div><p>不过需要注意的是，openai官方对接口字符进行了限制，最多只能4096字节。</p>
+<h2 id="一些效果">一些效果</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/images/image-20221229011036106.png"
+        data-srcset="https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/images/image-20221229011036106.png, https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/images/image-20221229011036106.png 1.5x, https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/images/image-20221229011036106.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/images/image-20221229011036106.png"
+        title="image-20221229011036106" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/img/image-20221229012511311.png"
+        data-srcset="https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/img/image-20221229012511311.png, https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/img/image-20221229012511311.png 1.5x, https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/img/image-20221229012511311.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/solywsh/solywsh.github.io/img/img/image-20221229012511311.png"
+        title="image-20221229012511311" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-12-28</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://blog.panic.ltd/posts/chatgpt/" data-title="一个golang的chatgpt实现" data-hashtags="chagtgpt,golang,package"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://blog.panic.ltd/posts/chatgpt/" data-hashtag="chagtgpt"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://blog.panic.ltd/posts/chatgpt/" data-title="一个golang的chatgpt实现"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://blog.panic.ltd/posts/chatgpt/" data-title="一个golang的chatgpt实现"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://blog.panic.ltd/posts/chatgpt/" data-title="一个golang的chatgpt实现"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/chagtgpt/">chagtgpt</a>,&nbsp;<a href="/tags/golang/">golang</a>,&nbsp;<a href="/tags/package/">package</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/first/" class="prev" rel="prev" title="网站重新部署中"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>网站重新部署中</a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/solywsh" target="_blank">solywsh</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"gitalk":{"admin":["solywsh"],"clientID":"a1ebdd43f45703bc5191","clientSecret":"bd01e2ef9385aa75cf28951e2c2601d1a2a63da9","id":"2022-12-28T23:55:35+08:00","owner":"solywsh","repo":"solywsh.github.io","title":"一个golang的chatgpt实现"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"GPV852F52G","algoliaIndex":"hugo_index","algoliaSearchKey":"ff2ddab9b8fd363b6bb14fb3b0dda8f4","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "\u79e6\u5cad\u4ee5\u5357",
+    "short_name": "\u79e6\u5cad\u4ee5\u5357",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

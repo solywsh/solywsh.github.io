@@ -2,13 +2,19 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://blog.panic.ltd/posts/</loc><lastmod>2022-12-13T14:28:32&#43;08:00</lastmod></url><url>
-            <loc>http://blog.panic.ltd/</loc><lastmod>2022-12-13T14:28:32&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/categories/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/tags/chagtgpt/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/tags/golang/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/categories/golang/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/tags/package/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/posts/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/tags/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/posts/chatgpt/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/categories/%E6%9D%82%E8%AE%B0/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
+            <loc>http://blog.panic.ltd/</loc><lastmod>2022-12-28T23:55:35&#43;08:00</lastmod></url><url>
             <loc>http://blog.panic.ltd/posts/first/</loc><lastmod>2022-12-13T14:28:32&#43;08:00</lastmod></url><url>
             <loc>http://blog.panic.ltd/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod></url><url>
-            <loc>http://blog.panic.ltd/categories/</loc></url><url>
             <loc>http://blog.panic.ltd/categories/documentation/</loc></url><url>
-            <loc>http://blog.panic.ltd/tags/</loc></url><url>
             <loc>http://blog.panic.ltd/tags/content/</loc></url><url>
             <loc>http://blog.panic.ltd/tags/installation/</loc></url><url>
             <loc>http://blog.panic.ltd/tags/configuration/</loc></url></urlset>
