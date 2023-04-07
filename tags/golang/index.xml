@@ -1,10 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>golang - Tag - 秦岭以南</title>
+        <title>golang - Tag - solywsh&#39;s blog</title>
         <link>http://blog.panic.ltd/tags/golang/</link>
-        <description>golang - Tag - 秦岭以南</description>
+        <description>golang - Tag - solywsh&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dont@panic.ltd (solywsh)</managingEditor>
-            <webMaster>dont@panic.ltd (solywsh)</webMaster><copyright>solywsh</copyright><lastBuildDate>Wed, 28 Dec 2022 23:55:35 &#43;0800</lastBuildDate><atom:link href="http://blog.panic.ltd/tags/golang/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dont@panic.ltd (solywsh)</webMaster><copyright>solywsh</copyright><lastBuildDate>Tue, 21 Mar 2023 08:55:35 &#43;0800</lastBuildDate><atom:link href="http://blog.panic.ltd/tags/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>Readline缓冲溢出导致断行</title>
+    <link>http://blog.panic.ltd/posts/golang_readline_stackoverflow/</link>
+    <pubDate>Tue, 21 Mar 2023 08:55:35 &#43;0800</pubDate>
+    <author>solywsh</author>
+    <guid>http://blog.panic.ltd/posts/golang_readline_stackoverflow/</guid>
+    <description><![CDATA[前提 在使用readline读取Nginx日志文件时发现个别日志解析时无法适配解析逻辑，按理来说Nginx日志是由服务自动生成的，不存在格式的]]></description>
+</item>
+<item>
     <title>一个golang的chatgpt实现</title>
     <link>http://blog.panic.ltd/posts/chatgpt/</link>
     <pubDate>Wed, 28 Dec 2022 23:55:35 &#43;0800</pubDate>

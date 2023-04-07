@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Nginx配置免费的Let&#39;s Encrypt - solywsh&#39;s blog</title><meta name="Description" content="solywsh&#39;s blog"><meta property="og:title" content="Nginx配置免费的Let&#39;s Encrypt" />
+<meta property="og:description" content="https://www.nginx-cn.net/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/#auto-renewal 1 下载 Let’s Encrypt 客户端 首先，下载 Let’s Encrypt 客户端 certbot。 如上所述，我们在 Ubuntu 16.04 上测试了相关指令，以下是在该平台上运行的相应命令：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.panic.ltd/posts/nginx_let_encrypt/" /><meta property="og:image" content="http://blog.panic.ltd/images/share.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-17T21:55:35+08:00" />
+<meta property="article:modified_time" content="2023-03-17T21:55:35+08:00" /><meta property="og:site_name" content="solywsh&#39;s blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://blog.panic.ltd/images/share.jpg"/>
+
+<meta name="twitter:title" content="Nginx配置免费的Let&#39;s Encrypt"/>
+<meta name="twitter:description" content="https://www.nginx-cn.net/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/#auto-renewal 1 下载 Let’s Encrypt 客户端 首先，下载 Let’s Encrypt 客户端 certbot。 如上所述，我们在 Ubuntu 16.04 上测试了相关指令，以下是在该平台上运行的相应命令："/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="http://blog.panic.ltd/posts/nginx_let_encrypt/" /><link rel="prev" href="http://blog.panic.ltd/posts/chatgpt/" /><link rel="next" href="http://blog.panic.ltd/posts/golang_readline_stackoverflow/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Nginx配置免费的Let's Encrypt",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/blog.panic.ltd\/posts\/nginx_let_encrypt\/"
+        },"genre": "posts","keywords": "web, nginx, ssl, 服务配置","wordcount":  909 ,
+        "url": "http:\/\/blog.panic.ltd\/posts\/nginx_let_encrypt\/","datePublished": "2023-03-17T21:55:35+08:00","dateModified": "2023-03-17T21:55:35+08:00","license": "solywsh","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "solywsh"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="solywsh&#39;s blog"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="solywsh&#39;s blog"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Nginx配置免费的Let's Encrypt</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/solywsh" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>solywsh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>服务配置</a>&nbsp;<a href="/categories/nginx/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>nginx</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-17">2023-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;909 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-下载-lets-encrypt-客户端">1 下载 Let’s Encrypt 客户端</a></li>
+    <li><a href="#2-设置-nginx">2 设置 NGINX</a></li>
+    <li><a href="#3-获取-ssltls-证书">3 获取 SSL/TLS 证书</a></li>
+    <li><a href="#4-自动更新-lets-encrypt-证书">4 自动更新 Let’s Encrypt 证书</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p><a href="https://www.nginx-cn.net/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/#auto-renewal" target="_blank" rel="noopener noreffer ">https://www.nginx-cn.net/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/#auto-renewal</a></p>
+</blockquote>
+<h2 id="1-下载-lets-encrypt-客户端">1 下载 Let’s Encrypt 客户端</h2>
+<p>首先，下载 Let’s Encrypt 客户端 <code>certbot</code>。</p>
+<p>如上所述，我们在 Ubuntu 16.04 上测试了相关指令，以下是在该平台上运行的相应命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">$ apt-get update
+</span></span><span class="line"><span class="cl">$ sudo apt-get install certbot
+</span></span><span class="line"><span class="cl">$ apt-get install python-certbot-nginx
+</span></span></code></pre></div><p>用 Ubuntu 18.04和更高版本, 替代 Python 3版本:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">$ apt-get update
+</span></span><span class="line"><span class="cl">$ sudo apt-get install certbot
+</span></span><span class="line"><span class="cl">$ apt-get install python3-certbot-nginx
+</span></span></code></pre></div><h2 id="2-设置-nginx">2 设置 NGINX</h2>
+<p><code>certbot</code> 可以自动完成 NGINX 的 SSL/TLS 配置。它会在您的 NGINX 配置中查找并修改包含 <code>[server_name](https://nginx.org/en/docs/http/ngx_http_core_module.html#server_name)</code> 指令（含有您为其请求证书的域名）的 <code>[server](https://nginx.org/en/docs/http/ngx_http_core_module.html#server)</code> 块。在我们的示例中，域名为 <strong><a href="https://www.example.com" target="_blank" rel="noopener noreffer ">www.example.com</a></strong>.</p>
+<ol>
+<li>假设您在一个全新的 NGINX 安装上进行设置，请使用文本编辑器在 <strong>/etc/nginx/conf.d</strong> 目录中创建一个名为 *<strong>domain‑name*.conf</strong> 的文件（在我们的示例中为 <strong><a href="https://www.example.com.conf" target="_blank" rel="noopener noreffer ">www.example.com.conf</a></strong>）。</li>
+<li>使用 <code>server_name</code> 指令指定您的域名（如果域名有变体的话也请指定）：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    listen <span class="m">80</span> default_server<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    listen <span class="o">[</span>::<span class="o">]</span>:80 default_server<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    root /var/www/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server_name example.com www.example.com<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><ol>
+<li>保存文件，然后运行以下命令来验证配置的语法并重新启动 NGINX：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">$ nginx -t <span class="o">&amp;&amp;</span> nginx -s reload
+</span></span></code></pre></div><h2 id="3-获取-ssltls-证书">3 获取 SSL/TLS 证书</h2>
+<p><code>certbot</code> 的 NGINX 插件负责重新配置 NGINX，并在必要时重新加载其配置。</p>
+<ol>
+<li>运行以下命令，使用 NGINX 插件生成证书：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">$ sudo certbot --nginx -d example.com -d www.example.com
+</span></span></code></pre></div><ol>
+<li>
+<p>根据 <code>certbot</code> 的提示配置 HTTPS 设置，包括输入您的电子邮件地址并同意 Let’s Encrypt 服务条款。</p>
+</li>
+<li>
+<p>证书生成后，NGINX 重新加载新设置。<code>certbot</code> 生成一条消息，显示证书成功生成，并指示证书在服务器上的位置。</p>
+</li>
+<li>
+<ol start="7">
+<li></li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">Congratulations! You have successfully enabled https://example.com and https://www.example.com 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">IMPORTANT NOTES: 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Congratulations! Your certificate and chain have been saved at: 
+</span></span><span class="line"><span class="cl">/etc/letsencrypt/live/example.com/fullchain.pem 
+</span></span><span class="line"><span class="cl">Your key file has been saved at: 
+</span></span><span class="line"><span class="cl">/etc/letsencrypt/live/example.com//privkey.pem
+</span></span><span class="line"><span class="cl">Your cert will expire on 2017-12-12.
+</span></span></code></pre></div><ol>
+<li>**注：**Let’s Encrypt 证书在 90 天后到期（在本例中，到期时间为 2017 年 12 月 12 日）。有关自动更新证书的信息，请参阅下方<a href="https://www.nginx-cn.net/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/#auto-renewal" target="_blank" rel="noopener noreffer ">“自动更新 Let’s Encrypt 证书”</a>一节。</li>
+</ol>
+<p>如果查看 *<strong>domain‑name*.conf</strong>，您会发现 <code>certbot</code> 已对其进行了修改：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    listen <span class="m">80</span> default_server<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    listen <span class="o">[</span>::<span class="o">]</span>:80 default_server<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    root /var/www/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server_name  example.com www.example.com<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    listen <span class="m">443</span> ssl<span class="p">;</span> <span class="c1"># managed by Certbot</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># RSA certificate</span>
+</span></span><span class="line"><span class="cl">    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem<span class="p">;</span> <span class="c1"># managed by Certbot</span>
+</span></span><span class="line"><span class="cl">    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem<span class="p">;</span> <span class="c1"># managed by Certbot</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    include /etc/letsencrypt/options-ssl-nginx.conf<span class="p">;</span> <span class="c1"># managed by Certbot</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Redirect non-https traffic to https</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="nv">$scheme</span> !<span class="o">=</span> <span class="s2">&#34;https&#34;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="c1"># managed by Certbot</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h2 id="4-自动更新-lets-encrypt-证书">4 自动更新 Let’s Encrypt 证书</h2>
+<p>Let’s Encrypt 证书将在 90 天后到期。我们建议您自动更新证书。此处，我们将一个 <code>[cron](https://baike.baidu.com/item/cron)</code> 作业添加到现有 <strong>crontab</strong> 文件中，以执行这一操作。</p>
+<ol>
+<li>打开 <strong>crontab</strong> 文件。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">$ crontab -e
+</span></span></code></pre></div><ol>
+<li>添加 <code>certbot</code> 命令，并设置为每天运行。在本例中，我们每天中午运行该命令。该命令检查服务器上的证书是否会在未来 30 天内到期，如果是，则更新证书。<code>--quiet</code> 指令告知 <code>certbot</code> 不要生成输出。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">12</span> * * * /usr/bin/certbot renew --quiet
+</span></span></code></pre></div><ol>
+<li>保存并关闭文件。所有已安装的证书将自动更新和重新加载。</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-03-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://blog.panic.ltd/posts/nginx_let_encrypt/" data-title="Nginx配置免费的Let&#39;s Encrypt" data-hashtags="web,nginx,ssl,服务配置"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://blog.panic.ltd/posts/nginx_let_encrypt/" data-hashtag="web"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://blog.panic.ltd/posts/nginx_let_encrypt/" data-title="Nginx配置免费的Let&#39;s Encrypt"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://blog.panic.ltd/posts/nginx_let_encrypt/" data-title="Nginx配置免费的Let&#39;s Encrypt"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://blog.panic.ltd/posts/nginx_let_encrypt/" data-title="Nginx配置免费的Let&#39;s Encrypt"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/web/">web</a>,&nbsp;<a href="/tags/nginx/">nginx</a>,&nbsp;<a href="/tags/ssl/">ssl</a>,&nbsp;<a href="/tags/%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/">服务配置</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/chatgpt/" class="prev" rel="prev" title="一个golang的chatgpt实现"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>一个golang的chatgpt实现</a>
+            <a href="/posts/golang_readline_stackoverflow/" class="next" rel="next" title="Readline缓冲溢出导致断行">Readline缓冲溢出导致断行<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/solywsh" target="_blank">solywsh</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"gitalk":{"admin":["solywsh"],"clientID":"a1ebdd43f45703bc5191","clientSecret":"bd01e2ef9385aa75cf28951e2c2601d1a2a63da9","id":"2023-03-17T21:55:35+08:00","owner":"solywsh","repo":"solywsh.github.io","title":"Nginx配置免费的Let's Encrypt"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"GPV852F52G","algoliaIndex":"hugo_index","algoliaSearchKey":"ff2ddab9b8fd363b6bb14fb3b0dda8f4","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
